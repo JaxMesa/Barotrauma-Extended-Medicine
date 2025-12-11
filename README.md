@@ -1,7 +1,7 @@
 # Barotrauma-Extended-Medicine
 A mod for a Barotrauma game which extends existing medicine with new medical items and afflictions.
 
-While forking, please leave references(like mention or link) to original author of mod.
+While forking, please leave references(like mention or link) to original author of mod. <br />
 All files are allowed for shared use.
 
 # Contacts <br />
