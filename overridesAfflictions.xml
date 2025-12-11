@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Afflictions -->
+<Afflictions>
+  <!-- OVERRIDED VANILLA AFFLICTIONS-->
+  <!-- Psychosis -->
+  <Override>
+    <AfflictionPsychosis name="Psychosis" identifier="psychosis" description="The patient rants and mutters in an agitated fashion, a steady commentary of unseen events." type="psychosis" limbspecific="false" indicatorlimb="Head" activationthreshold="0" showiconthreshold="1000" showicontoothersthreshold="20" showinhealthscannerthreshold="10" treatmentthreshold="20" karmachangeonapplied="-1" maxstrength="100" achievementonremoved="healpsychosis" healcostmultiplier="3.5">
+      <Effect minstrength="0" maxstrength="25" maxvitalitydecrease="0" strengthchange="-0.1">
+        <StatusEffect target="Character"></StatusEffect>
+      </Effect>
+      <Effect minstrength="25" maxstrength="100" maxvitalitydecrease="0" strengthchange="-0.1">
+        <StatusEffect target="Character">
+          <Affliction identifier="psyshock" strengthchange="+2" />
+        </StatusEffect>
+      </Effect>
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,640,128,128" color="150,26,26,255" origin="0,0" />
+      <PeriodicEffect mininterval="30" maxinterval="120">
+        <StatusEffect target="Character" onlyoutside="true">
+          <Conditional IsLocalPlayer="True" />
+          <Sound file="Content/Characters/Spineling/SPINELING_idle2.ogg" selectionmode="Random" />
+          <Sound file="Content/Characters/Spineling/SPINELING_idle4.ogg" />
+          <Sound file="Content/Characters/Tigerthresher/TIGERTRESHER_idle1.ogg" />
+          <Sound file="Content/Characters/Tigerthresher/TIGERTRESHER_idle2.ogg" />
+          <Sound file="Content/Characters/Tigerthresher/TIGERTRESHER_attack1.ogg" />
+          <Sound file="Content/Characters/Moloch/MOLOCH_attack1.ogg" />
+          <Sound file="Content/Characters/Moloch/MOLOCH_attack2.ogg" />
+          <Sound file="Content/Characters/Husk/HUSK_idle1.ogg" />
+          <Sound file="Content/Characters/Husk/HUSK_idle4.ogg" />
+          <Sound file="Content/Characters/Hammerheadmatriarch/MHAMMERHEAD_idle3.ogg" />
+          <Sound file="Content/Characters/Hammerhead/HAMMERHEAD_idle4.ogg" />
+          <Sound file="Content/Characters/Hammerhead/HAMMERHEAD_attack2.ogg" />
+          <Sound file="Content/Characters/Hammerhead/HAMMERHEAD_attack3.ogg" />
+          <Sound file="Content/Characters/Crawlerhusk/HUSKEDCRAWLER_idle1.ogg" />
+          <Sound file="Content/Characters/Crawlerhusk/HUSKEDCRAWLER_idle3.ogg" />
+          <Sound file="Content/Characters/Crawlerhusk/HUSKEDCRAWLER_attack2.ogg" />
+        </StatusEffect>
+        <StatusEffect target="Character" onlyinside="true">
+          <Conditional IsLocalPlayer="True" />
+          <Sound file="Content/Items/Weapons/honk.ogg" selectionmode="Random" />
+          <Sound file="Content/Items/Weapons/ShotgunShot1.ogg" />
+          <Sound file="Content/Items/Weapons/ShotgunShot2.ogg" />
+          <Sound file="Content/Characters/Moloch/MOLOCH_attack1.ogg" />
+          <Sound file="Content/Characters/Moloch/MOLOCH_attack2.ogg" />
+          <Sound file="Content/Characters/Mudraptor/MUDRAPTOR_attack1.ogg" />
+          <Sound file="Content/Characters/Mudraptor/MUDRAPTOR_attack2.ogg" />
+          <Sound file="Content/Characters/Mudraptor/MUDRAPTOR_idle4.ogg" />
+          <Sound file="Content/Characters/Husk/HUSK_idle1.ogg" />
+          <Sound file="Content/Characters/Husk/HUSK_idle4.ogg" />
+          <Sound file="Content/Characters/Husk/HUSK_attack4.ogg" />
+          <Sound file="Content/Characters/Crawler/CRAWLER_idle3.ogg" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <PeriodicEffect mininterval="100" maxinterval="200">
+        <StatusEffect target="Character" duration="30" onlyinside="true">
+          <Conditional IsLocalPlayer="True" />
+          <Sound file="Content/Items/WarningSiren.ogg" />
+        </StatusEffect>
+      </PeriodicEffect>
+    </AfflictionPsychosis>
+  </Override>
+  <!-- Radiation sickness -->
+  <Override>
+    <Affliction name="Radiation Sickness" identifier="radiationsickness" description="The patient has been damaged internally and externally by nearby radiation. Burns are begining to generate all around the body, and internal damage is inminent. Must be treated as soon as possible to avoid catastrophic behaviour." type="poison" causeofdeathdescription="Died of radiation sickness." selfcauseofdeathdescription="You have died of radiation sickness." limbspecific="false" indicatorlimb="Torso" activationthreshold="1.0" showiconthreshold="0" treatmentthreshold="25" maxstrength="100" grainburst="3">
+      <Effect minstrength="5" maxstrength="25" mingrainstrength="0.0" maxgrainstrength="0.5" strengthchange="+0.03">
+        <StatusEffect target="Character">
+          <Affliction identifier="burn" amount="0.0025" />
+          <Affliction identifier="cancer" strength="+0.334" />
+        </StatusEffect>
+      </Effect>
+      <Effect minstrength="25" maxstrength="50" mingrainstrength="0.5" maxgrainstrength="1.0" strengthchange="+0.03" minchromaticaberration="0.0" maxchromaticaberration="5.0">
+        <StatusEffect target="Character">
+          <Affliction identifier="burn" amount="0.005" />
+          <Affliction identifier="cancer" strength="+0.334" />
+        </StatusEffect>
+      </Effect>
+      <Effect minstrength="50" maxstrength="75" mingrainstrength="1.0" maxgrainstrength="1.0" strengthchange="+0.03" minchromaticaberration="5.0" maxchromaticaberration="10.0">
+        <StatusEffect target="Character">
+          <Affliction identifier="burn" amount="0.01" />
+          <Affliction identifier="nausea" amount="1.05" />
+          <Affliction identifier="cancer" strength="+0.334" />
+        </StatusEffect>
+      </Effect>
+      <Effect minstrength="75" maxstrength="90" mingrainstrength="1.0" maxgrainstrength="1.0" strengthchange="+0.03" minchromaticaberration="10.0" maxchromaticaberration="30.0">
+        <StatusEffect target="Character">
+          <Affliction identifier="burn" amount="0.02" />
+          <Affliction identifier="nausea" amount="1.1" />
+          <Affliction identifier="cancer" strength="+0.334" />
+        </StatusEffect>
+        <StatusEffect target="Character" SpeedMultiplier="0.8" setvalue="true" />
+      </Effect>
+      <Effect minstrength="90" maxstrength="100" mingrainstrength="1.0" maxgrainstrength="1.0" strengthchange="+0.03" minchromaticaberration="30.0" maxchromaticaberration="50.0">
+        <StatusEffect target="Character">
+          <Affliction identifier="burn" amount="0.02" />
+          <Affliction identifier="nausea" amount="1.1" />
+          <Affliction identifier="cancer" strength="+0.334" />
+        </StatusEffect>
+        <StatusEffect target="Character" SpeedMultiplier="0.5" setvalue="true" />
+      </Effect>
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="896,768,128,128" color="195,136,60,255" origin="0,0" />
+    </Affliction>
+  </Override>
+</Afflictions>

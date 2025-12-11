@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Russian" nowhitespace="false" translatedname="Русский">
+  <!-- Afflictions -->
+  <afflictionname.flu>Грипп</afflictionname.flu>
+  <afflictiondescription.flu>У пациента грипп. В долгосрочной перспективе это может привести к смерти.</afflictiondescription.flu>
+  <afflictioncauseofdeath.flu>Смерть от гриппа</afflictioncauseofdeath.flu>
+  <afflictionname.fever>Лихорадка</afflictionname.fever>
+  <afflictiondescription.fever>Пациент страдает от высоких температур в теле.</afflictiondescription.fever>
+  <afflictionname.cancer>Рак</afflictionname.cancer>
+  <afflictiondescription.cancer>Пациент страдает от рака. Нависшая над пациентом угроза смерти требует своевременного лечения. В худшем случае, пациента ждёт мучительная смерть.</afflictiondescription.cancer>
+  <afflictioncauseofdeath.cancer>Смерть от рака</afflictioncauseofdeath.cancer>
+  <afflictionname.spacerabies>Космическое бешенство</afflictionname.spacerabies>
+  <afflictiondescription.spacerabies>Пациент страдает от космического бешенства, инфекции, которая получена вероятнее всего от укуса. Пациент испытывает расплывчатое зрение, увеличенную скорость движения и желание физически причинить другим живым существам боль.</afflictiondescription.spacerabies>
+  <afflictioncauseofdeath.spacerabies>Смерть от бешенства</afflictioncauseofdeath.spacerabies>
+  <afflictionname.psyshock>Психозный шок</afflictionname.psyshock>
+  <afflictiondescription.psyshock>Пациент начинает постепенно сходить с ума и терять рассудок. В конце-концов это может привести к смерти пациента.</afflictiondescription.psyshock>
+  <afflictioncauseofdeath.psyshock>Смерть от сильного стресса</afflictioncauseofdeath.psyshock>
+  <afflictionname.bloodpoisoning>Заражение крови</afflictionname.bloodpoisoning>
+  <afflictiondescription.bloodpoisoning>Кровь, кажется, была загрязнена при переливании крови. Может потребоваться дополнение переливание крови, желательно "правильной".</afflictiondescription.bloodpoisoning>
+  <afflictioncauseofdeath.bloodpoisoning>Смерть от заражения крови</afflictioncauseofdeath.bloodpoisoning>
+  <afflictionname.severeinjury>Серьёзная травма</afflictionname.severeinjury>
+  <afflictiondescription.severeinjury>Конечность сильно повреждена. Пациент испытывает сильную боль.</afflictiondescription.severeinjury>
+  <afflictionname.pain>Боль</afflictionname.pain>
+  <afflictiondescription.pain>Пациент испытывает интенсивную боль, накапливающуюся из-за травм и кровотечений. Длительная сильная боль может привести к дезориентации или потере сознания.</afflictiondescription.pain>
+  <afflictionname.hemor>Поджопный волдырь</afflictionname.hemor>
+  <afflictiondescription.hemor>Болезненная припухлость, вызывающая дискомфорт и периодическую потерю трудоспособности. Нужно что то инопланетное и острое, что бы убрать его.</afflictiondescription.hemor>
+  <afflictionname.severebleeding>Сильное кровотечение</afflictionname.severebleeding>
+  <afflictiondescription.severebleeding>Открытая рана. Пациент испытывает сильную боль.</afflictiondescription.severebleeding>
+  <afflictionname.blackout>Тяжелая дезориентация</afflictionname.blackout>
+  <afflictiondescription.blackout>Пациент дизориентирован в результате сильных болей или травмы головы. Он с трудом стоит на ногах и держит себя в сознании.</afflictiondescription.blackout>
+  <afflictioncauseofdeath.blackout>Серьёзная травма головы</afflictioncauseofdeath.blackout>
+  <!-- Items -->
+  <entityname.antibioticpowder>Антибиотическая пудра</entityname.antibioticpowder>
+  <entitydescription.antibioticpowder>Борется с вредителями. Является медицинским компонентом.</entitydescription.antibioticpowder>
+  <entityname.vitaminpowder>Витаминная пудра</entityname.vitaminpowder>
+  <entitydescription.vitaminpowder>Помогает бороться с болезнями. Является медицинским компонентом.</entitydescription.vitaminpowder>
+  <entityname.bloodsample>Образец крови</entityname.bloodsample>
+  <entitydescription.bloodsample>Контейнер заполненный кровью. Полезен для создания лекарств.</entitydescription.bloodsample>
+  <entityname.emptysyringe>Пустой шприц</entityname.emptysyringe>
+  <entitydescription.emptysyringe>Полезен для извлечения жидкостей из тел.</entitydescription.emptysyringe>
+  <entityname.reagent>Реагент</entityname.reagent>
+  <entitydescription.reagent>Является медицинским компонентом.</entitydescription.reagent>
+  <entityname.liquidplasma>Жидкая плазма</entityname.liquidplasma>
+  <entitydescription.liquidplasma>Синтезированная плазма из органичких компонентов. Очень необычный компонент.</entitydescription.liquidplasma>
+  <!-- Clothes/Tools -->
+  <entityname.medicalbelt>Медицинский пояс</entityname.medicalbelt>
+  <entitydescription.medicalbelt>Специально разработанный для врачей и парамедиков медицинский пояс, имеющий дополнительные карманы для медикаментов, но не способный выполнять иные функции, кроме как помогать врачам.</entitydescription.medicalbelt>
+  <!-- Medicine -->
+  <entityname.antibioticpills>Антибиотики</entityname.antibioticpills>
+  <entitydescription.antibioticpills>Лёгкие антибиотики в виде таблеток. Помогают лечить болезни.</entitydescription.antibioticpills>
+  <entityname.vitaminpills>Витамины</entityname.vitaminpills>
+  <entitydescription.vitaminpills>Небольшие витаминки, помогающие организму восстанавливаться. На вкус как конфеты.</entitydescription.vitaminpills>
+  <entityname.antipsychoticpills>Антипсихотики</entityname.antipsychoticpills>
+  <entitydescription.antipsychoticpills>Иногда ваш рассудок и мораль падают до предела и вам нужно быстрое и недолгое решение этой проблемы.</entitydescription.antipsychoticpills>
+  <entityname.radiazine>Радиацин</entityname.radiazine>
+  <entitydescription.radiazine>Шприц заполненный веществом для борьбы с радиацией и раком.</entitydescription.radiazine>
+  <entityname.rabiesvaccine>Аутовакцина</entityname.rabiesvaccine>
+  <entitydescription.rabiesvaccine>Шприц заполненный смесью крови и других мощных компонентов, обеспечивает сопротивление бешенству после использования. Спасает жизнь на ранних этапах болезни.</entitydescription.rabiesvaccine>
+  <entityname.vitaminsoulution>Раствор витаминов</entityname.vitaminsoulution>
+  <entitydescription.vitaminsoulution>Высокоэффективный, универсальный раствор высококонцентрированных витаминов позволяющий вытащить пациента почти что из любой тяжелой ситуации. До разработки боевых стимуляторов считался основным средством выполняющим функции боевого стимулятора. К сожалению, этот медикамент известен своими ужасными побочными эффектами.</entitydescription.vitaminsoulution>
+  <entityname.compressionbandage>Шина</entityname.compressionbandage>
+  <entitydescription.compressionbandage>Шина, является средством лечения переломов, но может быть использована для лечения сильных кровотечений.</entitydescription.compressionbandage>
+  <entityname.donorbloodpack>Пакет донорской крови</entityname.donorbloodpack>
+  <entitydescription.donorbloodpack>Изготовленная на основе неочищенной донорской крови, пачка исцеляет кровопотерю.</entitydescription.donorbloodpack>
+  <entityname.antibloodpills>Осимилин</entityname.antibloodpills>
+  <entitydescription.antibloodpills>Замедляющее слегка метаболизм лекарство повышает кровенное давление, но повышает шансы пациента выжить при обильных кровопотерях и кровотечениях. Парамедикам рекомендуется.</entitydescription.antibloodpills>
+  <entityname.stasissolution>Раствор криоксадона</entityname.stasissolution>
+  <entitydescription.stasissolution>Прохладная на ощуп смесь в пакете способная вводить пациента в приближённый к крионическому сну транс на короткий срок. Используется лишь опытными парамедиками!</entitydescription.stasissolution>
+  <entityname.antioxygenlow>Химический кислород</entityname.antioxygenlow>
+  <entitydescription.antioxygenlow>Особый вид кислорода насыщенный химическими свойствами. Позволяет пациенту на относительно продолжительный период отказаться от кислорода. Полезен как аварийный медикамент для путешествинников.</entitydescription.antioxygenlow>
+  <entityname.antiaddiction>Адиксил</entityname.antiaddiction>
+  <entitydescription.antiaddiction>Необычный медикамент на основе плазма и органа морского обитателя, способный эффективно лечить зависимость пациентов, но усиливает её ломку.</entitydescription.antiaddiction>
+  <!-- Buffs -->
+  <afflictionname.fluresistance>Стойкость</afflictionname.fluresistance>
+  <afflictiondescription.fluresistance>Похоже что никакая болезнь, на время, не сможет так просто побороть пациента.</afflictiondescription.fluresistance>
+  <afflictionname.spacerabiesresistance>Вакцинирован</afflictionname.spacerabiesresistance>
+  <afflictiondescription.spacerabiesresistance>Через астрономическое увеличение общего количества лейкоцитов в теле пациента с помощью веществ, он временно устойчив к космическому бешенству.</afflictiondescription.spacerabiesresistance>
+  <afflictionname.psyshockresistance>Железная психика</afflictionname.psyshockresistance>
+  <afflictiondescription.psyshockresistance>Пациент временно устойчив к психотическому шоку.</afflictiondescription.psyshockresistance>
+  <afflictionname.metabolismarrest>Остановка метаболизма</afflictionname.metabolismarrest>
+  <afflictiondescription.metabolismarrest>Пациент находится в глубоком трансе, а его метаболизм остановился почти полностью.</afflictiondescription.metabolismarrest>
+</infotexts>

@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="English" nowhitespace="false" translatedname="English">
+  <!-- Afflictions -->
+  <afflictionname.flu>Flu</afflictionname.flu>
+  <afflictiondescription.flu>The patient has a flu. In the long term, this can lead to death.</afflictiondescription.flu>
+  <afflictioncauseofdeath.flu>Died by flu</afflictioncauseofdeath.flu>
+  <afflictionname.fever>Fever</afflictionname.fever>
+  <afflictiondescription.fever>The patient suffers from high temperatures inside his body.</afflictiondescription.fever>
+  <afflictionname.cancer>Cancer</afflictionname.cancer>
+  <afflictiondescription.cancer>The patient suffers from cancer. The threat of death hanging over the patient requires timely treatment. In the worst case, a painful death awaits the patient.</afflictiondescription.cancer>
+  <afflictioncauseofdeath.cancer>Died by cancer</afflictioncauseofdeath.cancer>
+  <afflictionname.spacerabies>Space rabies</afflictionname.spacerabies>
+  <afflictiondescription.spacerabies>The patient is suffering from space rabies, an infection that probably came from a bite. Patient experiences blurry vision, increased movement speed, and the desire to physically hurt other living beings.</afflictiondescription.spacerabies>
+  <afflictioncauseofdeath.spacerabies>Died by rabies</afflictioncauseofdeath.spacerabies>
+  <afflictionname.psyshock>Psychotic shock</afflictionname.psyshock>
+  <afflictiondescription.psyshock>The patient begins to gradually go crazy and lose his mind. In the end, this can lead to the death of the patient.</afflictiondescription.psyshock>
+  <afflictioncauseofdeath.psyshock>Died by heavy stress</afflictioncauseofdeath.psyshock>
+  <afflictionname.bloodpoisoning>Blood poisoning</afflictionname.bloodpoisoning>
+  <afflictiondescription.bloodpoisoning>The blood seems to have been contaminated with blood transfusions. Supplemental blood transfusion may be required, preferably "correct."</afflictiondescription.bloodpoisoning>
+  <afflictioncauseofdeath.bloodpoisoning>Died by blood poisoning</afflictioncauseofdeath.bloodpoisoning>
+  <afflictionname.severeinjury>Severe injury</afflictionname.severeinjury>
+  <afflictiondescription.severeinjury>The limb is badly damaged. The patient is in severe pain.</afflictiondescription.severeinjury>
+  <afflictionname.pain>Pain</afflictionname.pain>
+  <afflictiondescription.pain>The patient suffers from intense pain that accumulates from injuries and bleeding. Prolonged high pain can cause disorientation or blackout.</afflictiondescription.pain>
+  <afflictionname.hemor>Butt blister</afflictionname.hemor>
+  <afflictiondescription.hemor>A painful swelling that causes discomfort and may periodically incapacitate the patient. Need something sharp to remove it.</afflictiondescription.hemor>
+  <afflictionname.severebleeding>Severe bleeding</afflictionname.severebleeding>
+  <afflictiondescription.severebleeding>Open wound. The patient is in severe pain.</afflictiondescription.severebleeding>
+  <afflictionname.blackout>Blackout</afflictionname.blackout>
+  <afflictiondescription.blackout>The patient is dysdirected as a result of severe pain. He can hardly stand on his feet and keep himself conscious.</afflictiondescription.blackout>
+  <afflictioncauseofdeath.blackout>Brain death</afflictioncauseofdeath.blackout>
+  <!-- Items -->
+  <entityname.antibioticpowder>Antibiotic powder</entityname.antibioticpowder>
+  <entitydescription.antibioticpowder>It fights pests. It is a medical component.</entitydescription.antibioticpowder>
+  <entityname.vitaminpowder>Vitamin powder</entityname.vitaminpowder>
+  <entitydescription.vitaminpowder>Helps fight disease. It is a medical component.</entitydescription.vitaminpowder>
+  <entityname.bloodsample>Blood sample</entityname.bloodsample>
+  <entitydescription.bloodsample>A container filled with blood. Useful for crafting medicines.</entitydescription.bloodsample>
+  <entityname.emptysyringe>Empty syringe</entityname.emptysyringe>
+  <entitydescription.emptysyringe>An empty syringe. Useful for extracting fluids from bodies.</entitydescription.emptysyringe>
+  <entityname.reagent>Reagent</entityname.reagent>
+  <entitydescription.reagent>It is a medical component.</entitydescription.reagent>
+  <entityname.liquidplasma>Liquid Plasma</entityname.liquidplasma>
+  <entitydescription.liquidplasma>Synthesized plasma from organic components. A very unusual component.</entitydescription.liquidplasma>
+  <!-- Clothes/Tools -->
+  <entityname.medicalbelt>Medical Belt</entityname.medicalbelt>
+  <entitydescription.medicalbelt>A specially designed medical belt for doctors and paramedics, which has additional pockets for medicines, but is not able to perform other functions than helping doctors.</entitydescription.medicalbelt>
+  <!-- Medicine -->
+  <entityname.antibioticpills>Antibiotics</entityname.antibioticpills>
+  <entitydescription.antibioticpills>Mild antibiotics in the form of pills. Help treat diseases.</entitydescription.antibioticpills>
+  <entityname.vitaminpills>Vitamins</entityname.vitaminpills>
+  <entitydescription.vitaminpills>Small pills that help the body recover. Tastes like a candy.</entitydescription.vitaminpills>
+  <entityname.antipsychoticpills>Antipsychotics</entityname.antipsychoticpills>
+  <entitydescription.antipsychoticpills>Sometimes your sanity and morality falls to the limit and you need a quick and short-lived solution to this problem.</entitydescription.antipsychoticpills>
+  <entityname.radiazine>Radiazine</entityname.radiazine>
+  <entitydescription.radiazine>A syringe filled with an almost lethal composition, said to be able to cure cancer and radiation.</entitydescription.radiazine>
+  <entityname.rabiesvaccine>Rabies vaccine</entityname.rabiesvaccine>
+  <entitydescription.rabiesvaccine>A syringe filled with a mixture of blood and other powerful components provides resistance to rabies after use. Saves life in the early stages of the disease.</entitydescription.rabiesvaccine>
+  <entityname.vitaminsoulution>Vitamin solution</entityname.vitaminsoulution>
+  <entitydescription.vitaminsoulution>A highly effective, versatile high-concentration solution of vitamins that allows you to get the patient out of almost any difficult situation. Prior to the development of combat stimulants, it was considered the main means of performing the functions of a combat stimulant. Unfortunately, this medication is known for its terrible side effects.</entitydescription.vitaminsoulution>
+  <entityname.compressionbandage>Compression bandage</entityname.compressionbandage>
+  <entitydescription.compressionbandage>A bandage, specially designed to treat broken bones, but also can be used to treat severe bleedings.</entitydescription.compressionbandage>
+  <entityname.donorbloodpack>Donor Blood Pack</entityname.donorbloodpack>
+  <entitydescription.donorbloodpack>Made from raw donor blood, the pack heals blood loss.</entitydescription.donorbloodpack>
+  <entityname.antibloodpills>Osimilin</entityname.antibloodpills>
+  <entitydescription.antibloodpills>The drug, which slows down slightly metabolism, increases blood pressure, but increases the patient's chances of surviving heavy blood loss and bleeding. Paramedics are advised.</entitydescription.antibloodpills>
+  <entityname.stasissolution>Cryoxadone Solution</entityname.stasissolution>
+  <entitydescription.stasissolution>A cool mixture in a bag capable of introducing a patient into a trans close to cryonic sleep for a short time. Used only by experienced paramedics!</entitydescription.stasissolution>
+  <entityname.antioxygenlow>Chemical Oxygen</entityname.antioxygenlow>
+  <entitydescription.antioxygenlow>A special type of oxygen is saturated with chemical properties. Allows the patient to abandon oxygen for a relatively long period. Useful as an emergency medicine for travelers.</entitydescription.antioxygenlow>
+  <entityname.antiaddiction>Adixil</entityname.antiaddiction>
+  <entitydescription.antiaddiction>An unusual medicine based on plasma and an organ of a marine inhabitant, capable of effectively treating the dependence of patients, but intensifies its breakage.</entitydescription.antiaddiction>
+  <!-- Buffs -->
+  <afflictionname.fluresistance>Persistance</afflictionname.fluresistance>
+  <afflictiondescription.fluresistance>It seems that no disease, for a while, can so simply overcome the patient.</afflictiondescription.fluresistance>
+  <afflictionname.spacerabiesresistance>Vaccinated</afflictionname.spacerabiesresistance>
+  <afflictiondescription.spacerabiesresistance>Through an astronomical increase in the total number of white blood cells in the patient's body using substances, it is temporarily resistant to cosmic rabies.</afflictiondescription.spacerabiesresistance>
+  <afflictionname.psyshockresistance>Iron psyche</afflictionname.psyshockresistance>
+  <afflictiondescription.psyshockresistance>The patient is protected against psychotic shock temporarily.</afflictiondescription.psyshockresistance>
+  <afflictionname.metabolismarrest>Metabolism arrest</afflictionname.metabolismarrest>
+  <afflictiondescription.metabolismarrest>The patient is in a deep trance, and his metabolism has stopped almost completely.</afflictiondescription.metabolismarrest>
+</infotexts>
