@@ -1,0 +1,623 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Medicine -->
+<Items>
+  <!-- Projectile overrides to apply severe afflictions on impact -->
+  <Override>
+    <Antibiotics name="" identifier="antibiotics" category="Medical" maxstacksize="32" maxstacksizecharacterinventory="8" Tags="smallitem,chem,medical,syringe" description="" cargocontaineridentifier="mediccrate" scale="0.5" useinhealthinterface="true" RequireAimToUse="True">
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+      <PreferredContainer secondary="abandonedmedcab,wreckmedcab" minamount="1" maxamount="2" spawnprobability="0.5" />
+      <PreferredContainer primary="medfabcab" secondary="medcontainer" />
+      <Price baseprice="40">
+        <Price storeidentifier="merchantoutpost" minavailable="6" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="12" />
+        <Price storeidentifier="merchantresearch" multiplier="0.9" minavailable="10" />
+        <Price storeidentifier="merchantmilitary" sold="false" multiplier="1.1" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.1" />
+        <Price storeidentifier="merchantmedical" multiplier="0.9" minavailable="10" />
+      </Price>
+      <Fabricate suitablefabricators="vendingmachine" requiredtime="1" requiredmoney="60" fabricationlimitmin="5" fabricationlimitmax="10" />
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="576,704,64,64" origin="0.5,0.5" />
+      <Sprite texture="Medicines.png" sourcerect="263,142,36,68" depth="0.6" origin="0.5,0.5" />
+      <Body width="35" height="70" density="20" />
+      <SuitableTreatment type="damage" suitability="-33" />
+      <SuitableTreatment identifier="huskinfection" suitability="30" />
+      <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect">
+        <RequiredSkill identifier="medical" level="25" />
+        <StatusEffect type="OnFailure" target="This" Condition="-100.0" disabledeltatime="true" />
+        <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
+        <StatusEffect tags="medical" type="OnUse" target="Character" duration="60.0">
+          <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+          <Conditional huskinfection="lt 100.0" />
+          <ReduceAffliction identifier="huskinfection" amount="0.5" />
+        </StatusEffect>
+        <StatusEffect tags="medical" type="OnUse" target="Limb" duration="60.0">
+          <Affliction identifier="organdamage" amount="0.55" />
+        </StatusEffect>
+        <StatusEffect tags="medical" type="OnUse" target="Character" disabledeltatime="true">
+          <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+          <Affliction identifier="huskinfectionresistance" amount="600" />
+          <Affliction identifier="fluresistance" amount="100" />
+          <ReduceAffliction identifier="flu" amount="2.5" />
+        </StatusEffect>
+        <StatusEffect tags="medical" type="OnFailure" target="Character" duration="60.0">
+          <Conditional huskinfection="lt 100.0" />
+          <ReduceAffliction identifier="huskinfection" amount="0.25" />
+        </StatusEffect>
+        <StatusEffect tags="medical" type="OnFailure" target="Limb" duration="60.0">
+          <Affliction identifier="organdamage" amount="1.0" />
+        </StatusEffect>
+        <StatusEffect tags="medical" type="OnFailure" target="Character" disabledeltatime="true">
+          <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+          <Affliction identifier="huskinfectionresistance" amount="300" />
+          <Affliction identifier="fluresistance" amount="60" />
+          <ReduceAffliction identifier="flu" amount="1" />
+        </StatusEffect>
+        <!-- Remove the item when fully used -->
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </MeleeWeapon>
+      <Projectile characterusable="false" launchimpulse="20.0" sticktocharacters="true" launchrotation="-90" inheritstatuseffectsfrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon" />
+    </Antibiotics>
+  </Override>
+  <Override>
+    <Plastiseal name="" identifier="antibleeding2" category="Medical" Tags="smallitem,medical" maxstacksize="8" cargocontaineridentifier="mediccrate" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_soft" RequireAimToUse="True">
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+      <PreferredContainer primary="medcab" secondary="medcontainer" />
+      <PreferredContainer secondary="wreckmedcab,abandonedmedcab" minamount="1" maxamount="2" spawnprobability="0.4" />
+      <PreferredContainer secondary="outpostmedcompartment,outpostmedcab" minamount="1" maxamount="3" spawnprobability="0.3" />
+      <Price baseprice="100">
+        <Price storeidentifier="merchantmedical" minavailable="12" />
+      </Price>
+      <Fabricate suitablefabricators="medicalfabricator" requiredtime="25" amount="3">
+        <RequiredSkill identifier="medical" level="16" />
+        <RequiredItem identifier="antibleeding1" amount="3" />
+        <RequiredItem identifier="elastin" />
+      </Fabricate>
+      <Deconstruct time="2" />
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="959,771,63,59" origin="0.5,0.5" />
+      <Sprite texture="Medicines.png" sourcerect="340,33,26,42" depth="0.6" origin="0.5,0.5" />
+      <Body width="25" height="40" density="20" />
+      <SuitableTreatment type="bleeding" suitability="50" />
+      <SuitableTreatment type="burn" suitability="50" />
+      <SuitableTreatment type="severebleeding" suitability="10" />
+      <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="10" reload="1.0" msg="ItemMsgPickUpSelect">
+        <RequiredSkill identifier="medical" level="22" />
+        <StatusEffect type="OnFailure" target="This" Condition="-100.0" disabledeltatime="true" />
+        <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
+        <StatusEffect tags="medical" type="OnUse" target="This, Limb" duration="5.0">
+          <Sound file="Content/Items/Medical/Bandage1.ogg" range="500" />
+          <Sound file="Content/Items/Medical/Bandage2.ogg" range="500" />
+          <ReduceAffliction type="bleeding" amount="10" />
+          <ReduceAffliction type="burn" amount="10" />
+          <ReduceAffliction type="severebleeding" amount="5" />
+        </StatusEffect>
+        <StatusEffect tags="medical" type="OnFailure" target="This, Limb" duration="5.0">
+          <Sound file="Content/Items/Medical/Bandage1.ogg" range="500" />
+          <Sound file="Content/Items/Medical/Bandage2.ogg" range="500" />
+          <ReduceAffliction type="bleeding" amount="7.5" />
+          <ReduceAffliction type="burn" amount="7.5" />
+          <ReduceAffliction type="severebleeding" amount="2" />
+        </StatusEffect>
+        <!-- Remove the item when fully used -->
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </MeleeWeapon>
+    </Plastiseal>
+  </Override>
+  <Override>
+    <BloodPack name="" identifier="antibloodloss2" category="Medical" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="mediccrate" Tags="smallitem,chem,medical,petfood1" useinhealthinterface="true" description="" scale="0.5" impactsoundtag="impact_soft">
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+      <PreferredContainer primary="medcab" minamount="2" maxamount="3" notcampaign="true" />
+      <PreferredContainer secondary="outpostmedcompartment,outpostmedcab" minamount="1" maxamount="2" spawnprobability="0.2" />
+      <PreferredContainer secondary="wreckmedcab,abandonedmedcab" minamount="1" maxamount="2" spawnprobability="0.2" />
+      <PreferredContainer secondary="medcontainer" />
+      <Price baseprice="240">
+        <Price storeidentifier="merchantmedical" multiplier="0.9" />
+      </Price>
+      <Fabricate suitablefabricators="medicalfabricator" requiredtime="25">
+        <RequiredSkill identifier="medical" level="31" />
+        <RequiredItem identifier="alienblood" amount="2" />
+        <RequiredItem identifier="antibloodloss1" amount="2" />
+        <RequiredItem identifier="stabilozine" amount="1" />
+      </Fabricate>
+      <Fabricate suitablefabricators="medicalfabricator" requiredtime="50">
+        <RequiredSkill identifier="medical" level="40" />
+        <RequiredItem identifier="donorbloodpack" amount="1" />
+        <RequiredItem identifier="antibloodloss1" amount="1" />
+        <RequiredItem identifier="stabilozine" amount="2" />
+      </Fabricate>
+      <Deconstruct time="20">
+        <Item identifier="sodium" />
+        <Item identifier="stabilozine" />
+      </Deconstruct>
+      <SuitableTreatment type="bloodloss" suitability="120" />
+      <SuitableTreatment type="bloodpoisoning" suitability="125" />
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="896,640,64,64" origin="0.5,0.5" />
+      <Sprite texture="Medicines.png" sourcerect="1,217,82,44" depth="0.6" origin="0.5,0.5" />
+      <Body width="80" height="42" density="11" />
+      <Holdable canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect">
+        <RequiredSkill identifier="medical" level="35" />
+        <RequiredSkill identifier="medical" level="40" />
+        <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true">
+          <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        </StatusEffect>
+        <StatusEffect tags="medical" type="OnSuccess" target="UseTarget, This" duration="15">
+          <ReduceAffliction identifier="bloodloss" amount="8" />
+          <ReduceAffliction identifier="bloodpoisoning" amount="10" />
+        </StatusEffect>
+        <StatusEffect tags="medical" type="OnFailure" target="UseTarget, This" duration="15">
+          <ReduceAffliction identifier="bloodloss" amount="4" />
+          <ReduceAffliction identifier="bloodpoisoning" amount="5" />
+        </StatusEffect>
+        <!-- Remove the item when fully used -->
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+      <AiTarget sightrange="1000" static="true" />
+    </BloodPack>
+  </Override>
+  <Override>
+    <Stabilozine name="" identifier="stabilozine" category="Medical" maxstacksize="32" maxstacksizecharacterinventory="8" tags="smallitem,chem,medical,syringe" cargocontaineridentifier="mediccrate" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+      <PreferredContainer secondary="abandonedmedcab,wreckmedcab" minamount="1" maxamount="2" spawnprobability="0.5" />
+      <PreferredContainer primary="medfabcab" secondary="medcontainer" />
+      <Price baseprice="40">
+        <Price storeidentifier="merchantoutpost" minavailable="6" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="10" sold="false" />
+        <Price storeidentifier="merchantresearch" multiplier="0.9" minavailable="15" />
+        <Price storeidentifier="merchantmilitary" sold="false" multiplier="1.1" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.1" />
+        <Price storeidentifier="merchantmedical" multiplier="0.9" minavailable="15" />
+      </Price>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="384,640,64,64" origin="0.5,0.5" />
+      <Sprite texture="Medicines.png" sourcerect="112,139,37,70" depth="0.6" origin="0.5,0.5" />
+      <Body width="35" height="70" density="20" />
+      <SuitableTreatment type="poison" suitability="10" />
+      <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect">
+        <RequiredSkill identifier="medical" level="20" />
+        <StatusEffect type="OnFailure" target="This" Condition="-100.0" disabledeltatime="true" />
+        <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
+        <StatusEffect tags="medical" type="OnUse" target="Character" duration="30">
+          <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+          <ReduceAffliction type="poison" amount="1" />
+        </StatusEffect>
+        <StatusEffect tags="medical" type="OnFailure" target="Character" duration="30">
+          <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+          <ReduceAffliction identifier="poison" amount="0.5" />
+        </StatusEffect>
+        <!-- Remove the item when fully used -->
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </MeleeWeapon>
+      <Projectile characterusable="false" launchimpulse="20.0" sticktocharacters="true" launchrotation="-90" inheritstatuseffectsfrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon" />
+    </Stabilozine>
+  </Override>
+  <Override>
+    <LiquidOxygenite name="" identifier="liquidoxygenite" category="Medical" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="mediccrate" Tags="smallitem,chem,medical,syringe" impacttolerance="8" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+      <Price baseprice="80">
+        <Price storeidentifier="merchantoutpost" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="3" />
+        <Price storeidentifier="merchantresearch" multiplier="0.9" minavailable="4" />
+        <Price storeidentifier="merchantmilitary" sold="false" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="0.9" />
+        <Price storeidentifier="merchantmedical" multiplier="0.9" minavailable="4" />
+      </Price>
+      <PreferredContainer primary="medcab" secondary="medcontainer" />
+      <PreferredContainer secondary="wreckmedcab,abandonedmedcab" minamount="1" maxamount="2" spawnprobability="0.1" />
+      <Fabricate suitablefabricators="medicalfabricator" requiredtime="25">
+        <RequiredSkill identifier="medical" level="44" />
+        <RequiredItem identifier="reagent" amount="2" />
+        <RequiredItem identifier="stabilozine" />
+      </Fabricate>
+      <Deconstruct time="20">
+        <Item identifier="stabilozine" />
+      </Deconstruct>
+      <SuitableTreatment identifier="organdamage" suitability="-30" />
+      <SuitableTreatment identifier="oxygenlow" suitability="100" />
+      <SuitableTreatment identifier="blackout" suitability="10" />
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="704,640,64,64" origin="0.5,0.5" />
+      <Sprite texture="Medicines.png" sourcerect="187,138,38,71" depth="0.6" origin="0.5,0.5" />
+      <Body width="35" height="70" density="20" />
+      <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnFailure" target="This" Condition="-100.0" disabledeltatime="true" />
+        <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
+        <RequiredSkill identifier="medical" level="72" />
+        <StatusEffect tags="medical" type="OnUse" target="UseTarget" duration="60.0">
+          <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+          <Affliction identifier="organdamage" amount="0.5" />
+          <ReduceAffliction identifier="oxygenlow" amount="1.65" />
+        </StatusEffect>
+        <StatusEffect tags="medical" type="OnFailure" target="UseTarget" duration="60.0">
+          <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+          <Affliction identifier="organdamage" amount="1.5" />
+          <ReduceAffliction identifier="oxygenlow" amount="1.65" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" Condition="0.0" setvalue="true">
+          <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" range="5000" selectionmode="All" />
+          <sound file="Content/Items/Weapons/ExplosionDebris2.ogg" range="5000" />
+          <Explosion range="300.0" structuredamage="100" force="10.0">
+            <Affliction identifier="burn" amount="30" />
+            <Affliction identifier="stun" amount="2" />
+          </Explosion>
+        </StatusEffect>
+        <!-- Remove the item when fully used -->
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </MeleeWeapon>
+      <Projectile characterusable="false" launchimpulse="20.0" sticktocharacters="true" launchrotation="-90" inheritstatuseffectsfrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon" />
+    </LiquidOxygenite>
+  </Override>
+  <Override>
+    <Ethanol name="" identifier="ethanol" category="Medical,Material" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="chemicalcrate" description="" Tags="smallitem,chem,medical,petfood2" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+      <PreferredContainer primary="sprayer" amount="1" spawnprobability="1" />
+      <PreferredContainer secondary="wreckmedcab,abandonedmedcab" amount="1" spawnprobability="0.2" />
+      <PreferredContainer secondary="abandonedcrewcab" minamount="1" maxamount="2" spawnprobability="0.3" />
+      <PreferredContainer secondary="crewcab" amount="1" spawnprobability="0.5" notcampaign="true" />
+      <PreferredContainer primary="medfabcab" secondary="medcab" />
+      <Price baseprice="60" minavailable="6">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="8" />
+        <Price storeidentifier="merchantresearch" multiplier="0.9" minavailable="10" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.1" />
+        <Price storeidentifier="merchantmine" multiplier="1.1" />
+      </Price>
+      <Fabricate suitablefabricators="vendingmachine" requiredtime="1" requiredmoney="80" fabricationlimitmin="5" fabricationlimitmax="10" />
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="256,768,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="435,452,30,57" depth="0.6" origin="0.5,0.5" />
+      <Body width="30" height="55" density="20" />
+      <Holdable canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="-5,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
+        <StatusEffect type="OnUse" target="Character" delay="10" duration="10">
+          <Affliction identifier="drunk" amount="2.0" />
+          <ReduceAffliction identifier="psychosis" amount="2.0" />
+          <ReduceAffliction identifier="psyshock" amount="1.0" />
+          <ReduceAffliction identifier="hallucinating" amount="2.0" />
+          <ReduceAffliction identifier="concussion" amount="0.5" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" delay="20" duration="20">
+          <Affliction identifier="nausea" amount="1.0" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" disabledeltatime="true">
+          <Affliction identifier="psychosisresistance" amount="600" />
+        </StatusEffect>
+        <!-- Remove the item when fully used -->
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+      <AiTarget sightrange="1000" static="true" />
+    </Ethanol>
+  </Override>
+  <Override>
+    <Adrenaline name="" identifier="adrenaline" category="Medical,Material" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="mediccrate" Tags="smallitem,chem,medical,syringe" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+      <PreferredContainer primary="medfabcab" secondary="medcontainer" />
+      <PreferredContainer secondary="abandonedmedcab,wreckmedcab" minamount="1" maxamount="2" spawnprobability="0.5" />
+      <Price baseprice="60">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantcity" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="0.9" minavailable="4" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="2" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.1" />
+        <Price storeidentifier="merchantmedical" multiplier="0.9" minavailable="4" />
+      </Price>
+      <SuitableTreatment identifier="blackout" suitability="10" />
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="384,768,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="379,452,27,58" depth="0.6" origin="0.5,0.5" />
+      <Body width="25" height="55" density="10.2" waterdragcoefficient="1" />
+      <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
+        <StatusEffect type="OnSuccess" target="This" Condition="-100.0" setvalue="true" />
+        <StatusEffect type="OnFailure" target="This" Condition="-100.0" setvalue="true" />
+        <RequiredSkill identifier="medical" level="50" />
+        <StatusEffect tags="medical" type="OnSuccess" target="UseTarget" duration="5">
+          <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+          <ReduceAffliction type="blackout" amount="3" />
+          <Affliction identifier="nausea" strength="1.5" />
+        </StatusEffect>
+        <StatusEffect tags="medical" type="OnFailure" target="UseTarget" duration="5">
+          <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+          <ReduceAffliction type="blackout" amount="1" />
+          <Affliction identifier="nausea" strength="3" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="UseTarget" multiplyafflictionsbymaxvitality="true" AllowWhenBroken="true">
+          <Affliction identifier="stun" amount="0.1" />
+        </StatusEffect>
+        <!-- TODO: some effect for adrenaline -->
+        <!-- Remove the item when fully used -->
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </MeleeWeapon>
+      <Projectile characterusable="false" launchimpulse="18.0" sticktocharacters="true" launchrotation="-90" inheritstatuseffectsfrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon" />
+    </Adrenaline>
+  </Override>
+  <Override>
+    <pomegrenadeextract name="" identifier="pomegrenadeextract" category="Medical" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="mediccrate" Tags="smallitem,chem,medical,syringe" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+      <PreferredContainer primary="medcab" minamount="2" maxamount="4" spawnprobability="0.5" notcampaign="true" />
+      <PreferredContainer secondary="wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.1" />
+      <PreferredContainer secondary="wreckmedcab,abandonedmedcab" minamount="1" maxamount="2" spawnprobability="0.2" />
+      <PreferredContainer secondary="medcontainer" />
+      <Price baseprice="80" minavailable="4">
+        <Price storeidentifier="merchantoutpost" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" />
+        <Price storeidentifier="merchantresearch" multiplier="0.9" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.2" />
+        <Price storeidentifier="merchantmine" multiplier="0.75" />
+      </Price>
+      <SuitableTreatment type="damage" suitability="6" />
+      <SuitableTreatment type="burn" suitability="6" />
+      <SuitableTreatment identifier="oxygenlow" suitability="-30" />
+      <SuitableTreatment type="severebleeding" suitability="10" />
+      <Fabricate suitablefabricators="medicalfabricator" requiredtime="15">
+        <RequiredSkill identifier="medical" level="20" />
+        <RequiredItem identifier="creepingorange" amount="3" />
+      </Fabricate>
+      <Fabricate suitablefabricators="vendingmachine" requiredtime="1" requiredmoney="115" fabricationlimitmin="0" fabricationlimitmax="10" />
+      <Deconstruct time="30">
+        <Item identifier="creepingorange" amount="2" />
+      </Deconstruct>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="0,384,64,64" origin="0.5,0.5" />
+      <Sprite texture="Medicines.png" sourcerect="228,380,64,64" depth="0.6" origin="0.5,0.5" />
+      <Body width="35" height="65" density="10.2" waterdragcoefficient="1" />
+      <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
+        <RequiredSkill identifier="medical" level="25" />
+        <StatusEffect type="OnSuccess" target="This" Condition="-100.0" setvalue="true" />
+        <StatusEffect type="OnFailure" target="This" Condition="-100.0" setvalue="true" />
+        <StatusEffect tags="medical" type="OnSuccess" target="UseTarget" duration="1">
+          <Affliction identifier="oxygenlow" amount="25" />
+        </StatusEffect>
+        <StatusEffect tags="medical" type="OnSuccess" target="UseTarget" duration="25">
+          <ReduceAffliction type="damage" amount="0.25" />
+          <ReduceAffliction type="burn" amount="0.25" />
+          <ReduceAffliction type="severebleeding" amount="0.5" />
+        </StatusEffect>
+        <StatusEffect tags="medical" type="OnFailure" target="UseTarget" duration="1">
+          <Affliction identifier="oxygenlow" amount="1.5" />
+        </StatusEffect>
+        <StatusEffect tags="medical" type="OnFailure" target="UseTarget" duration="25">
+          <ReduceAffliction type="damage" amount="0.125" />
+          <ReduceAffliction type="burn" amount="0.125" />
+          <ReduceAffliction type="severebleeding" amount="1.25" />
+        </StatusEffect>
+        <StatusEffect type="OnSuccess" target="UseTarget">
+          <Conditional entitytype="eq Character" />
+          <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        </StatusEffect>
+        <StatusEffect type="OnFailure" target="UseTarget">
+          <Conditional entitytype="eq Character" />
+          <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="UseTarget" multiplyafflictionsbymaxvitality="true" AllowWhenBroken="true">
+          <Affliction identifier="stun" amount="0.1" />
+        </StatusEffect>
+        <!-- Remove the item when fully used -->
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </MeleeWeapon>
+      <Projectile characterusable="false" launchimpulse="18.0" sticktocharacters="true" launchrotation="-90" inheritstatuseffectsfrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon" />
+      <SkillRequirementHint identifier="medical" level="25" />
+    </pomegrenadeextract>
+  </Override>
+
+<!-- Plants -->
+  <Override>
+    <Item name="" identifier="creepingorange" category="Material" maxstacksize="32" maxstacksizecharacterinventory="8" Tags="smallitem,plantitem,petfood1,petfood2,petfood3" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft" impacttolerance="5.5" allowasextracargo="true">
+      <Sprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" depth="0.2" sourcerect="971,649,43,55" origin="0.5,0.5" />
+      <Body radius="30" density="9" />
+      <Price baseprice="20" sold="false">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" />
+        <Price storeidentifier="merchantresearch" multiplier="1.1" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.8" />
+        <Price storeidentifier="merchantmine" multiplier="0.75" />
+      </Price>
+      <Fabricate suitablefabricators="vendingmachine" requiredtime="1" requiredmoney="30" fabricationlimitmin="3" fabricationlimitmax="5" />
+      <Deconstruct time="35">
+        <Item identifier="carbon" mincondition="0.5" />
+        <Item identifier="creepingorangevineseed" mincondition="0.5" />
+        <Item identifier="vitaminpowder" mincondition="0.5" />
+      </Deconstruct>
+      <Throwable characterusable="true" canBeCombined="false" slots="Any,RightHand,LeftHand" throwforce="3.5" aimpos="35,-10" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnImpact" target="This" Condition="0.0" setvalue="true">
+          <Explosion range="0.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" decal="fruitsplatter1" decalsize="1.0" />
+          <ParticleEmitter particle="whitegoosplash" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="0" scalemin="1.5" scalemax="2" />
+          <ParticleEmitter particle="fruitchunks" anglemin="0" anglemax="360" particleamount="10" velocitymin="200" velocitymax="300" scalemin="0.4" scalemax="0.8" />
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnFire" target="This" Condition="-50.0" />
+        <StatusEffect type="OnBroken" target="This" Condition="-100.0">
+          <Remove />
+        </StatusEffect>
+      </Throwable>
+      <AiTarget sightrange="1000" static="true" />
+      <PreferredContainer primary="plantcontainer" />
+    </Item>
+  </Override>
+  <Override>
+    <Item name="" identifier="badraptorbane" descriptionidentifier="raptorbane" category="Material" maxstacksize="32" maxstacksizecharacterinventory="8" Tags="smallitem,plantitem,petfood1,petfood2,petfood3" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft" impacttolerance="5.5" allowasextracargo="true">
+      <Sprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" depth="0.2" sourcerect="907,838,44,50" origin="0.5,0.5" />
+      <Body radius="30" density="9" />
+      <Deconstruct time="35">
+        <Item identifier="carbon" mincondition="0.5" />
+        <Item identifier="raptorbaneseed" mincondition="0.5" />
+        <Item identifier="antibioticpowder" mincondition="0.5" />
+      </Deconstruct>
+      <Throwable characterusable="true" canBeCombined="false" slots="Any,RightHand,LeftHand" throwforce="3.5" aimpos="35,-10" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnNotContained" target="This" Scale="0.05">
+          <sound file="Content/Sounds/Damage/Gore1.ogg" selectionmode="Random" range="500" volume="0.5" />
+          <sound file="Content/Sounds/Damage/Gore2.ogg" selectionmode="Random" range="500" volume="0.5" />
+          <sound file="Content/Sounds/Damage/Gore3.ogg" selectionmode="Random" range="500" volume="0.5" />
+          <sound file="Content/Sounds/Damage/Gore4.ogg" selectionmode="Random" range="500" volume="0.5" />
+        </StatusEffect>
+        <StatusEffect type="Always" target="This" Condition="0.0" setvalue="true">
+          <Conditional Scale="gte 0.75" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" Condition="0.0" setvalue="true" />
+        <StatusEffect type="OnFire" target="This" Condition="-50.0" />
+        <StatusEffect type="OnBroken" target="This" Condition="-100.0">
+          <Explosion range="150.0" structuredamage="0" itemdamage="0" force="3.0" severlimbsprobability="0.0" decal="blood" decalSize="3.0">
+            <Affliction identifier="nausea" strength="50" />
+          </Explosion>
+          <sound file="Content/Sounds/Damage/Limbslash2.ogg" range="1000" />
+          <ParticleEmitter particle="bloodsplash" anglemin="0" anglemax="360" particleamount="20" velocitymin="0" velocitymax="0" scalemin="0.75" scalemax="1.75" />
+          <ParticleEmitter particle="fruitchunks" anglemin="0" anglemax="360" particleamount="10" velocitymin="200" velocitymax="300" scalemin="0.4" scalemax="0.8" />
+          <Remove />
+        </StatusEffect>
+      </Throwable>
+      <AiTarget sightrange="1000" static="true" />
+      <PreferredContainer primary="plantcontainer" />
+    </Item>
+  </Override>
+  <Override>
+    <Item name="" identifier="saltbulb" category="Material" maxstacksize="32" maxstacksizecharacterinventory="8" Tags="smallitem,plantitem,explodesinwater" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft" impacttolerance="5" allowasextracargo="true">
+      <Sprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" depth="0.2" sourcerect="968,712,49,55" origin="0.5,0.5" />
+      <Body radius="30" density="9" />
+      <Price baseprice="65" sold="false">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" />
+        <Price storeidentifier="merchantresearch" multiplier="1.1" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.8" />
+        <Price storeidentifier="merchantmine" multiplier="0.75" />
+      </Price>
+      <Deconstruct time="35">
+        <Item identifier="sodium" />
+        <Item identifier="saltvineseed" />
+        <Item identifier="reagent" />
+      </Deconstruct>
+      <Throwable characterusable="true" canBeCombined="false" slots="Any,RightHand,LeftHand" throwforce="3.5" aimpos="35,-10" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="InWater" target="This" Condition="0.0" setvalue="true">
+          <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" range="2000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" range="2000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" range="2000" />
+          <Explosion range="50.0" force="5.0" flames="false" underwaterBubble="false" sparks="false" smoke="false" shockwave="true">
+            <Affliction identifier="burn" strength="20" />
+            <Affliction identifier="stun" strength="5" />
+          </Explosion>
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" Condition="0.0" setvalue="true">
+          <Explosion range="0.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" decal="fruitsplatter1" decalsize="1.0" />
+          <ParticleEmitter particle="whitegoosplash" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="0" scalemin="1.5" scalemax="2" />
+          <ParticleEmitter particle="fruitchunks" anglemin="0" anglemax="360" particleamount="10" velocitymin="200" velocitymax="300" scalemin="0.4" scalemax="0.8" />
+        </StatusEffect>
+        <StatusEffect type="OnFire" target="This" Condition="-50.0" />
+        <StatusEffect type="OnBroken" target="This" Condition="-100.0">
+          <Remove />
+        </StatusEffect>
+      </Throwable>
+      <PreferredContainer primary="plantcontainer" />
+    </Item>
+  </Override>
+  <Override>
+    <Item name="" identifier="raptorbane" category="Material" maxstacksize="32" maxstacksizecharacterinventory="8" Tags="smallitem,plantitem,petfood1,petfood2,petfood3" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft" impacttolerance="5" allowasextracargo="true">
+      <Sprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" depth="0.2" sourcerect="971,777,44,50" origin="0.5,0.5" />
+      <Body radius="30" density="9" waterdragcoefficient="10" />
+      <Price baseprice="40" sold="false">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" />
+        <Price storeidentifier="merchantresearch" multiplier="1.1" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.8" />
+        <Price storeidentifier="merchantmine" multiplier="0.75" />
+      </Price>
+      <Deconstruct time="35">
+        <Item identifier="carbon" mincondition="0.5" />
+        <Item identifier="raptorbaneseed" mincondition="0.5" />
+      </Deconstruct>
+      <Throwable characterusable="true" canBeCombined="false" slots="Any,RightHand,LeftHand" throwforce="3.5" aimpos="35,-10" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnImpact" target="This" Condition="0.0" setvalue="true">
+          <Explosion range="0.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" decal="fruitsplatter1" decalsize="1.0" />
+          <ParticleEmitter particle="whitegoosplash" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="0" scalemin="1.5" scalemax="2" />
+          <ParticleEmitter particle="fruitchunks" anglemin="0" anglemax="360" particleamount="10" velocitymin="200" velocitymax="300" scalemin="0.4" scalemax="0.8" />
+        </StatusEffect>
+        <StatusEffect type="OnFire" target="This" Condition="-50.0" />
+        <StatusEffect type="OnBroken" target="This" Condition="-100.0">
+          <Remove />
+        </StatusEffect>
+      </Throwable>
+      <AiTarget sightrange="1000" static="true" />
+      <PreferredContainer primary="plantcontainer" />
+    </Item>
+  </Override>
+  <Override>
+    <Item name="" identifier="badcreepingorange" descriptionidentifier="creepingorange" category="Material" maxstacksize="8" Tags="smallitem,plantitem,petfood1,petfood2,petfood3" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft" impacttolerance="5.5" allowasextracargo="true">
+      <Sprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" depth="0.2" sourcerect="971,835,43,55" origin="0.5,0.5" />
+      <Body radius="30" density="9" />
+      <Deconstruct time="35">
+        <Item identifier="carbon" mincondition="0.5" />
+        <Item identifier="creepingorangevineseed" mincondition="0.5" />
+      </Deconstruct>
+      <Throwable characterusable="true" canBeCombined="false" slots="Any,RightHand,LeftHand" throwforce="3.5" aimpos="35,-10" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnNotContained" target="This" Scale="0.05">
+          <sound file="Content/Sounds/Damage/Gore1.ogg" selectionmode="Random" range="500" volume="0.5" />
+          <sound file="Content/Sounds/Damage/Gore2.ogg" selectionmode="Random" range="500" volume="0.5" />
+          <sound file="Content/Sounds/Damage/Gore3.ogg" selectionmode="Random" range="500" volume="0.5" />
+          <sound file="Content/Sounds/Damage/Gore4.ogg" selectionmode="Random" range="500" volume="0.5" />
+          <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="360" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" />
+        </StatusEffect>
+        <StatusEffect type="Always" target="This" Condition="0.0" setvalue="true">
+          <Conditional Scale="gte 0.75" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" Condition="0.0" setvalue="true" />
+        <StatusEffect type="OnFire" target="This" Condition="-50.0" />
+        <StatusEffect type="OnBroken" target="This" Condition="-100.0">
+          <sound file="Content/Sounds/Damage/Limbslash2.ogg" range="1000" />
+          <ParticleEmitter particle="whitegoosplash" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="0" scalemin="1.5" scalemax="2" />
+          <ParticleEmitter particle="fruitchunks" anglemin="0" anglemax="360" particleamount="10" velocitymin="200" velocitymax="300" scalemin="0.4" scalemax="0.8" />
+          <Explosion range="50.0" force="3.0">
+            <Affliction identifier="burn" strength="50" />
+          </Explosion>
+          <Fire size="1.0" />
+          <Remove />
+        </StatusEffect>
+      </Throwable>
+      <AiTarget sightrange="1000" static="true" />
+      <PreferredContainer primary="plantcontainer" />
+    </Item>
+  </Override>
+
+
+  <!-- Weapons -->
+  <Override>
+    <Item name="" identifier="huskstinger" category="Weapon" Tags="smallitem" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" scale="0.5" allowasextracargo="true" RequireAimToUse="True">
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+      <Price baseprice="1" sold="false" canbespecial="false" />
+      <Price baseprice="500" sold="false">
+        <Price storeidentifier="merchanthusk" minavailable="1" maxavailable="2" sold="true">
+          <Reputation faction="huskcult" min="70"/>
+        </Price>
+      </Price>
+      <SuitableTreatment type="hemor" suitability="1" />
+      <PreferredContainer primary="medcab"/>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="960,576,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/CreatureLoot/CreatureLoot.png" sourcerect="425,232,86,23" depth="0.55" origin="0.44,0.6" />
+      <Body radius="10" width="60" density="20" />
+      <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="30,5" handle1="-20,0" holdangle="65" reload="1.0" range="50" combatpriority="10" msg="ItemMsgPickUpSelect">
+        <Attack targetimpulse="2" severlimbsprobability="0.1" itemdamage="2" structuredamage="2" structuresoundtype="StructureSlash">
+          <Affliction identifier="lacerations" strength="5" />
+          <Affliction identifier="bleeding" strength="10" />
+          <Affliction identifier="stun" strength="0.2" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character"/>
+            <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="500" />
+            <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="500" />
+            <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="500" />
+            <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="500" />
+            <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="500" />
+            <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="500" />
+          </StatusEffect>
+        </Attack>
+        <StatusEffect tags="medical" type="OnUse" target="UseTarget" duration="2">
+            <ReduceAffliction type="hemor" amount="1" />
+          </StatusEffect>
+      </MeleeWeapon>
+    </Item>
+  </Override>
+</Items>

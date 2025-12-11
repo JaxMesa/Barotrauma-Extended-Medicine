@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Afflictions -->
+<Afflictions>
+  <!-- Flu - Contagious disease spread by lacerations/burn wounds; causes fever and reduced movement (Triggers: Lacerations/Burn) -->
+  <Affliction name="" identifier="flu" description="" type="disease" limbspecific="false" indicatorlimb="Head" activationthreshold="1.0" showiconthreshold="100" showinhealthscannerthreshold="0" minstrength="0" maxstrength="200" healcostmultiplier="2" causeofdeathdescription="">
+    <Effect minstrength="0" maxstrength="100" strengthchange="+1">
+      <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true">
+        <Affliction identifier="fever" amount="+1.25" />
+      </StatusEffect>
+    </Effect>
+    <Effect minstrength="100" maxstrength="200" strengthchange="+1">
+      <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true">
+        <Affliction identifier="fever" amount="+1.5" />
+        <PeriodicEffect mininterval="45" maxinterval="90">
+          <StatusEffect target="Character">
+            <Affliction identifier="stun" strength="3"/>
+          </StatusEffect>
+        </PeriodicEffect>
+      </StatusEffect>
+    </Effect>
+    <PeriodicEffect mininterval="150" maxinterval="300">
+      <StatusEffect target="Character" comparison="and">
+        <Conditional ishuman="true" />
+        <Conditional ismale="true" />
+        <Sound file="%ModDir%/sounds/Voice/male_cough1.ogg" selectionmode="Random" />
+        <Sound file="%ModDir%/sounds/Voice/male_cough2.ogg" />
+        <Sound file="%ModDir%/sounds/Voice/male_cough3.ogg" />
+        <Sound file="%ModDir%/sounds/Voice/male_cough4.ogg" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <PeriodicEffect mininterval="150" maxinterval="300">
+      <StatusEffect target="Character" comparison="and">
+        <Conditional ishuman="true" />
+        <Conditional isfemale="true" />
+        <Sound file="%ModDir%/sounds/Voice/female_cough1.ogg" selectionmode="Random" />
+        <Sound file="%ModDir%/sounds/Voice/female_cough2.ogg" />
+        <Sound file="%ModDir%/sounds/Voice/female_cough3.ogg" />
+        <Sound file="%ModDir%/sounds/Voice/female_cough4.ogg" />
+        <Sound file="%ModDir%/sounds/Voice/female_cough5.ogg" />
+        <Sound file="%ModDir%/sounds/Voice/female_cough6.ogg" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <icon texture="%ModDir%/icons/charHeadDrop.png" color="215,165,0,255" origin="0,0" />
+  </Affliction>
+  <!-- Fever - Symptom caused by flu; reduces speed and causes nausea/organ damage over time (Triggers: Flu) -->
+  <Affliction name="" identifier="fever" description="" type="symptom" limbspecific="false" indicatorlimb="Torso" activationthreshold="1.0" showiconthreshold="60" showinhealthscannerthreshold="0" minstrength="0" maxstrength="100">
+    <Effect minstrength="0" maxstrength="30" minscreenblur="0.1" maxscreenblur="0.2">
+      <StatusEffect target="Character">
+        <PeriodicEffect mininterval="30" maxinterval="60">
+          <StatusEffect target="Character">
+            <Affliction identifier="organdamage" strength="1"/>
+            <Affliction identifier="nausea" strength="1"/>
+          </StatusEffect>
+        </PeriodicEffect>
+      </StatusEffect>
+    </Effect>
+    <Effect minstrength="30" maxstrength="60" minscreenblur="0.2" maxscreenblur="0.4">
+      <StatusEffect target="Character">
+        <Affliction identifier="nausea" strength="10" probability="0.01" />
+        <PeriodicEffect mininterval="30" maxinterval="60">
+          <StatusEffect target="Character">
+            <Affliction identifier="organdamage" strength="1.5"/>
+            <Affliction identifier="nausea" strength="1.5"/>
+          </StatusEffect>
+        </PeriodicEffect>
+      </StatusEffect>
+    </Effect>
+    <Effect minstrength="60" maxstrength="100" minscreenblur="0.4" maxscreenblur="0.6">
+      <StatusEffect target="Character">
+        <PeriodicEffect mininterval="30" maxinterval="60">
+          <StatusEffect target="Character" >
+            <Affliction identifier="organdamage" strength="2"/>
+            <Affliction identifier="nausea" strength="2"/>
+          </StatusEffect>
+        </PeriodicEffect>
+        <Affliction identifier="pain" strength="2" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="%ModDir%/icons/charFever.png" color="255,90,0,255" origin="0,0" />
+  </Affliction>
+  <!-- Cancer - Internal malignancy from radiation exposure; causes vital loss and seizures at high strength (Triggers: Radiation Sickness) -->
+  <Affliction name="" identifier="cancer" description="" type="cancer" limbspecific="false" indicatorlimb="Torso" activationthreshold="1.0" showiconthreshold="600" showinhealthscannerthreshold="0" causeofdeathdescription="" minstrength="0" maxstrength="1201" iconcolors="25,25,25,255;55,55,55,255;75,75,75,255" healcostmultiplier="10">
+    <Effect minstrength="0" maxstrength="300" minvitalitydecrease="0" maxvitalitydecrease="10" strengthchange="+1">
+      <StatusEffect target="Character" SpeedMultiplier="1" setvalue="true" />
+    </Effect>
+    <Effect minstrength="300" maxstrength="600" minscreenblur="0.00" maxscreenblur="0.10" minvitalitydecrease="10" maxvitalitydecrease="25" strengthchange="+1">
+      <StatusEffect target="Character" SpeedMultiplier="0.9" setvalue="true" />
+    </Effect>
+    <Effect minstrength="600" maxstrength="1200" minscreenblur="0.10" maxscreenblur="0.20" minvitalitydecrease="25" maxvitalitydecrease="50" strengthchange="+1">
+      <StatusEffect target="Character" SpeedMultiplier="0.8" setvalue="true" />
+    </Effect>
+    <Effect minstrength="1200" maxstrength="1201" maxvitalitydecrease="1000" strengthchange="+1">
+    </Effect>
+    <PeriodicEffect mininterval="120" maxinterval="180">
+      <StatusEffect target="Character" SpeedMultiplier="0.0" setvalue="true" duration="1.7" />
+      <StatusEffect target="Character" comparison="and">
+        <Conditional ishuman="true" />
+        <Conditional ismale="true" />
+        <Sound file="Content/Sounds/HUMAN_chokeMale1.ogg" selectionmode="Random" />
+        <Sound file="Content/Sounds/HUMAN_chokeMale2.ogg" />
+        <Sound file="Content/Sounds/HUMAN_chokeMale3.ogg" />
+      </StatusEffect>
+      <StatusEffect target="Character" comparison="and">
+        <Conditional ishuman="true" />
+        <Conditional isfemale="true" />
+        <Sound file="Content/Sounds/HUMAN_chokeFemale1.ogg" selectionmode="Random" />
+        <Sound file="Content/Sounds/HUMAN_chokeFemale2.ogg" />
+        <Sound file="Content/Sounds/HUMAN_chokeFemale3.ogg" />
+      </StatusEffect>
+      <StatusEffect target="Character">
+        <Affliction identifier="stun" strength="0.1" />
+        <Affliction identifier="organdamage" strength="0.5" />
+        <Affliction identifier="bloodloss" strength="2" />
+      </StatusEffect>
+      <StatusEffect target="Character" targetlimbs="Head" duration="1">
+        <ParticleEmitter particle="blood" copyentityangle="true" anglemin="-10" anglemax="10" particlespersecond="50" velocitymin="50" velocitymax="200" scalemin="0.1" scalemax="0.2" />
+        <Conditional HideFace="eq False" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <icon texture="%ModDir%/icons/charInnerDeadly.png" color="55,55,55,255" origin="0,0" />
+  </Affliction>
+  <!-- Space Rabies - Transmissible infection from bite wounds; causes hyperactivity and reduced damage resistance (Triggers: Bite Wounds) -->
+  <Affliction name="" identifier="spacerabies" description="" type="rabies" minstrength="0" maxstrength="601" limbspecific="false" indicatorlimb="Torso" activationthreshold="1.0" showiconthreshold="80" showinhealthscannerthreshold="30" causeofdeathdescription="" iconcolors="60,140,195,255;60,107,195,255;60,0,195,255" healcostmultiplier="4.5">
+    <Effect minstrength="0" maxstrength="150" strengthchange="+1">
+      <StatusEffect target="Character" />
+      <ReduceAffliction type="damage" strength="0.0625" />
+    </Effect>
+    <Effect minstrength="150" maxstrength="300" strengthchange="+1">
+      <StatusEffect target="Character" />
+      <ReduceAffliction type="damage" strength="0.125" />
+    </Effect>
+    <Effect minstrength="300" maxstrength="450" mingrainstrength="0.0" maxgrainstrength="0.25" minscreenblur="0.0" maxscreenblur="0.1" strengthchange="+1">
+      <StatusEffect target="Character" />
+      <ReduceAffliction type="damage" strength="0.25" />
+    </Effect>
+    <Effect minstrength="450" maxstrength="600" mingrainstrength="0.25" maxgrainstrength="0.5" minscreenblur="0.1" maxscreenblur="0.2" strengthchange="+1">
+      <StatusEffect target="Character" />
+      <ReduceAffliction type="damage" strength="0.5" />
+      <ReduceAffliction type="burn" strength="0.125" />
+      <ReduceAffliction identifier="bloodloss" strength="0.25" />
+    </Effect>
+    <Effect minstrength="600" maxstrength="601" maxvitalitydecrease="1000" strengthchange="+1"></Effect>
+    <icon texture="%ModDir%/icons/charCanines.png" color="60,107,195,255" origin="0,0" />
+  </Affliction>
+  <!-- Psychotic Shock - Mental trauma effect from extreme psychosis; causes screen blur and vitality loss (Triggers: Psychosis) -->
+  <Affliction name="" identifier="psyshock" description="" type="psyshock" limbspecific="false" indicatorlimb="Head" activationthreshold="1.0" showiconthreshold="180" showinhealthscannerthreshold="30" causeofdeathdescription="" minstrength="0" maxstrength="300">
+    <Effect minstrength="0" maxstrength="300" minscreenblur="0.0" maxscreenblur="0.7" minvitalitydecrease="0" maxvitalitydecrease="200" strengthchange="-1"></Effect>
+    <icon texture="%ModDir%/icons/charSilk.png" color="150,26,26,255" origin="0,0" />
+  </Affliction>
+  <!-- Blood Poisoning - Toxic reaction from incompatible blood; causes stun and movement reduction (Triggers: Using of Donor Blood Pack) -->
+  <Affliction name="" identifier="bloodpoisoning" description="" type="poison" limbspecific="false" indicatorlimb="Torso" activationthreshold="1.0" showinhealthscannerthreshold="30" showiconthreshold="240" minstrength="0" maxstrength="300">
+    <Effect minstrength="0" maxstrength="60" strengthchange="+1">
+      <StatusEffect target="Character" />
+    </Effect>
+    <Effect minstrength="60" maxstrength="300" minvitalitydecrease="0" maxvitalitydecrease="200" strengthchange="+1">
+      <StatusEffect target="Character" />
+    </Effect>
+    <PeriodicEffect mininterval="30" maxinterval="60">
+      <StatusEffect target="Character">
+        <Affliction identifier="stun" strength="2.5" selectionmode="Random" />
+        <Affliction identifier="stun" strength="5" />
+        <Affliction identifier="stun" strength="10" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <icon texture="%ModDir%/icons/charDirtyBlood.png" color="139,60,42,255" origin="0,0" />
+  </Affliction>
+  <!-- Severe injury - Serious limb injury from blunt trauma or gunshot; causes concussion and pain (Triggers: Blunt Trauma, Gunshot Wounds) -->
+  <Affliction name="" identifier="severeinjury" description="" type="deepdamage" limbspecific="true" indicatorlimb="" activationthreshold="1" showiconthreshold="0" minstrength="0" maxstrength="10" iconcolors="255,153,51,055;255,128,0,155;204,86,0,255">
+    <Effect minstrength="0" maxstrength="5" minvitalitydecrease="0" maxvitalitydecrease="5">
+      <StatusEffect target="Character">
+        <Affliction identifier="pain" strength="1" />
+      </StatusEffect>
+    </Effect>
+    <Effect minstrength="5" maxstrength="10" minvitalitydecrease="5" maxvitalitydecrease="10">
+      <StatusEffect target="Character">
+        <Affliction identifier="pain" strength="2" />
+      </StatusEffect>
+    </Effect>
+    <PeriodicEffect mininterval="90" maxinterval="150">
+      <StatusEffect target="Character" comparison="and">
+        <Conditional ishuman="true" />
+        <Conditional ismale="true" />
+        <Sound file="Content/Sounds/HUMAN_chokeMale1.ogg" selectionmode="Random" />
+        <Sound file="Content/Sounds/HUMAN_chokeMale2.ogg" />
+        <Sound file="Content/Sounds/HUMAN_chokeMale3.ogg" />
+      </StatusEffect>
+      <StatusEffect target="Character" comparison="and">
+        <Conditional ishuman="true" />
+        <Conditional isfemale="true" />
+        <Sound file="Content/Sounds/HUMAN_chokeFemale1.ogg" selectionmode="Random" />
+        <Sound file="Content/Sounds/HUMAN_chokeFemale2.ogg" />
+        <Sound file="Content/Sounds/HUMAN_chokeFemale3.ogg" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <icon texture="%ModDir%/icons/charBrokenBone.png" color="255,90,0,255" origin="0,0" />
+  </Affliction>
+  <!-- Severe Bleeding - Life-threatening blood loss from lacerations, bites, or gunshot; accumulates pain over time (Triggers: Lacerations, Bites, Gunshot Wounds) -->
+  <Affliction name="" identifier="severebleeding" description="" type="severebleeding" limbspecific="true" indicatorlimb="" activationthreshold="1" showiconthreshold="0" minstrength="0" maxstrength="10" iconcolors="255,153,51,055;255,128,0,155;204,86,0,255">
+    <Effect minstrength="0" maxstrength="5" minvitalitydecrease="0" maxvitalitydecrease="2.5">
+      <StatusEffect target="Character">
+        <Affliction identifier="bloodloss" strength="0.125" />
+        <Affliction identifier="pain" strength="0.5" />
+      </StatusEffect>
+    </Effect>
+    <Effect minstrength="5" maxstrength="10" minvitalitydecrease="2.5" maxvitalitydecrease="5">
+      <StatusEffect target="Character">
+        <Affliction identifier="bloodloss" strength="0.25" />
+        <Affliction identifier="pain" strength="1" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="%ModDir%/icons/charBleeding.png" sourcerect="0,0,128,128" color="255,90,0,255" origin="0,0" />
+  </Affliction>
+  <!-- Pain - Cumulative suffering from injuries; accumulates only while severe injury or severe bleeding present; decays naturally when healed (Triggers: Severe Bleeding, Broken Bones) -->
+  <Affliction name="" identifier="pain" description="" type="pain" limbspecific="false" indicatorlimb="Head" activationthreshold="1" showiconthreshold="0" minstrength="0" maxstrength="360" healcostmultiplier="1">
+    <Effect minstrength="0" maxstrength="90" strengthchange="-0.5">
+    </Effect>
+    <Effect minstrength="90" maxstrength="180" strengthchange="-0.5">
+      <Affliction identifier="organdamage" strength="1" probability="0.01"/>
+    </Effect>
+    <Effect minstrength="180" maxstrength="360" strengthchange="-0.5">
+      <StatusEffect target="Character">
+        <Affliction identifier="blackout" strengthchange="+4" />
+        <PeriodicEffect mininterval="30" maxinterval="60">
+          <StatusEffect target="Character">
+            <Affliction identifier="organdamage" strength="1"/>
+          </StatusEffect>
+        </PeriodicEffect>
+      </StatusEffect>
+    </Effect>
+    <icon texture="%ModDir%/icons/charConcussion.png" sourcerect="0,0,128,128" color="255,100,100,255" origin="0,0" />
+  </Affliction>
+  <!-- Blackout - Temporary unconsciousness from extreme pain or concussion; reduces control and causes organ damage; lasts 10 seconds; 10% chance to trigger hemorrhoids (Triggers: Pain/High Concussion) -->
+  <Affliction name="" identifier="blackout" description="" type="blackout" limbspecific="false" indicatorlimb="Head" activationthreshold="1" showiconthreshold="0" maxstrength="10" minstrength="0">
+    <Effect minstrength="0" maxstrength="10" strengthchange="-1">
+      <StatusEffect target="Character" setvalue="true">
+        <Affliction identifier="stun" setvalue="true" />
+        <Affliction identifier="psyshock" strength="1.5" />
+        <Affliction identifier="hemor" strength="1" probability="0.0000001" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="%ModDir%/icons/charConcussion.png" sourcerect="0,0,128,128" color="255,90,0,255" origin="0,0" />
+  </Affliction>
+  <!-- Hemorrhoids - Minor condition triggered by extreme strain from blackout; triggers stun with 5% probability every 30 seconds (Triggers: Blackout with 10% probability) -->
+  <Affliction name="" identifier="hemor" description="" type="hemor" limbspecific="false" indicatorlimb="Head" showinhealthscannerthreshold="1" activationthreshold="1" maxstrength="1">
+    <Effect minstrength="0" maxstrength="1">
+      <StatusEffect target="Character" setvalue="true">
+      </StatusEffect>
+    </Effect>
+    <PeriodicEffect mininterval="30" maxinterval="30">
+      <StatusEffect target="Character">
+        <Affliction identifier="stun" strength="1" probability="0.05" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <icon texture="%ModDir%/icons/charBleeding.png" sourcerect="0,0,128,128" color="180,180,180,255" origin="0,0" />
+  </Affliction>
+
+  <!-- Buffs -->
+  <!-- Flu Resistance Buff - Resistance effect that reduces flu severity and provides fever reduction over time -->
+  <Affliction name="" identifier="fluresistance" description="" type="resistance" isbuff="true" indicatorlimb="Head" limbspecific="false" maxstrength="120" MedicalSkillGain="0.01">
+    <Effect minstrength="0" maxstrength="120" strengthchange="-0.15" resistancefor="flu" minresistance="0" maxresistance="0.1">
+      <StatusEffect target="Character" setvalue="true">
+        <ReduceAffliction identifier="fever" strength="2" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="%ModDir%/icons/resistHeadDrop.png" color="10,193,114,255" origin="0,0" />
+  </Affliction>
+  <!-- Space Rabies Resistance Buff - Resistance effect that significantly reduces space rabies progression -->
+  <Affliction name="" identifier="spacerabiesresistance" description="" type="resistance" isbuff="true" indicatorlimb="Torso" limbspecific="false" resistancefor="spacerabies" maxstrength="120" MedicalSkillGain="0.01">
+    <Effect minstrength="0" maxstrength="120" strengthchange="-1">
+      <StatusEffect target="Character" setvalue="true">
+        <ReduceAffliction identifier="spacerabies" strength="7.5" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="%ModDir%/icons/resistCanines.png" color="10,193,114,255" origin="0,0" />
+  </Affliction>
+  <!-- PsyShock Resistance Buff - Resistance effect that reduces psychotic shock accumulation -->
+  <Affliction name="" identifier="psyshockresistance" description="" type="resistance" isbuff="true" indicatorlimb="Head" limbspecific="false" resistancefor="psyshock" maxstrength="100" MedicalSkillGain="0.01">
+    <Effect minstrength="0" maxstrength="100" strengthchange="-0.15">
+      <StatusEffect target="Character" setvalue="true">
+        <ReduceAffliction identifier="psyshock" strength="2" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="%ModDir%/icons/resistSilk.png" color="150,26,26,255" origin="0,0" />
+  </Affliction>
+  <!-- Metabolic Arrest Buff - Emergency state that stops blood loss and reduces oxygen damage while preventing movement -->
+  <Affliction name="" identifier="metabolismarrest" description="" type="resistance" isbuff="true" limbspecific="false" maxstrength="120" affectmachines="false" MedicalSkillGain="0.01">
+    <Effect minstrength="0" maxstrength="120" strengthchange="-1" resistancefor="bloodloss" minresistance="0.8" maxresistance="1">
+      <StatusEffect target="Character" setvalue="true">
+        <ReduceAffliction type="bloodloss" strength="10" />
+        <Affliction identifier="stun" strength="5" />
+        <ReduceAffliction identifier="oxygenlow" strength="2" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="%ModDir%/icons/resistStop.png" color="150,26,26,255" origin="0,0" />
+  </Affliction>
+</Afflictions>
