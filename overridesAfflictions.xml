@@ -64,27 +64,27 @@
       <Effect minstrength="5" maxstrength="25" mingrainstrength="0.0" maxgrainstrength="0.5" strengthchange="+0.03">
         <StatusEffect target="Character">
           <Affliction identifier="burn" amount="0.0025" />
-          <Affliction identifier="cancer" strength="+0.334" />
+          <Affliction identifier="cancer" strength="+0.1" />
         </StatusEffect>
       </Effect>
       <Effect minstrength="25" maxstrength="50" mingrainstrength="0.5" maxgrainstrength="1.0" strengthchange="+0.03" minchromaticaberration="0.0" maxchromaticaberration="5.0">
         <StatusEffect target="Character">
           <Affliction identifier="burn" amount="0.005" />
-          <Affliction identifier="cancer" strength="+0.334" />
+          <Affliction identifier="cancer" strength="+0.01" />
         </StatusEffect>
       </Effect>
       <Effect minstrength="50" maxstrength="75" mingrainstrength="1.0" maxgrainstrength="1.0" strengthchange="+0.03" minchromaticaberration="5.0" maxchromaticaberration="10.0">
         <StatusEffect target="Character">
           <Affliction identifier="burn" amount="0.01" />
           <Affliction identifier="nausea" amount="1.05" />
-          <Affliction identifier="cancer" strength="+0.334" />
+          <Affliction identifier="cancer" strength="+0.01" />
         </StatusEffect>
       </Effect>
       <Effect minstrength="75" maxstrength="90" mingrainstrength="1.0" maxgrainstrength="1.0" strengthchange="+0.03" minchromaticaberration="10.0" maxchromaticaberration="30.0">
         <StatusEffect target="Character">
           <Affliction identifier="burn" amount="0.02" />
           <Affliction identifier="nausea" amount="1.1" />
-          <Affliction identifier="cancer" strength="+0.334" />
+          <Affliction identifier="cancer" strength="+0.01" />
         </StatusEffect>
         <StatusEffect target="Character" SpeedMultiplier="0.8" setvalue="true" />
       </Effect>
@@ -92,7 +92,7 @@
         <StatusEffect target="Character">
           <Affliction identifier="burn" amount="0.02" />
           <Affliction identifier="nausea" amount="1.1" />
-          <Affliction identifier="cancer" strength="+0.334" />
+          <Affliction identifier="cancer" strength="+0.01" />
         </StatusEffect>
         <StatusEffect target="Character" SpeedMultiplier="0.5" setvalue="true" />
       </Effect>

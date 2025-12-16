@@ -236,14 +236,14 @@
       <StatusEffect statuseffectstags="medical" type="OnUse" target="UseTarget" duration="25">
         <Sound file="Content/Items/Medical/Syringe.ogg" type="OnUse" range="500" />
         <Sound file="Content/Items/Medical/Syringe.ogg" type="OnUse" range="500" />
-        <ReduceAffliction identifier="cancer" amount="0.25" />
+        <ReduceAffliction identifier="cancer" amount="1" />
         <ReduceAffliction identifier="radiationsickness" amount="1" />
         <Affliction identifier="internaldamage" amount="0.25" />
       </StatusEffect>
       <StatusEffect statuseffectstags="medical" type="OnFailure" target="UseTarget" duration="25">
         <Sound file="Content/Items/Medical/Syringe.ogg" type="OnUse" range="500" />
         <Sound file="Content/Items/Medical/Syringe.ogg" type="OnUse" range="500" />
-        <ReduceAffliction identifier="cancer" amount="0.1" />
+        <ReduceAffliction identifier="cancer" amount="0.5" />
         <ReduceAffliction identifier="radiationsickness" amount="0.75" />
         <Affliction identifier="internaldamage" amount="1" />
       </StatusEffect>

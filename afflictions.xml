@@ -40,6 +40,12 @@
         <Sound file="%ModDir%/sounds/Voice/female_cough6.ogg" />
       </StatusEffect>
     </PeriodicEffect>
+    <!-- Small chance to catch flu while in water -->
+    <PeriodicEffect mininterval="90" maxinterval="180">
+      <StatusEffect type="InWater" target="Character">
+        <Affliction identifier="flu" amount="+1" probability="0.05" />
+      </StatusEffect>
+    </PeriodicEffect>
     <icon texture="%ModDir%/icons/charHeadDrop.png" color="215,165,0,255" origin="0,0" />
   </Affliction>
   <!-- Fever - Symptom caused by flu; reduces speed and causes nausea/organ damage over time (Triggers: Flu) -->
@@ -79,7 +85,7 @@
     <icon texture="%ModDir%/icons/charFever.png" color="255,90,0,255" origin="0,0" />
   </Affliction>
   <!-- Cancer - Internal malignancy from radiation exposure; causes vital loss and seizures at high strength (Triggers: Radiation Sickness) -->
-  <Affliction name="" identifier="cancer" description="" type="cancer" limbspecific="false" indicatorlimb="Torso" activationthreshold="1.0" showiconthreshold="600" showinhealthscannerthreshold="0" causeofdeathdescription="" minstrength="0" maxstrength="1201" iconcolors="25,25,25,255;55,55,55,255;75,75,75,255" healcostmultiplier="10">
+  <Affliction name="" identifier="cancer" description="" type="cancer" limbspecific="false" indicatorlimb="Torso" activationthreshold="1.0" showiconthreshold="600" showinhealthscannerthreshold="0" causeofdeathdescription="" minstrength="0" maxstrength="1200" iconcolors="25,25,25,255;55,55,55,255;75,75,75,255" healcostmultiplier="10">
     <Effect minstrength="0" maxstrength="300" minvitalitydecrease="0" maxvitalitydecrease="10" strengthchange="+1">
       <StatusEffect target="Character" SpeedMultiplier="1" setvalue="true" />
     </Effect>
@@ -89,7 +95,7 @@
     <Effect minstrength="600" maxstrength="1200" minscreenblur="0.10" maxscreenblur="0.20" minvitalitydecrease="25" maxvitalitydecrease="50" strengthchange="+1">
       <StatusEffect target="Character" SpeedMultiplier="0.8" setvalue="true" />
     </Effect>
-    <Effect minstrength="1200" maxstrength="1201" maxvitalitydecrease="1000" strengthchange="+1">
+    <Effect minstrength="1200" maxstrength="1200" maxvitalitydecrease="1000" strengthchange="+1">
     </Effect>
     <PeriodicEffect mininterval="120" maxinterval="180">
       <StatusEffect target="Character" SpeedMultiplier="0.0" setvalue="true" duration="1.7" />
@@ -115,6 +121,13 @@
       <StatusEffect target="Character" targetlimbs="Head" duration="1">
         <ParticleEmitter particle="blood" copyentityangle="true" anglemin="-10" anglemax="10" particlespersecond="50" velocitymin="50" velocitymax="200" scalemin="0.1" scalemax="0.2" />
         <Conditional HideFace="eq False" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <!-- If the character has radiation sickness, increase cancer growth by +1/sec to halve time to terminal -->
+    <PeriodicEffect mininterval="1" maxinterval="1">
+      <StatusEffect target="Character">
+        <Conditional radiationsickness="gt 10" />
+        <Affliction identifier="cancer" strength="+1" />
       </StatusEffect>
     </PeriodicEffect>
     <icon texture="%ModDir%/icons/charInnerDeadly.png" color="55,55,55,255" origin="0,0" />
@@ -208,6 +221,22 @@
         <Affliction identifier="pain" strength="1" />
       </StatusEffect>
     </Effect>
+      <!-- If a limb has deep tissue damage > 10 (or lacerations > 10), that limb may worsen into severe injury or severe bleeding -->
+      <PeriodicEffect mininterval="60" maxinterval="120">
+        <StatusEffect target="Character" targetlimbs="Any">
+          <Conditional deepdamage="gt 10" />
+          <Conditional lacerations="gt 10" />
+          <Affliction identifier="severeinjury" amount="+1" probability="0.15" />
+          <Affliction identifier="severebleeding" amount="+1" probability="0.15" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <!-- If any limb has >25 bite wounds, small chance to contract space rabies -->
+      <PeriodicEffect mininterval="60" maxinterval="120">
+        <StatusEffect target="Character" targetlimbs="Any">
+          <Conditional bitewounds="gt 25" />
+          <Affliction identifier="spacerabies" amount="+1" probability="0.05" />
+        </StatusEffect>
+      </PeriodicEffect>
     <icon texture="%ModDir%/icons/charBleeding.png" sourcerect="0,0,128,128" color="255,90,0,255" origin="0,0" />
   </Affliction>
   <!-- Pain - Cumulative suffering from injuries; accumulates only while severe injury or severe bleeding present; decays naturally when healed (Triggers: Severe Bleeding, Broken Bones) -->
