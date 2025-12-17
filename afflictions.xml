@@ -89,6 +89,10 @@
     <Effect minstrength="300" maxstrength="600" minscreenblur="0.1" maxscreenblur="0.2" minvitalitydecrease="25" maxvitalitydecrease="200" strengthchange="+0.5">
       <StatusEffect target="Character" SpeedMultiplier="0.8" setvalue="true" />
     </Effect>
+    <StatusEffect target="Character">
+        <Conditional radiationsickness="gt 10" />
+        <Affliction identifier="cancer" strengthchange="0.5" />
+      </StatusEffect>
     <PeriodicEffect mininterval="180" maxinterval="300">
       <StatusEffect target="Character" SpeedMultiplier="0.0" setvalue="true" duration="1.7" />
       <StatusEffect target="Character" comparison="and">
@@ -113,13 +117,6 @@
       <StatusEffect target="Character" targetlimbs="Head" duration="1">
         <ParticleEmitter particle="blood" copyentityangle="true" anglemin="-10" anglemax="10" particlespersecond="50" velocitymin="50" velocitymax="200" scalemin="0.1" scalemax="0.2" />
         <Conditional HideFace="eq False" />
-      </StatusEffect>
-    </PeriodicEffect>
-    <!-- If the character has radiation sickness, increase cancer growth by +1/sec to halve time to terminal -->
-    <PeriodicEffect mininterval="1" maxinterval="1">
-      <StatusEffect target="Character">
-        <Conditional radiationsickness="gt 10" />
-        <Affliction identifier="cancer" strength="+1" />
       </StatusEffect>
     </PeriodicEffect>
     <icon texture="%ModDir%/icons/charInnerDeadly.png" color="55,55,55,255" origin="0,0" />
