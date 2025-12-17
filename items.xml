@@ -197,6 +197,7 @@
     <Price baseprice="560" minavailable="1">
       <Price storeidentifier="merchantresearch" multiplier="0.6" />
       <Price storeidentifier="merchantmedical" multiplier="0.9" />
+    </Price>
     <Fabricate suitablefabricators="medicalfabricator" requiredtime="30">
       <RequiredSkill identifier="medical" level="72" />
       <RequiredItem identifier="uranium" />
@@ -470,7 +471,6 @@
     <PreferredContainer primary="wreckmedcab" minamount="0" maxamount="3" spawnprobability="0.5" />
     <PreferredContainer primary="outpostmedcompartment" minamount="0" maxamount="3" spawnprobability="0.25" />
     <Price baseprice="160" minavailable="4">
-      <Price baseprice="440">
       <Price storeidentifier="merchantresearch" multiplier="0.6" />
       <Price storeidentifier="merchantmedical" multiplier="0.9" />
     </Price>

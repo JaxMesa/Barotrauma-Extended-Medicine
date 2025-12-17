@@ -2,17 +2,17 @@
 <!-- Afflictions -->
 <Afflictions>
   <!-- Flu: A trigger for fever on itself. Provides minor penalties at end. Caused by being in water(Need to check it, still does not work) -->
-  <Affliction name="" identifier="flu" description="" type="disease" limbspecific="false" indicatorlimb="Head" activationthreshold="1.0" showiconthreshold="100" showinhealthscannerthreshold="0" minstrength="0" maxstrength="300" healcostmultiplier="2" causeofdeathdescription="">
+  <Affliction name="" identifier="flu" description="" type="disease" limbspecific="false" indicatorlimb="Head" activationthreshold="0" showiconthreshold="100" showinhealthscannerthreshold="0" minstrength="0" maxstrength="300" healcostmultiplier="2" causeofdeathdescription="">
     <!-- General developement of flu -->
     <Effect minstrength="0" maxstrength="100" strengthchange="+1">
       <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true"> <!-- Questionable multiplyafflictionsbymaxvitatility. Don't get what it does nor when I added it, need to check or remove.(JaxMesa; 17.12.2025) -->
-        <Affliction identifier="fever" strength="1.25" />
+        <Affliction identifier="fever" strength="0.25" />
       </StatusEffect>
     </Effect>
     <!-- If player has half of flu, it accelerates -> Need more pills or vanilla antibiotics -->
     <Effect minstrength="100" maxstrength="200" strengthchange="+2">
       <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true">
-        <Affliction identifier="fever" strength="1.5" />
+        <Affliction identifier="fever" strength="0.5" />
         <!-- Sometimes stuns player becaues fever getting dangerous (45 to 90 secs, stuns for 3 secs) -->
         <PeriodicEffect mininterval="45" maxinterval="90">
           <StatusEffect target="Character">
@@ -87,26 +87,31 @@
     <icon texture="%ModDir%/icons/charFever.png" color="255,90,0,255" origin="0,0" />
   </Affliction>
   <!-- Cancer: A long-term disease with debuffs and eventual death. Lasts for somewhat 20 minutes and can be accelerated by radiation sickness. -->
-  <Affliction name="" identifier="cancer" description="" type="cancer" limbspecific="false" indicatorlimb="Torso" activationthreshold="1.0" showiconthreshold="300" showinhealthscannerthreshold="0" causeofdeathdescription="" minstrength="0" maxstrength="600" iconcolors="25,25,25,255;55,55,55,255;75,75,75,255" healcostmultiplier="10">
+  <Affliction name="" identifier="cancer" description="" type="cancer" limbspecific="false" indicatorlimb="Torso" activationthreshold="0" showiconthreshold="300" showinhealthscannerthreshold="0" causeofdeathdescription="" minstrength="0" maxstrength="600" iconcolors="25,25,25,255;55,55,55,255;75,75,75,255" healcostmultiplier="10">
     <!-- First stage: Minor debuffs, lasts for ~5 min -->
     <!-- FATAL! Number wrong again, apparently. For fuck sake. -->
     <!-- Maybe try replace debuffs with skill penalties later? Sounds good -->
     <Effect minstrength="0" maxstrength="150" minvitalitydecrease="0" maxvitalitydecrease="10" strengthchange="+0.5">
       <StatusEffect target="Character" SpeedMultiplier="1" setvalue="true" />
+      <!-- Accelerates cancer developement if radiation sickness is more or greater than 10 -->
+      <StatusEffect target="Character">
+        <Conditional radiationsickness="gte 10" />
+        <Affliction identifier="cancer" strengthchange="0.5" />
+      </StatusEffect>
     </Effect>
     <!-- Second stage: Moderate debuffs, lasts for ~5 min-->
     <Effect minstrength="150" maxstrength="300" minscreenblur="0" maxscreenblur="0.1" minvitalitydecrease="10" maxvitalitydecrease="25" strengthchange="+0.5">
       <StatusEffect target="Character" SpeedMultiplier="0.9" setvalue="true" />
+      <!-- Accelerates cancer developement if radiation sickness is more or greater than 10 -->
+      <StatusEffect target="Character">
+        <Conditional radiationsickness="gte 10" />
+        <Affliction identifier="cancer" strengthchange="0.5" />
+      </StatusEffect>
     </Effect>
     <!-- Third stage: Slow death, lasts for ~10 min-->
     <Effect minstrength="300" maxstrength="600" minscreenblur="0.1" maxscreenblur="0.2" minvitalitydecrease="25" maxvitalitydecrease="200" strengthchange="+0.5">
       <StatusEffect target="Character" SpeedMultiplier="0.8" setvalue="true" />
     </Effect>
-    <!-- Accelerates cancer developement if radiation sickness is more or greater than 10 -->
-    <StatusEffect target="Character">
-        <Conditional radiationsickness="gte 10" />
-        <Affliction identifier="cancer" strengthchange="0.5" />
-    </StatusEffect>
     <!-- Choke sounds for male -->
     <PeriodicEffect mininterval="180" maxinterval="300">
       <StatusEffect target="Character" SpeedMultiplier="0.0" setvalue="true" duration="1.7" />
@@ -167,18 +172,14 @@
     <icon texture="%ModDir%/icons/charCanines.png" color="60,107,195,255" origin="0,0" />
   </Affliction>
   <!-- Psychotic Shock: Just a lethal addition to psychosis. Caused by blackout a bit and phychosis. Slowly kills. -->
-  <Affliction name="" identifier="psyshock" description="" type="psyshock" limbspecific="false" indicatorlimb="Head" activationthreshold="1.0" showiconthreshold="180" showinhealthscannerthreshold="30" causeofdeathdescription="" minstrength="0" maxstrength="300">
+  <Affliction name="" identifier="psyshock" description="" type="psyshock" limbspecific="false" indicatorlimb="Head" activationthreshold="1" showiconthreshold="180" showinhealthscannerthreshold="30" causeofdeathdescription="" minstrength="0" maxstrength="300">
     <Effect minstrength="0" maxstrength="300" minscreenblur="0.0" maxscreenblur="0.7" minvitalitydecrease="0" maxvitalitydecrease="200" strengthchange="-1"></Effect>
     <icon texture="%ModDir%/icons/charSilk.png" color="150,26,26,255" origin="0,0" />
   </Affliction>
-  <!-- Blood Poisoning: Caused by donor blood by a specific chance. Is just a lethal side effect. -->
-  <Affliction name="" identifier="bloodpoisoning" description="" type="poison" limbspecific="false" indicatorlimb="Torso" activationthreshold="1.0" showinhealthscannerthreshold="30" showiconthreshold="240" minstrength="0" maxstrength="300">
-    <!-- First stage -->
-    <Effect minstrength="0" maxstrength="60" strengthchange="+1">
-      <StatusEffect target="Character" />
-    </Effect>
-    <!-- Second stage -->
-    <Effect minstrength="60" maxstrength="300" minvitalitydecrease="0" maxvitalitydecrease="200" strengthchange="+1">
+  <!-- Blood Poisoning: Caused by donor blood with a specific chance when failed to apply. Is just a lethal side effect. -->
+  <Affliction name="" identifier="bloodpoisoning" description="" type="poison" limbspecific="false" indicatorlimb="Torso" activationthreshold="1" showinhealthscannerthreshold="0" showiconthreshold="60" minstrength="0" maxstrength="200">
+    <!-- Slowly dying -->
+    <Effect minstrength="0" maxstrength="200" minvitalitydecrease="0" maxvitalitydecrease="200" strengthchange="+0.5">
       <StatusEffect target="Character" />
     </Effect>
     <!-- 30 to secs a player get stun of different strengh/time(2.5 sec, 5 sec, 10 sec) -->
@@ -245,7 +246,7 @@
     <icon texture="%ModDir%/icons/charBleeding.png" sourcerect="0,0,128,128" color="255,90,0,255" origin="0,0" />
   </Affliction>
   <!-- Pain: Caused by severe injuries. Accumulates. Causes blackout and give debuffs over time. Should motivate player to seek help. ~6 min till blackout. Every severe injury accelerate pain gain. Goes away by itself over time -> Treat causes -->
-  <Affliction name="" identifier="pain" description="" type="pain" limbspecific="false" indicatorlimb="Head" activationthreshold="1" showiconthreshold="0" minstrength="0" maxstrength="360" healcostmultiplier="1">
+  <Affliction name="" identifier="pain" description="" type="pain" limbspecific="false" indicatorlimb="Head" activationthreshold="0.5" showiconthreshold="0" minstrength="0" maxstrength="360" healcostmultiplier="1">
     <!-- First stage: None. At least 2 severe injuries needed to cause to growth (+2) -->
     <Effect minstrength="0" maxstrength="90" strengthchange="-1">
     </Effect>
@@ -283,10 +284,10 @@
       <StatusEffect target="Character" SpeedMultiplier="0.95" setvalue="true">
       </StatusEffect>
     </Effect>
-    <!-- 5% chance to get stunned for 1 sec -->
+    <!-- 5% chance to get stunned for 3 sec -->
     <PeriodicEffect mininterval="120" maxinterval="300">
       <StatusEffect target="Character">
-        <Affliction identifier="stun" strength="1" probability="0.05" />
+        <Affliction identifier="stun" strength="3" probability="0.05" />
       </StatusEffect>
     </PeriodicEffect>
     <icon texture="%ModDir%/icons/charBleeding.png" sourcerect="0,0,128,128" color="180,180,180,255" origin="0,0" />
