@@ -24,9 +24,8 @@
       <Item identifier="antibioticpowder" copycondition="true" mincondition="0.1" outcondition="0.5" />
       <Item identifier="calcium" copycondition="true" mincondition="0.1" outcondition="0.5" />
     </Deconstruct>
-    <SuitableTreatment identifier="huskinfectionresistance" suitability="-180" />
-    <SuitableTreatment identifier="huskinfection" suitability="20" />
-    <SuitableTreatment identifier="flu" suitability="60" />
+    <SuitableTreatment identifier="huskinfection" suitability="30" />
+    <SuitableTreatment identifier="flu" suitability="120" />
     <InventoryIcon texture="%ModDir%/icons/pillsAqua.png" sourcerect="0,0,64,64" />
     <Sprite texture="%ModDir%/sprites/pillsAqua.png" sourcerect="0,0,64,64" depth="0.6" />
     <Body width="60" height="20" density="20" />
@@ -35,17 +34,15 @@
       <RequiredSkill identifier="medical" level="10" />
       <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
       <StatusEffect type="OnFailure" target="This" Condition="-100.0" disabledeltatime="true" />
-      <StatusEffect type="OnUse" target="UseTarget" duration="90">
+      <StatusEffect type="OnUse" target="UseTarget" duration="60">
         <Sound file="%ModDir%/sounds/Medicine/SwallowSound.ogg" range="200" />
-        <Affliction identifier="huskinfectionresistance" amount="3" />
-        <ReduceAffliction identifier="huskinfection" amount="0.22" />
-        <ReduceAffliction identifier="flu" amount="0.66" />
+        <ReduceAffliction identifier="huskinfection" amount="0.5" />
+        <ReduceAffliction identifier="flu" amount="2" />
       </StatusEffect>
-      <StatusEffect type="OnFailure" target="UseTarget" duration="90">
+      <StatusEffect type="OnFailure" target="UseTarget" duration="60">
         <Sound file="%ModDir%/sounds/Medicine/SwallowSound.ogg" range="200" />
-        <Affliction identifier="huskinfectionresistance" amount="1" />
-        <ReduceAffliction identifier="huskinfection" amount="0.11" />
-        <ReduceAffliction identifier="flu" amount="0.33" />
+        <ReduceAffliction identifier="huskinfection" amount="0.2" />
+        <ReduceAffliction identifier="flu" amount="1.5" />
       </StatusEffect>
       <!-- Chem addiction and withdrawal -->
       <StatusEffect type="OnUse" target="UseTarget" duration="90">
@@ -55,7 +52,7 @@
       </StatusEffect>
       <StatusEffect type="OnFailure" target="UseTarget" duration="60">
         <Sound file="%ModDir%/sounds/Medicine/SwallowSound.ogg" range="200" />
-        <Affliction identifier="chemaddiction" amount="0.5" />
+        <Affliction identifier="chemaddiction" amount="0.3" />
         <ReduceAffliction identifier="chemwithdrawal" amount="0.5" />
       </StatusEffect>
       <!-- Remove the item when fully used -->
@@ -64,7 +61,7 @@
       </StatusEffect>
     </MeleeWeapon>
   </AntibioticPills>
-  <!-- Vitamin Pills - Nutritional supplement that heals general damage and fever; reduces chemical addiction (Medical Item) -->
+  <!-- Vitamin Pills: Primarly to cure fever + healing -->
   <VitaminPills name="" identifier="vitaminpills" category="Medical" tags="smallitem,medical,chem" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="mediccrate" description="" useinhealthinterface="true" scale="0.25" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="medcab" minamount="0" maxamount="1" />
     <PreferredContainer primary="wreckmedcab" minamount="0" maxamount="3" spawnprobability="0.5" />
@@ -88,8 +85,8 @@
       <Item identifier="magnesium" copycondition="true" mincondition="0.1" outcondition="0.5" />
     </Deconstruct>
     <SuitableTreatment type="damage" suitability="30" />
-    <SuitableTreatment type="fever" suitability="30" />
-    <SuitableTreatment type="psyshockresistance" suitability="-10" />
+    <SuitableTreatment type="fever" suitability="90" />
+    <SuitableTreatment type="fluresistance" suitability="-60" />
     <InventoryIcon texture="%ModDir%/icons/pillsPink.png" sourcerect="0,0,64,64" />
     <Sprite texture="%ModDir%/sprites/pillsPink.png" sourcerect="0,0,64,64" depth="0.6" />
     <Body width="60" height="20" density="20" />
@@ -98,16 +95,14 @@
       <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
       <StatusEffect type="OnFailure" target="This" Condition="-100.0" disabledeltatime="true" />
       <!-- General healing -->
-      <StatusEffect statuseffectstags="medical" type="OnUse" target="UseTarget" duration="90.0">
+      <StatusEffect statuseffectstags="medical" type="OnUse" target="UseTarget" duration="60.0">
         <ReduceAffliction type="damage" amount="0.33" />
-        <ReduceAffliction type="fever" amount="0.33" />
-        <ReduceAffliction type="psyshockresistance" amount="0.11" />
+        <ReduceAffliction type="fever" amount="1" />
         <Affliction identifier="fluresistance" amount="1" />
       </StatusEffect>
-      <StatusEffect statuseffectstags="medical" type="OnFailure" target="UseTarget" duration="90.0">
+      <StatusEffect statuseffectstags="medical" type="OnFailure" target="UseTarget" duration="60.0">
         <ReduceAffliction type="damage" amount="0.25" />
-        <ReduceAffliction type="fever" amount="0.25" />
-        <ReduceAffliction type="psyshockresistance" amount="0.05" />
+        <ReduceAffliction type="fever" amount="1" />
         <Affliction identifier="fluresistance" amount="0.5" />
       </StatusEffect>
       <!-- Chem addiction and withdrawal -->
@@ -127,7 +122,7 @@
       </StatusEffect>
     </MeleeWeapon>
   </VitaminPills>
-  <!-- Antipsychotic Pills -->
+  <!-- Antipsychotic Pills: Primarly against psychosis and psyshock, can reduce concussion and pain -->
   <AntibioticPills name="" identifier="antipsychoticpills" category="Medical" tags="smallitem,medical,chem" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="mediccrate" description="" useinhealthinterface="true" scale="0.25" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="medcab" minamount="0" maxamount="2" />
     <PreferredContainer primary="wreckmedcab" minamount="0" maxamount="3" spawnprobability="0.5" />
@@ -158,19 +153,21 @@
     <Sprite texture="%ModDir%/sprites/pillsGreen.png" sourcerect="0,0,64,64" depth="0.6" />
     <Body width="60" height="20" density="20" />
     <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
-      <!-- Psychosis, psyshock and concussion heal and resistance -->
+      <!-- Heals: Psychosis, psyshock, concussion and pain -->
       <RequiredSkill identifier="medical" level="20" />
       <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
       <StatusEffect type="OnFailure" target="This" Condition="-100.0" disabledeltatime="true" />
-      <StatusEffect type="OnUse" target="UseTarget" duration="90">
+      <StatusEffect type="OnUse" target="UseTarget" duration="60">
         <Sound file="%ModDir%/sounds/Medicine/SwallowSound.ogg" range="200" />
         <ReduceAffliction identifier="psyshock" amount="0.22" />
         <ReduceAffliction identifier="concussion" amount="0.25" />
+        <ReduceAffliction identifier="pain" amount="1" />
       </StatusEffect>
-      <StatusEffect type="OnFailure" target="UseTarget" duration="90">
+      <StatusEffect type="OnFailure" target="UseTarget" duration="60">
         <Sound file="%ModDir%/sounds/Medicine/SwallowSound.ogg" range="200" />
         <ReduceAffliction identifier="psyshock" amount="0.05" />
         <ReduceAffliction identifier="concussion" amount="0.2" />
+        <ReduceAffliction identifier="pain" amount="0.5" />
       </StatusEffect>
       <!-- Chem addiction and withdrawal -->
       <StatusEffect type="OnUse" target="UseTarget" duration="90">
@@ -183,7 +180,7 @@
         <Affliction identifier="chemaddiction" amount="0.5" />
         <ReduceAffliction identifier="chemwithdrawal" amount="0.5" />
       </StatusEffect>
-      <!-- PsyShock Resistance -->
+      <!-- Gives PsyShock Resistance -->
       <StatusEffect type="OnUse" target="UseTarget" duration="5">
         <Sound file="%ModDir%/sounds/Medicine/SwallowSound.ogg" range="200" />
         <ReduceAffliction identifier="psyshock" amount="20" />
@@ -230,19 +227,21 @@
     <Sprite texture="%ModDir%/sprites/syringeDNA.png" sourcerect="0,0,64,64" depth="0.6" />
     <Body width="60" height="20" density="20" />
     <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="5,0" handle1="-5,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
+      <!-- Medics only item -> Skill needed: 72 medical -->
       <RequiredSkill identifier="medical" level="72" />
       <StatusEffect type="OnUse" target="This" Condition="-25.0" disabledeltatime="true" />
       <StatusEffect type="OnFailure" target="This" Condition="-50.0" disabledeltatime="true" />
+      <!-- 4 uses needed to cure cancer -->
       <StatusEffect statuseffectstags="medical" type="OnUse" target="UseTarget" duration="30">
         <Sound file="Content/Items/Medical/Syringe.ogg" type="OnUse" range="500" />
         <Sound file="Content/Items/Medical/Syringe.ogg" type="OnUse" range="500" />
-        <ReduceAffliction identifier="cancer" amount="10" />
+        <ReduceAffliction identifier="cancer" amount="5" />
         <ReduceAffliction identifier="radiationsickness" amount="1" />
       </StatusEffect>
       <StatusEffect statuseffectstags="medical" type="OnFailure" target="UseTarget" duration="30">
         <Sound file="Content/Items/Medical/Syringe.ogg" type="OnUse" range="500" />
         <Sound file="Content/Items/Medical/Syringe.ogg" type="OnUse" range="500" />
-        <ReduceAffliction identifier="cancer" amount="5" />
+        <ReduceAffliction identifier="cancer" amount="2.5" />
         <ReduceAffliction identifier="radiationsickness" amount="0.75" />
       </StatusEffect>
       <!-- Remove the item when fully used -->
@@ -251,7 +250,7 @@
       </StatusEffect>
     </MeleeWeapon>
   </Radiazine>
-  <!-- Rabies vaccine -->
+  <!-- Rabies vaccine: Cures rabies entirely + gives resistance -->
   <RabiesVaccine name="" identifier="rabiesvaccine" category="Medical" Tags="smallitem,medical" maxstacksize="4" cargocontaineridentifier="mediccrate" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
     <Upgrade gameversion="0.13.0.0" scale="0.5" />
     <PreferredContainer primary="toxcab" minamount="0" maxamount="1" />
@@ -282,21 +281,26 @@
     <Body width="60" height="20" density="20" />
     <SuitableTreatment identifier="spacerabies" suitability="100" />
     <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="5,0" handle1="-5,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
+      <!-- Mainly for medic due to skill requirement of 55 -->
       <RequiredSkill identifier="medical" level="55" />
-      <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
-      <StatusEffect type="OnFailure" target="This" Condition="-100.0" disabledeltatime="true" />
-      <StatusEffect statuseffectstags="medical" type="OnUse" target="UseTarget, Limb" duration="10">
+      <StatusEffect type="OnUse" target="This" Condition="-50.0" disabledeltatime="true" />
+      <StatusEffect type="OnFailure" target="This" Condition="-50.0" disabledeltatime="true" />
+      <StatusEffect statuseffectstags="medical" type="OnUse" target="UseTarget, Limb" duration="20">
         <Sound file="Content/Items/Medical/Syringe.ogg" type="OnUse" range="500" />
         <Sound file="Content/Items/Medical/Syringe.ogg" type="OnUse" range="500" />
-        <Conditional spacerabies="lt 90.0" />
-        <ReduceAffliction identifier="spacerabies" amount="5" />
+        <!-- While player has less than 550 of space rabies(out of max of 600) he can be cured -->
+        <Conditional spacerabies="lt 550" />
+        <ReduceAffliction identifier="spacerabies" amount="15" />
         <Affliction identifier="spacerabiesresistance" amount="10" />
+        <!-- HERE GO SPACE RABIES RESISTANCE. IT NEEDS REWORK -->
       </StatusEffect>
-      <StatusEffect statuseffectstags="medical" type="OnFailure" target="UseTarget" duration="10">
+      <StatusEffect statuseffectstags="medical" type="OnFailure" target="UseTarget" duration="20">
         <Sound file="Content/Items/Medical/Syringe.ogg" type="OnUse" range="500" />
         <Sound file="Content/Items/Medical/Syringe.ogg" type="OnUse" range="500" />
-        <ReduceAffliction identifier="spacerabies" amount="2.5" />
-        <Affliction identifier="spacerabiesresistance" amount="50" />
+        <!-- While player has less than 550 of space rabies(out of max of 600) he can be cured -->
+        <Conditional spacerabies="lt 550" />
+        <ReduceAffliction identifier="spacerabies" amount="7.5" />
+        <!-- HERE GO SPACE RABIES RESISTANCE. IT NEEDS REWORK -->
       </StatusEffect>
       <!-- Remove the item when fully used -->
       <StatusEffect type="OnBroken" target="This">
@@ -304,7 +308,7 @@
       </StatusEffect>
     </MeleeWeapon>
   </RabiesVaccine>
-  <!-- Vitamin solution -->
+  <!-- Vitamin solution: A huge pack which gives long term passive regeneration. Lasts for ~2 minutes -->
   <VitaminSolution name="" identifier="vitaminsoulution" category="Medical" Tags="smallitem,medical" maxstacksize="8" maxstacksizecharacterinventory="2" cargocontaineridentifier="mediccrate" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="medcab" minamount="0" maxamount="1" />
     <PreferredContainer primary="wreckmedcab" minamount="0" maxamount="1" spawnprobability="0.15" />
@@ -341,10 +345,11 @@
     <SuitableTreatment type="bloodloss" amount="200" />
     <SuitableTreatment type="oxygenlow" amount="75" />
     <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="5,0" handle1="-5,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
-      <RequiredSkill identifier="medical" level="60" />
+      <!-- Need high skill medic for execution or effects are bad -> medic skill: 64 -->
+      <RequiredSkill identifier="medical" level="64" />
       <StatusEffect type="OnUse" target="This" Condition="-100" disabledeltatime="true" />
       <StatusEffect type="OnFailure" target="This" Condition="-100" disabledeltatime="true" />
-      <!-- General healing -->
+      <!-- Regeneration for 2 minutes -->
       <StatusEffect statuseffectstags="medical" type="OnUse" target="UseTarget" duration="120">
         <Sound file="Content/Items/Medical/Syringe.ogg" type="OnUse" range="500" />
         <ReduceAffliction type="damage" amount="0.83" />
@@ -360,6 +365,7 @@
         <ReduceAffliction identifier="opiatewithdrawal" amount="0.83" />
         <ReduceAffliction type="psyshockresistance" amount="0.35" />
       </StatusEffect>
+      <!-- Halfs all of healing -->
       <StatusEffect statuseffectstags="medical" type="OnFailure" target="UseTarget" duration="120">
         <Sound file="Content/Items/Medical/Syringe.ogg" type="OnUse" range="500" />
         <ReduceAffliction type="damage" amount="0.25" />
@@ -372,7 +378,7 @@
         <ReduceAffliction identifier="opiatewithdrawal" amount="0.5" />
         <ReduceAffliction type="psyshockresistance" amount="0.5" />
       </StatusEffect>
-      <!-- Separate oxygen low healing -->
+      <!-- Separate oxygen low healing. Lasts 30 seconds!! -->
       <StatusEffect statuseffectstags="medical" type="OnUse" target="UseTarget" duration="30">
         <Affliction identifier="oxygenlow" amount="-3.5" />
       </StatusEffect>
@@ -385,7 +391,7 @@
       </StatusEffect>
     </MeleeWeapon>
   </VitaminSolution>
-  <!-- Donor Blood Pack -->
+  <!-- Donor Blood Pack: Cheap alternative to bloodpack. Should be better than saline, worse than bloodpack-->
   <DonorBloodPack name="" identifier="donorbloodpack" category="Medical" Tags="smallitem,medical" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="mediccrate" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="medcab" minamount="0" maxamount="2" />
     <PreferredContainer primary="wreckmedcab" minamount="0" maxamount="2" spawnprobability="0.25" />
@@ -422,13 +428,11 @@
         <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
         <ReduceAffliction identifier="bloodloss" amount="3.25" />
       </StatusEffect>
-      <StatusEffect statuseffectstags="medical" type="OnUse" target="UseTarget">
-        <Affliction identifier="bloodpoisoning" strength="1" probability="0.0001" />
-      </StatusEffect>
       <StatusEffect statuseffectstags="medical" type="OnFailure" target="UseTarget" duration="20">
         <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
         <ReduceAffliction identifier="bloodloss" amount="1.625" />
       </StatusEffect>
+      <!-- By failure there a small chance to get blood poisoning! -->
       <StatusEffect statuseffectstags="medical" type="OnFailure" target="UseTarget">
         <Affliction identifier="bloodpoisoning" strength="1" probability="0.0005" />
       </StatusEffect>
@@ -438,6 +442,7 @@
       </StatusEffect>
     </Holdable>
   </DonorBloodPack>
+  <!-- STOPPED WORKING ITEMS HERE (11:45, 17.12.25) -->
   <!-- Compression bandage -->
   <CompressionBandage name="" identifier="compressionbandage" category="Medical" tags="smallitem,medical" maxstacksize="24" maxstacksizecharacterinventory="6" cargocontaineridentifier="mediccrate" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_soft" RequireAimToUse="true">
     <PreferredContainer secondary="supplycab" minamount="1" maxamount="2" spawnprobability="0.5" notcampaign="true" />
