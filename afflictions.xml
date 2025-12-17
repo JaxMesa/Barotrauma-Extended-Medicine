@@ -278,12 +278,11 @@
     <!-- Fourth stage: Player blackouts(replaced by stun)-->
     <Effect minstrength="290" maxstrength="300" strengthchange="-1">
       <PeriodicEffect mininterval="30" maxinterval="60">
-      <StatusEffect target="Character" SpeedMultiplier="0.4" setvalue="true"/>
+        <StatusEffect target="Character" SpeedMultiplier="0.4" setvalue="true"/>
         <Affliction identifier="stun" strength="2.5" selectionmode="Random" />
         <Affliction identifier="stun" strength="5" />
         <Affliction identifier="stun" strength="10" />
-      </StatusEffect>
-    </PeriodicEffect>
+      </PeriodicEffect>
     </Effect>
     <icon texture="%ModDir%/icons/charConcussion.png" sourcerect="0,0,128,128" color="255,100,100,255" origin="0,0" />
   </Affliction>
