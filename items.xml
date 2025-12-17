@@ -230,22 +230,20 @@
     <Sprite texture="%ModDir%/sprites/syringeDNA.png" sourcerect="0,0,64,64" depth="0.6" />
     <Body width="60" height="20" density="20" />
     <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="5,0" handle1="-5,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
-      <RequiredSkill identifier="medical" level="50" />
+      <RequiredSkill identifier="medical" level="72" />
       <StatusEffect type="OnUse" target="This" Condition="-25.0" disabledeltatime="true" />
       <StatusEffect type="OnFailure" target="This" Condition="-50.0" disabledeltatime="true" />
-      <StatusEffect statuseffectstags="medical" type="OnUse" target="UseTarget" duration="25">
+      <StatusEffect statuseffectstags="medical" type="OnUse" target="UseTarget" duration="30">
         <Sound file="Content/Items/Medical/Syringe.ogg" type="OnUse" range="500" />
         <Sound file="Content/Items/Medical/Syringe.ogg" type="OnUse" range="500" />
-        <ReduceAffliction identifier="cancer" amount="1" />
+        <ReduceAffliction identifier="cancer" amount="10" />
         <ReduceAffliction identifier="radiationsickness" amount="1" />
-        <Affliction identifier="internaldamage" amount="0.25" />
       </StatusEffect>
-      <StatusEffect statuseffectstags="medical" type="OnFailure" target="UseTarget" duration="25">
+      <StatusEffect statuseffectstags="medical" type="OnFailure" target="UseTarget" duration="30">
         <Sound file="Content/Items/Medical/Syringe.ogg" type="OnUse" range="500" />
         <Sound file="Content/Items/Medical/Syringe.ogg" type="OnUse" range="500" />
-        <ReduceAffliction identifier="cancer" amount="0.5" />
+        <ReduceAffliction identifier="cancer" amount="5" />
         <ReduceAffliction identifier="radiationsickness" amount="0.75" />
-        <Affliction identifier="internaldamage" amount="1" />
       </StatusEffect>
       <!-- Remove the item when fully used -->
       <StatusEffect type="OnBroken" target="This">
@@ -464,7 +462,7 @@
       <RequiredItem identifier="antibleeding1" />
     </Deconstruct>
     <SuitableTreatment identifier="severeinjury" suitability="10" />
-    <SuitableTreatment identifier="bleeding" suitability="10" />
+    <SuitableTreatment identifier="severebleeding" suitability="10" />
     <InventoryIcon texture="%ModDir%/icons/betterBandage.png" sourcerect="0,0,64,64" />
     <Sprite texture="%ModDir%/sprites/betterBandage.png" sourcerect="0,0,64,64" depth="0.6" />
     <Body width="60" height="20" density="20" />
@@ -476,11 +474,13 @@
         <Sound file="Content/Items/Medical/Bandage1.ogg" type="OnUse" range="500" />
         <Sound file="Content/Items/Medical/Bandage2.ogg" type="OnUse" range="500" />
         <ReduceAffliction identifier="severeinjury" amount="1" />
+        <ReduceAffliction identifier="severebleeding" amount="1" />
       </StatusEffect>
       <StatusEffect statuseffectstags="medical" type="OnFailure" target="This, Limb" duration="5">
         <Sound file="Content/Items/Medical/Bandage2.ogg" type="OnUse" range="500" />
         <Sound file="Content/Items/Medical/Bandage1.ogg" type="OnUse" range="500" />
         <ReduceAffliction identifier="severeinjury" amount="0.5" />
+        <ReduceAffliction identifier="severebleeding" amount="1" />
       </StatusEffect>
       <!-- Remove the item when fully used -->
       <StatusEffect type="OnBroken" target="This">
