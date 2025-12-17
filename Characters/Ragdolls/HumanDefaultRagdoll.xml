@@ -1,4 +1,8 @@
-﻿<Ragdoll type="Human" Texture="Content/Characters/Human/Human_[GENDER].png" Color="255,255,255,255" SpritesheetOrientation="180" LimbScale="0.5" JointScale="0.5" TextureScale="1" ColliderHeightFromFloor="140" ImpactTolerance="7.5" CanEnterSubmarine="True" CanWalk="True" Draggable="True" MainLimb="Torso">
+﻿<!-- Changed parts: Torso(0), Head(1), Arms(2,4) and Legs(7,10) -->
+<!-- No idea why I need to copy-paste entire human character folder with all
+sounds and .png files in order to just add/change minor modifier.
+If anyone can  fix it, please help with it. Thanks. (JaxMesa; 17.12.25)-->
+<Ragdoll type="Human" Texture="Content/Characters/Human/Human_[GENDER].png" Color="255,255,255,255" SpritesheetOrientation="180" LimbScale="0.5" JointScale="0.5" TextureScale="1" ColliderHeightFromFloor="140" ImpactTolerance="7.5" CanEnterSubmarine="True" CanWalk="True" Draggable="True" MainLimb="Torso">
   <collider Name="Main Collider" Radius="30" Height="110" Width="0" />
   <collider Name="Secondary Collider" Radius="30" Height="80" Width="0" />
   <limb Name="Torso (0)" ID="0" Type="Torso" Notes="" Scale="1" Flip="True" MirrorVertically="False" MirrorHorizontally="False" Hide="False" SpriteOrientation="NaN" InheritLimbDepth="None" SteerForce="0" Radius="30" Height="70" Width="0" Density="10" IgnoreCollisions="False" AngularDamping="7" AttackPriority="1" PullPos="0,0" StepOffset="0,0" RefJoint="-1" MouthPos="0,0" ConstantTorque="0" ConstantAngle="0" AttackForceMultiplier="1" MinSeveranceDamage="1" CanBeSeveredAlive="True" SeveredFadeOutTime="60" ApplyTailAngle="False" SineFrequencyMultiplier="1" SineAmplitudeMultiplier="1" BlinkFrequency="0" BlinkDurationIn="0.2" BlinkDurationOut="0.5" BlinkHoldTime="0" BlinkRotationIn="0" BlinkRotationOut="45" BlinkForce="50" OnlyBlinkInWater="False" BlinkTransitionIn="Linear" BlinkTransitionOut="Linear" HealthIndex="1" Friction="0.3" Restitution="0.05">
@@ -7,16 +11,27 @@
     <damagedsprite texture="Content/Characters/Human/Human_damageoverlay.png" sourcerect="160,0,112,192"/>
     <damagemodifier DamageSound="" DamageParticle="" DamageMultiplier="0.5" ProbabilityMultiplier="1" ArmorSector="0,360" DeflectProjectiles="False" AfflictionIdentifiers="gunshotwound,lacerations,blunttrauma" AfflictionTypes="" />
     <damagemodifier DamageSound="" DamageParticle="" DamageMultiplier="0.75" ProbabilityMultiplier="1" ArmorSector="0,360" DeflectProjectiles="False" AfflictionIdentifiers="bleeding,bitewounds" AfflictionTypes="" />
+    <!-- Severe bleeding triggers by lacerations, gunshot, bites and explosives with 20% by at least 5 damage of these types already -->
     <StatusEffect type="OnDamaged" target="This">
-      <RequiredAffliction identifier="lacerations,gunshotwound,bitewounds,deepdamage" minstrength="1" />
-      <Affliction identifier="severebleeding" amount="2.5" probability="0.20" />
-      <Affliction identifier="spacerabies" amount="1" probability="0.0001"/>
+      <RequiredAffliction identifier="lacerations,gunshotwound,bitewounds,deepdamage" minstrength="5" />
+      <Affliction identifier="severebleeding" amount="5" probability="0.20" />
     </StatusEffect>
+    <!-- Severe injury triggers by blunttrauma, gunshot, bites, burn and explosives with 30% by at least 5 damage of these types already -->
     <StatusEffect type="OnDamaged" target="This">
-      <RequiredAffliction identifier="blunttrauma,gunshotwound,bitewounds,burn,deepdamage" minstrength="1" />
-      <Affliction identifier="severeinjury" amount="2.5" probability="0.30" />
-      <Affliction identifier="flu" amount="1" probability="0.001"/>
+      <RequiredAffliction identifier="blunttrauma,gunshotwound,bitewounds,burn,deepdamage" minstrength="5" />
+      <Affliction identifier="severeinjury" amount="5" probability="0.30" />
     </StatusEffect>
+    <!-- Spacerabies triggers by bites with 5% when characters has at least 20 bites already -->
+    <StatusEffect type="OnDamaged" target="This">
+      <RequiredAffliction identifier="bitewounds" minstrength="20" />
+      <Affliction identifier="spacerabies" amount="1" probability="0.05"/>
+    </StatusEffect>
+    <!-- Flu MAY trigger every 30 to 60 secs while in water with a chance of 5%-->
+    <PeriodicEffect mininterval="30" maxinterval="60">
+      <StatusEffect type="InWater" target="This">
+        <Affliction identifier="flu" amount="1" probability="0.05"/>
+      </StatusEffect>
+    </PeriodicEffect>
   </limb>
   <limb Name="Head (1)" ID="1" Type="Head" Notes="" Scale="0.5" Flip="True" MirrorVertically="False" MirrorHorizontally="False" Hide="False" SpriteOrientation="0" InheritLimbDepth="None" SteerForce="0" Radius="45" Height="0" Width="0" Density="10" IgnoreCollisions="False" AngularDamping="7" AttackPriority="1" PullPos="0,0" StepOffset="0,0" RefJoint="-1" MouthPos="0,0" ConstantTorque="0" ConstantAngle="0" AttackForceMultiplier="1" MinSeveranceDamage="1" CanBeSeveredAlive="True" SeveredFadeOutTime="60" ApplyTailAngle="False" SineFrequencyMultiplier="1" SineAmplitudeMultiplier="1" BlinkFrequency="0" BlinkDurationIn="0.2" BlinkDurationOut="0.5" BlinkHoldTime="0" BlinkRotationIn="0" BlinkRotationOut="45" BlinkForce="50" OnlyBlinkInWater="False" BlinkTransitionIn="Linear" BlinkTransitionOut="Linear" HealthIndex="0" Friction="0.3" Restitution="0.05">
     <sprite SourceRect="0,0,128,128" Origin="0.5,0.5" Depth="0.05" Texture="Content/Characters/Human/Human_[GENDER]_heads.png" IgnoreTint="False" Color="255,255,255,255" DeadColor="255,255,255,255" DeadColorTime="0" />
@@ -29,15 +44,20 @@
       <RequiredAffliction identifier="internaldamage,blunttrauma,bitewounds,explosiondamage,lacerations" minstrength="5" />
       <Affliction identifier="concussion" strength="10" probability="0.25" />
     </StatusEffect>
+    <!-- Severe bleeding triggers by lacerations, gunshot, bites and explosives with 20% by at least 5 damage of these types already -->
     <StatusEffect type="OnDamaged" target="This">
-      <RequiredAffliction identifier="lacerations,gunshotwound,bitewounds,deepdamage" minstrength="1" />
-      <Affliction identifier="severebleeding" amount="2.5" probability="0.20" />
-      <Affliction identifier="spacerabies" amount="1" probability="0.001"/>
+      <RequiredAffliction identifier="lacerations,gunshotwound,bitewounds,deepdamage" minstrength="5" />
+      <Affliction identifier="severebleeding" amount="5" probability="0.20" />
     </StatusEffect>
+    <!-- Severe injury triggers by blunttrauma, gunshot, bites, burn and explosives with 30% by at least 5 damage of these types already -->
     <StatusEffect type="OnDamaged" target="This">
-      <RequiredAffliction identifier="blunttrauma,gunshotwound,bitewounds,burn,deepdamage" minstrength="1" />
-      <Affliction identifier="severeinjury" amount="2.5" probability="0.30" />
-      <Affliction identifier="flu" amount="1" probability="0.001"/>
+      <RequiredAffliction identifier="blunttrauma,gunshotwound,bitewounds,burn,deepdamage" minstrength="5" />
+      <Affliction identifier="severeinjury" amount="5" probability="0.30" />
+    </StatusEffect>
+    <!-- Spacerabies triggers by bites with 5% when characters has at least 20 bites already -->
+    <StatusEffect type="OnDamaged" target="This">
+      <RequiredAffliction identifier="bitewounds" minstrength="20" />
+      <Affliction identifier="spacerabies" amount="1" probability="0.05"/>
     </StatusEffect>
   </limb>
   <limb Name="RightArm (2)" ID="2" Type="RightArm" Notes="" Scale="1" Flip="True" MirrorVertically="False" MirrorHorizontally="False" Hide="False" SpriteOrientation="NaN" InheritLimbDepth="None" SteerForce="0" height="77" Width="30" Density="12" IgnoreCollisions="False" AngularDamping="50" AttackPriority="1" PullPos="0,0" StepOffset="0,0" RefJoint="-1" MouthPos="0,0" ConstantTorque="0" ConstantAngle="0" AttackForceMultiplier="1" MinSeveranceDamage="1" CanBeSeveredAlive="True" SeveredFadeOutTime="60" ApplyTailAngle="False" SineFrequencyMultiplier="1" SineAmplitudeMultiplier="1" BlinkFrequency="0" BlinkDurationIn="0.2" BlinkDurationOut="0.5" BlinkHoldTime="0" BlinkRotationIn="0" BlinkRotationOut="45" BlinkForce="50" OnlyBlinkInWater="False" BlinkTransitionIn="Linear" BlinkTransitionOut="Linear" HealthIndex="3" Friction="0.3" Restitution="0.05">
@@ -46,15 +66,20 @@
     <damagedsprite texture="Content/Characters/Human/Human_damageoverlay.png" sourcerect="272,0,64,96"/>
     <damagemodifier DamageSound="" DamageParticle="" DamageMultiplier="0.5" ProbabilityMultiplier="1" ArmorSector="0,360" DeflectProjectiles="False" AfflictionIdentifiers="gunshotwound,lacerations,blunttrauma" AfflictionTypes="" />
     <damagemodifier DamageSound="" DamageParticle="" DamageMultiplier="0.75" ProbabilityMultiplier="1" ArmorSector="0,360" DeflectProjectiles="False" AfflictionIdentifiers="bleeding,bitewounds" AfflictionTypes="" />
+    <!-- Severe bleeding triggers by lacerations, gunshot, bites and explosives with 20% by at least 5 damage of these types already -->
     <StatusEffect type="OnDamaged" target="This">
-      <RequiredAffliction identifier="lacerations,gunshotwound,bitewounds,deepdamage" minstrength="1" />
-      <Affliction identifier="severebleeding" amount="2.5" probability="0.20" />
-      <Affliction identifier="spacerabies" amount="1" probability="0.0001"/>
+      <RequiredAffliction identifier="lacerations,gunshotwound,bitewounds,deepdamage" minstrength="5" />
+      <Affliction identifier="severebleeding" amount="5" probability="0.20" />
     </StatusEffect>
+    <!-- Severe injury triggers by blunttrauma, gunshot, bites, burn and explosives with 30% by at least 5 damage of these types already -->
     <StatusEffect type="OnDamaged" target="This">
-      <RequiredAffliction identifier="blunttrauma,gunshotwound,bitewounds,burn,deepdamage" minstrength="1" />
-      <Affliction identifier="severeinjury" amount="2.5" probability="0.30" />
-      <Affliction identifier="flu" amount="1" probability="0.001"/>
+      <RequiredAffliction identifier="blunttrauma,gunshotwound,bitewounds,burn,deepdamage" minstrength="5" />
+      <Affliction identifier="severeinjury" amount="5" probability="0.30" />
+    </StatusEffect>
+    <!-- Spacerabies triggers by bites with 5% when characters has at least 20 bites already -->
+    <StatusEffect type="OnDamaged" target="This">
+      <RequiredAffliction identifier="bitewounds" minstrength="20" />
+      <Affliction identifier="spacerabies" amount="1" probability="0.05"/>
     </StatusEffect>
   </limb>
   <limb Name="RightHand (3)" ID="3" Type="RightHand" Notes="" Scale="1" Flip="True" MirrorVertically="False" MirrorHorizontally="False" Hide="False" SpriteOrientation="NaN" InheritLimbDepth="None" SteerForce="0" Height="40" Width="26" Density="12" IgnoreCollisions="False" AngularDamping="50" AttackPriority="1" PullPos="0,0" StepOffset="0,0" RefJoint="-1" MouthPos="0,0" ConstantTorque="0" ConstantAngle="0" AttackForceMultiplier="1" MinSeveranceDamage="1" CanBeSeveredAlive="True" SeveredFadeOutTime="60" ApplyTailAngle="False" SineFrequencyMultiplier="1" SineAmplitudeMultiplier="1" BlinkFrequency="0" BlinkDurationIn="0.2" BlinkDurationOut="0.5" BlinkHoldTime="0" BlinkRotationIn="0" BlinkRotationOut="45" BlinkForce="50" OnlyBlinkInWater="False" BlinkTransitionIn="Linear" BlinkTransitionOut="Linear" HealthIndex="3" Friction="0.3" Restitution="0.05">
@@ -70,15 +95,20 @@
     <damagedsprite texture="Content/Characters/Human/Human_damageoverlay.png" sourcerect="336,0,64,96"/>
     <damagemodifier DamageSound="" DamageParticle="" DamageMultiplier="0.5" ProbabilityMultiplier="1" ArmorSector="0,360" DeflectProjectiles="False" AfflictionIdentifiers="gunshotwound,lacerations,blunttrauma" AfflictionTypes="" />
     <damagemodifier DamageSound="" DamageParticle="" DamageMultiplier="0.75" ProbabilityMultiplier="1" ArmorSector="0,360" DeflectProjectiles="False" AfflictionIdentifiers="bleeding,bitewounds" AfflictionTypes="" />
+    <!-- Severe bleeding triggers by lacerations, gunshot, bites and explosives with 20% by at least 5 damage of these types already -->
     <StatusEffect type="OnDamaged" target="This">
-      <RequiredAffliction identifier="lacerations,gunshotwound,bitewounds,deepdamage" minstrength="1" />
-      <Affliction identifier="severebleeding" amount="2.5" probability="0.20" />
-      <Affliction identifier="spacerabies" amount="1" probability="0.0001"/>
+      <RequiredAffliction identifier="lacerations,gunshotwound,bitewounds,deepdamage" minstrength="5" />
+      <Affliction identifier="severebleeding" amount="5" probability="0.20" />
     </StatusEffect>
+    <!-- Severe injury triggers by blunttrauma, gunshot, bites, burn and explosives with 30% by at least 5 damage of these types already -->
     <StatusEffect type="OnDamaged" target="This">
-      <RequiredAffliction identifier="blunttrauma,gunshotwound,bitewounds,burn,deepdamage" minstrength="1" />
-      <Affliction identifier="severeinjury" amount="2.5" probability="0.30" />
-      <Affliction identifier="flu" amount="1" probability="0.001"/>
+      <RequiredAffliction identifier="blunttrauma,gunshotwound,bitewounds,burn,deepdamage" minstrength="5" />
+      <Affliction identifier="severeinjury" amount="5" probability="0.30" />
+    </StatusEffect>
+    <!-- Spacerabies triggers by bites with 5% when characters has at least 20 bites already -->
+    <StatusEffect type="OnDamaged" target="This">
+      <RequiredAffliction identifier="bitewounds" minstrength="20" />
+      <Affliction identifier="spacerabies" amount="1" probability="0.05"/>
     </StatusEffect>
   </limb>
   <limb Name="LeftHand (5)" ID="5" Type="LeftHand" Notes="" Scale="1" Flip="True" MirrorVertically="False" MirrorHorizontally="False" Hide="False" SpriteOrientation="NaN" InheritLimbDepth="None" SteerForce="0" Height="40" Width="26" Density="12" IgnoreCollisions="False" AngularDamping="50" AttackPriority="1" PullPos="0,0" StepOffset="0,0" RefJoint="-1" MouthPos="0,0" ConstantTorque="0" ConstantAngle="0" AttackForceMultiplier="1" MinSeveranceDamage="1" CanBeSeveredAlive="True" SeveredFadeOutTime="60" ApplyTailAngle="False" SineFrequencyMultiplier="1" SineAmplitudeMultiplier="1" BlinkFrequency="0" BlinkDurationIn="0.2" BlinkDurationOut="0.5" BlinkHoldTime="0" BlinkRotationIn="0" BlinkRotationOut="45" BlinkForce="50" OnlyBlinkInWater="False" BlinkTransitionIn="Linear" BlinkTransitionOut="Linear" HealthIndex="2" Friction="0.3" Restitution="0.05">
@@ -94,16 +124,6 @@
     <damagedsprite texture="Content/Characters/Human/Human_damageoverlay.png" sourcerect="80,0,80,128"/>
     <damagemodifier DamageSound="" DamageParticle="" DamageMultiplier="0.5" ProbabilityMultiplier="1" ArmorSector="0,360" DeflectProjectiles="False" AfflictionIdentifiers="gunshotwound,lacerations,blunttrauma" AfflictionTypes="" />
     <damagemodifier DamageSound="" DamageParticle="" DamageMultiplier="0.75" ProbabilityMultiplier="1" ArmorSector="0,360" DeflectProjectiles="False" AfflictionIdentifiers="bleeding,bitewounds" AfflictionTypes="" />
-    <StatusEffect type="OnDamaged" target="This">
-      <RequiredAffliction identifier="lacerations,gunshotwound,bitewounds,deepdamage" minstrength="1" />
-      <Affliction identifier="severebleeding" amount="2.5" probability="0.20" />
-      <Affliction identifier="spacerabies" amount="1" probability="0.0001"/>
-    </StatusEffect>
-    <StatusEffect type="OnDamaged" target="This">
-      <RequiredAffliction identifier="blunttrauma,gunshotwound,bitewounds,burn,deepdamage" minstrength="1" />
-      <Affliction identifier="severeinjury" amount="2.5" probability="0.30" />
-      <Affliction identifier="flu" amount="1" probability="0.001"/>
-    </StatusEffect>
   </limb>
   <limb Name="LeftLeg (7)" ID="7" Type="LeftLeg" Notes="" Scale="1" Flip="True" MirrorVertically="False" MirrorHorizontally="False" Hide="False" SpriteOrientation="NaN" InheritLimbDepth="None" SteerForce="0" Height="73" Width="30" Density="12" IgnoreCollisions="False" AngularDamping="7" AttackPriority="1" PullPos="0,0" StepOffset="0,0" RefJoint="-1" MouthPos="0,0" ConstantTorque="0" ConstantAngle="0" AttackForceMultiplier="1" MinSeveranceDamage="1" CanBeSeveredAlive="True" SeveredFadeOutTime="60" ApplyTailAngle="False" SineFrequencyMultiplier="1" SineAmplitudeMultiplier="1" BlinkFrequency="0" BlinkDurationIn="0.2" BlinkDurationOut="0.5" BlinkHoldTime="0" BlinkRotationIn="0" BlinkRotationOut="45" BlinkForce="50" OnlyBlinkInWater="False" BlinkTransitionIn="Linear" BlinkTransitionOut="Linear" HealthIndex="4" Friction="0.3" Restitution="0.05">
     <sprite SourceRect="80,128,80,128" Origin="0.5,0.5" Depth="0.131" Texture="" IgnoreTint="False" Color="255,255,255,255" DeadColor="255,255,255,255" DeadColorTime="0" />
@@ -111,6 +131,21 @@
     <damagedsprite texture="Content/Characters/Human/Human_damageoverlay.png" sourcerect="80,128,80,128"/>
     <damagemodifier DamageSound="" DamageParticle="" DamageMultiplier="0.5" ProbabilityMultiplier="1" ArmorSector="0,360" DeflectProjectiles="False" AfflictionIdentifiers="gunshotwound,lacerations,blunttrauma" AfflictionTypes="" />
     <damagemodifier DamageSound="" DamageParticle="" DamageMultiplier="0.75" ProbabilityMultiplier="1" ArmorSector="0,360" DeflectProjectiles="False" AfflictionIdentifiers="bleeding,bitewounds" AfflictionTypes="" />
+    <!-- Severe bleeding triggers by lacerations, gunshot, bites and explosives with 20% by at least 5 damage of these types already -->
+    <StatusEffect type="OnDamaged" target="This">
+      <RequiredAffliction identifier="lacerations,gunshotwound,bitewounds,deepdamage" minstrength="5" />
+      <Affliction identifier="severebleeding" amount="5" probability="0.20" />
+    </StatusEffect>
+    <!-- Severe injury triggers by blunttrauma, gunshot, bites, burn and explosives with 30% by at least 5 damage of these types already -->
+    <StatusEffect type="OnDamaged" target="This">
+      <RequiredAffliction identifier="blunttrauma,gunshotwound,bitewounds,burn,deepdamage" minstrength="5" />
+      <Affliction identifier="severeinjury" amount="5" probability="0.30" />
+    </StatusEffect>
+    <!-- Spacerabies triggers by bites with 5% when characters has at least 20 bites already -->
+    <StatusEffect type="OnDamaged" target="This">
+      <RequiredAffliction identifier="bitewounds" minstrength="20" />
+      <Affliction identifier="spacerabies" amount="1" probability="0.05"/>
+    </StatusEffect>
   </limb>
   <limb Name="LeftFoot (8)" ID="8" Type="LeftFoot" Notes="" Scale="1" Flip="True" MirrorVertically="False" MirrorHorizontally="False" Hide="False" SpriteOrientation="90" InheritLimbDepth="None" SteerForce="0" Radius="12" Height="0" Width="32" Density="10" IgnoreCollisions="False" AngularDamping="7" AttackPriority="1" PullPos="-2.8043144,-11.4667225" StepOffset="0,0" RefJoint="-1" MouthPos="0,0" ConstantTorque="0" ConstantAngle="0" AttackForceMultiplier="1" MinSeveranceDamage="1" CanBeSeveredAlive="True" SeveredFadeOutTime="60" ApplyTailAngle="False" SineFrequencyMultiplier="1" SineAmplitudeMultiplier="1" BlinkFrequency="0" BlinkDurationIn="0.2" BlinkDurationOut="0.5" BlinkHoldTime="0" BlinkRotationIn="0" BlinkRotationOut="45" BlinkForce="50" OnlyBlinkInWater="False" BlinkTransitionIn="Linear" BlinkTransitionOut="Linear" HealthIndex="4" Friction="0.3" Restitution="0.05">
     <sprite SourceRect="336,208,64,48" Origin="0.48,0.55" Depth="0.132" Texture="" IgnoreTint="False" Color="255,255,255,255" DeadColor="255,255,255,255" DeadColorTime="0" />
@@ -126,16 +161,6 @@
     <damagedsprite texture="Content/Characters/Human/Human_damageoverlay.png" sourcerect="0,0,80,128"/>
     <damagemodifier DamageSound="" DamageParticle="" DamageMultiplier="0.5" ProbabilityMultiplier="1" ArmorSector="0,360" DeflectProjectiles="False" AfflictionIdentifiers="gunshotwound,lacerations,blunttrauma" AfflictionTypes="" />
     <damagemodifier DamageSound="" DamageParticle="" DamageMultiplier="0.75" ProbabilityMultiplier="1" ArmorSector="0,360" DeflectProjectiles="False" AfflictionIdentifiers="bleeding,bitewounds" AfflictionTypes="" />
-    <StatusEffect type="OnDamaged" target="This">
-      <RequiredAffliction identifier="lacerations,gunshotwound,bitewounds,deepdamage" minstrength="1" />
-      <Affliction identifier="severebleeding" amount="2.5" probability="0.20" />
-      <Affliction identifier="spacerabies" amount="1" probability="0.0001"/>
-    </StatusEffect>
-    <StatusEffect type="OnDamaged" target="This">
-      <RequiredAffliction identifier="blunttrauma,gunshotwound,bitewounds,burn,deepdamage" minstrength="1" />
-      <Affliction identifier="severeinjury" amount="2.5" probability="0.30" />
-      <Affliction identifier="flu" amount="1" probability="0.001"/>
-    </StatusEffect>
   </limb>
   <limb Name="RightLeg (10)" ID="10" Type="RightLeg" Notes="" Scale="1" Flip="True" MirrorVertically="False" MirrorHorizontally="False" Hide="False" SpriteOrientation="NaN" InheritLimbDepth="None" SteerForce="0" Height="73" Width="30" Density="12" IgnoreCollisions="False" AngularDamping="7" AttackPriority="1" PullPos="0,0" StepOffset="0,0" RefJoint="-1" MouthPos="0,0" ConstantTorque="0" ConstantAngle="0" AttackForceMultiplier="1" MinSeveranceDamage="1" CanBeSeveredAlive="True" SeveredFadeOutTime="60" ApplyTailAngle="False" SineFrequencyMultiplier="1" SineAmplitudeMultiplier="1" BlinkFrequency="0" BlinkDurationIn="0.2" BlinkDurationOut="0.5" BlinkHoldTime="0" BlinkRotationIn="0" BlinkRotationOut="45" BlinkForce="50" OnlyBlinkInWater="False" BlinkTransitionIn="Linear" BlinkTransitionOut="Linear" HealthIndex="5" Friction="0.3" Restitution="0.05">
     <sprite SourceRect="0,128,80,128" Origin="0.5,0.5" Depth="0.121" Texture="" IgnoreTint="False" Color="255,255,255,255" DeadColor="255,255,255,255" DeadColorTime="0" />
@@ -143,6 +168,21 @@
     <damagedsprite texture="Content/Characters/Human/Human_damageoverlay.png" sourcerect="0,128,80,128"/>
     <damagemodifier DamageSound="" DamageParticle="" DamageMultiplier="0.5" ProbabilityMultiplier="1" ArmorSector="0,360" DeflectProjectiles="False" AfflictionIdentifiers="gunshotwound,lacerations,blunttrauma" AfflictionTypes="" />
     <damagemodifier DamageSound="" DamageParticle="" DamageMultiplier="0.75" ProbabilityMultiplier="1" ArmorSector="0,360" DeflectProjectiles="False" AfflictionIdentifiers="bleeding,bitewounds" AfflictionTypes="" />
+    <!-- Severe bleeding triggers by lacerations, gunshot, bites and explosives with 20% by at least 5 damage of these types already -->
+    <StatusEffect type="OnDamaged" target="This">
+      <RequiredAffliction identifier="lacerations,gunshotwound,bitewounds,deepdamage" minstrength="5" />
+      <Affliction identifier="severebleeding" amount="5" probability="0.20" />
+    </StatusEffect>
+    <!-- Severe injury triggers by blunttrauma, gunshot, bites, burn and explosives with 30% by at least 5 damage of these types already -->
+    <StatusEffect type="OnDamaged" target="This">
+      <RequiredAffliction identifier="blunttrauma,gunshotwound,bitewounds,burn,deepdamage" minstrength="5" />
+      <Affliction identifier="severeinjury" amount="5" probability="0.30" />
+    </StatusEffect>
+    <!-- Spacerabies triggers by bites with 5% when characters has at least 20 bites already -->
+    <StatusEffect type="OnDamaged" target="This">
+      <RequiredAffliction identifier="bitewounds" minstrength="20" />
+      <Affliction identifier="spacerabies" amount="1" probability="0.05"/>
+    </StatusEffect>
   </limb>
   <limb Name="RightFoot (11)" ID="11" Type="RightFoot" Notes="" Scale="1" Flip="True" MirrorVertically="False" MirrorHorizontally="False" Hide="False" SpriteOrientation="90" InheritLimbDepth="None" SteerForce="0" Radius="12" Height="0" Width="32" Density="12" IgnoreCollisions="False" AngularDamping="7" AttackPriority="1" PullPos="-7.0750213,-11.173927" StepOffset="0,0" RefJoint="-1" MouthPos="0,0" ConstantTorque="0" ConstantAngle="0" AttackForceMultiplier="1" MinSeveranceDamage="1" CanBeSeveredAlive="True" SeveredFadeOutTime="60" ApplyTailAngle="False" SineFrequencyMultiplier="1" SineAmplitudeMultiplier="1" BlinkFrequency="0" BlinkDurationIn="0.2" BlinkDurationOut="0.5" BlinkHoldTime="0" BlinkRotationIn="0" BlinkRotationOut="45" BlinkForce="50" OnlyBlinkInWater="False" BlinkTransitionIn="Linear" BlinkTransitionOut="Linear" HealthIndex="5" Friction="0.3" Restitution="0.05">
     <sprite SourceRect="272,208,64,48" Origin="0.48,0.55" Depth="0.122" Texture="" IgnoreTint="False" Color="255,255,255,255" DeadColor="255,255,255,255" DeadColorTime="0" />

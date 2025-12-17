@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Medicine -->
+<!-- Medical Items and Medicine -->
 <Items>
-  <!-- Antibiotic Pills - Broad-spectrum antimicrobial agent; treats husk infections, regular flu, and reduces chemical addiction (Medical Item) -->
+  <!-- Antibiotic Pills: To threat flu mainly, also provides a bit of anti-husk effects -->
   <AntibioticPills name="" identifier="antibioticpills" category="Medical" tags="smallitem,medical,chem" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="mediccrate" description="" useinhealthinterface="true" scale="0.25" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="medcab" minamount="0" maxamount="2" />
     <PreferredContainer primary="wreckmedcab" minamount="0" maxamount="3" spawnprobability="0.5" />
@@ -32,7 +32,7 @@
     <Body width="60" height="20" density="20" />
     <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect">
       <!-- General healing -->
-      <RequiredSkill identifier="medical" level="20" />
+      <RequiredSkill identifier="medical" level="10" />
       <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
       <StatusEffect type="OnFailure" target="This" Condition="-100.0" disabledeltatime="true" />
       <StatusEffect type="OnUse" target="UseTarget" duration="90">

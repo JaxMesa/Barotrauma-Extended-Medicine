@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Afflictions -->
 <Afflictions>
-  <!-- Flu - Contagious disease spread by lacerations/burn wounds; causes fever and reduced movement (Triggers: Lacerations/Burn) -->
-  <Affliction name="" identifier="flu" description="" type="disease" limbspecific="false" indicatorlimb="Head" activationthreshold="1.0" showiconthreshold="100" showinhealthscannerthreshold="0" minstrength="0" maxstrength="200" healcostmultiplier="2" causeofdeathdescription="">
+  <!-- Flu: A trigger for fever on itself. Provides minor penalties at end. Caused by being in water(Need to check it, still does not work) -->
+  <Affliction name="" identifier="flu" description="" type="disease" limbspecific="false" indicatorlimb="Head" activationthreshold="1.0" showiconthreshold="100" showinhealthscannerthreshold="0" minstrength="0" maxstrength="300" healcostmultiplier="2" causeofdeathdescription="">
+    <!-- General developement of flu -->
     <Effect minstrength="0" maxstrength="100" strengthchange="+1">
-      <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true">
+      <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true"> <!-- Questionable multiplyafflictionsbymaxvitatility. Don't get what it does nor when I added it, need to check or remove.(JaxMesa; 17.12.2025) -->
         <Affliction identifier="fever" strength="1.25" />
       </StatusEffect>
     </Effect>
-    <Effect minstrength="100" maxstrength="200" strengthchange="+1">
+    <!-- If player has half of flu, it accelerates -> Need more pills or vanilla antibiotics -->
+    <Effect minstrength="100" maxstrength="200" strengthchange="+2">
       <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true">
         <Affliction identifier="fever" strength="1.5" />
+        <!-- Sometimes stuns player becaues fever getting dangerous (45 to 90 secs, stuns for 3 secs) -->
         <PeriodicEffect mininterval="45" maxinterval="90">
           <StatusEffect target="Character">
             <Affliction identifier="stun" strength="3"/>
@@ -18,7 +21,8 @@
         </PeriodicEffect>
       </StatusEffect>
     </Effect>
-    <PeriodicEffect mininterval="150" maxinterval="300">
+    <!-- Sometimes player coughs for male -->
+    <PeriodicEffect mininterval="120" maxinterval="300">
       <StatusEffect target="Character" comparison="and">
         <Conditional ishuman="true" />
         <Conditional ismale="true" />
@@ -28,7 +32,8 @@
         <Sound file="%ModDir%/sounds/Voice/male_cough4.ogg" />
       </StatusEffect>
     </PeriodicEffect>
-    <PeriodicEffect mininterval="150" maxinterval="300">
+    <!-- For female -->
+    <PeriodicEffect mininterval="120" maxinterval="300">
       <StatusEffect target="Character" comparison="and">
         <Conditional ishuman="true" />
         <Conditional isfemale="true" />
@@ -42,8 +47,9 @@
     </PeriodicEffect>
     <icon texture="%ModDir%/icons/charHeadDrop.png" color="215,165,0,255" origin="0,0" />
   </Affliction>
-  <!-- Fever - Symptom caused by flu; reduces speed and causes nausea/organ damage over time (Triggers: Flu) -->
+  <!-- Fever: Increases while affected by flu. Does not go away on itself -> Need vitamins. Is not fatal, just big debuffs at end. -->
   <Affliction name="" identifier="fever" description="" type="symptom" limbspecific="false" indicatorlimb="Torso" activationthreshold="1.0" showiconthreshold="60" showinhealthscannerthreshold="0" minstrength="0" maxstrength="100">
+    <!-- First stage: Minor debuffs -->
     <Effect minstrength="0" maxstrength="30" minscreenblur="0.1" maxscreenblur="0.2">
       <StatusEffect target="Character">
         <PeriodicEffect mininterval="30" maxinterval="60">
@@ -54,6 +60,7 @@
         </PeriodicEffect>
       </StatusEffect>
     </Effect>
+    <!-- Second stage: Moderate debuffs -->
     <Effect minstrength="30" maxstrength="60" minscreenblur="0.2" maxscreenblur="0.4">
       <StatusEffect target="Character">
         <Affliction identifier="nausea" strength="10" probability="0.01" />
@@ -65,6 +72,7 @@
         </PeriodicEffect>
       </StatusEffect>
     </Effect>
+    <!-- Third stage: Big debuffs + Pain gain -->
     <Effect minstrength="60" maxstrength="100" minscreenblur="0.4" maxscreenblur="0.6">
       <StatusEffect target="Character">
         <PeriodicEffect mininterval="30" maxinterval="60">
@@ -78,21 +86,28 @@
     </Effect>
     <icon texture="%ModDir%/icons/charFever.png" color="255,90,0,255" origin="0,0" />
   </Affliction>
-  <!-- Cancer - Internal malignancy from radiation exposure; causes vital loss and seizures at high strength (Triggers: Radiation Sickness) -->
+  <!-- Cancer: A long-term disease with debuffs and eventual death. Lasts for somewhat 20 minutes and can be accelerated by radiation sickness. -->
   <Affliction name="" identifier="cancer" description="" type="cancer" limbspecific="false" indicatorlimb="Torso" activationthreshold="1.0" showiconthreshold="300" showinhealthscannerthreshold="0" causeofdeathdescription="" minstrength="0" maxstrength="600" iconcolors="25,25,25,255;55,55,55,255;75,75,75,255" healcostmultiplier="10">
+    <!-- First stage: Minor debuffs, lasts for ~5 min -->
+    <!-- FATAL! Number wrong again, apparently. For fuck sake. -->
+    <!-- Maybe try replace debuffs with skill penalties later? Sounds good -->
     <Effect minstrength="0" maxstrength="150" minvitalitydecrease="0" maxvitalitydecrease="10" strengthchange="+0.5">
       <StatusEffect target="Character" SpeedMultiplier="1" setvalue="true" />
     </Effect>
+    <!-- Second stage: Moderate debuffs, lasts for ~5 min-->
     <Effect minstrength="150" maxstrength="300" minscreenblur="0" maxscreenblur="0.1" minvitalitydecrease="10" maxvitalitydecrease="25" strengthchange="+0.5">
       <StatusEffect target="Character" SpeedMultiplier="0.9" setvalue="true" />
     </Effect>
+    <!-- Third stage: Slow death, lasts for ~10 min-->
     <Effect minstrength="300" maxstrength="600" minscreenblur="0.1" maxscreenblur="0.2" minvitalitydecrease="25" maxvitalitydecrease="200" strengthchange="+0.5">
       <StatusEffect target="Character" SpeedMultiplier="0.8" setvalue="true" />
     </Effect>
+    <!-- Accelerates cancer developement if radiation sickness is more or greater than 10 -->
     <StatusEffect target="Character">
-        <Conditional radiationsickness="gt 10" />
+        <Conditional radiationsickness="gte 10" />
         <Affliction identifier="cancer" strengthchange="0.5" />
-      </StatusEffect>
+    </StatusEffect>
+    <!-- Choke sounds for male -->
     <PeriodicEffect mininterval="180" maxinterval="300">
       <StatusEffect target="Character" SpeedMultiplier="0.0" setvalue="true" duration="1.7" />
       <StatusEffect target="Character" comparison="and">
@@ -102,6 +117,7 @@
         <Sound file="Content/Sounds/HUMAN_chokeMale2.ogg" />
         <Sound file="Content/Sounds/HUMAN_chokeMale3.ogg" />
       </StatusEffect>
+      <!-- For female -->
       <StatusEffect target="Character" comparison="and">
         <Conditional ishuman="true" />
         <Conditional isfemale="true" />
@@ -109,11 +125,13 @@
         <Sound file="Content/Sounds/HUMAN_chokeFemale2.ogg" />
         <Sound file="Content/Sounds/HUMAN_chokeFemale3.ogg" />
       </StatusEffect>
+      <!-- Causes character to gain some damage -->
       <StatusEffect target="Character">
         <Affliction identifier="stun" strength="0.1" />
         <Affliction identifier="organdamage" strength="0.5" />
         <Affliction identifier="bloodloss" strength="2" />
       </StatusEffect>
+      <!-- Spill blood effect -->
       <StatusEffect target="Character" targetlimbs="Head" duration="1">
         <ParticleEmitter particle="blood" copyentityangle="true" anglemin="-10" anglemax="10" particlespersecond="50" velocitymin="50" velocitymax="200" scalemin="0.1" scalemax="0.2" />
         <Conditional HideFace="eq False" />
@@ -121,20 +139,24 @@
     </PeriodicEffect>
     <icon texture="%ModDir%/icons/charInnerDeadly.png" color="55,55,55,255" origin="0,0" />
   </Affliction>
-  <!-- Space Rabies - Transmissible infection from bite wounds; causes hyperactivity and reduced damage resistance (Triggers: Bite Wounds) -->
+  <!-- Space Rabies: Caused by bites only and if player already have 20 damage from bites. Is letal, but the more player has it, the stronger he becomes(damage resists, speed and regeneration) while affected by rabies. -->
   <Affliction name="" identifier="spacerabies" description="" type="rabies" minstrength="0" maxstrength="601" limbspecific="false" indicatorlimb="Torso" activationthreshold="1.0" showiconthreshold="80" showinhealthscannerthreshold="30" causeofdeathdescription="" iconcolors="60,140,195,255;60,107,195,255;60,0,195,255" healcostmultiplier="4.5">
+    <!-- First stage: Minor regeneration -->
     <Effect minstrength="0" maxstrength="150" strengthchange="+1">
       <StatusEffect target="Character" />
       <ReduceAffliction type="damage" strength="0.0625" />
     </Effect>
+    <!-- Second stage: Moderate regeneration -->
     <Effect minstrength="150" maxstrength="300" strengthchange="+1">
       <StatusEffect target="Character" />
       <ReduceAffliction type="damage" strength="0.125" />
     </Effect>
+    <!-- Third stage: Strong regeneration -->
     <Effect minstrength="300" maxstrength="450" mingrainstrength="0.0" maxgrainstrength="0.25" minscreenblur="0.0" maxscreenblur="0.1" strengthchange="+1">
       <StatusEffect target="Character" />
       <ReduceAffliction type="damage" strength="0.25" />
     </Effect>
+    <!-- Fourth stage: Very strong regeneration -->
     <Effect minstrength="450" maxstrength="600" mingrainstrength="0.25" maxgrainstrength="0.5" minscreenblur="0.1" maxscreenblur="0.2" strengthchange="+1">
       <StatusEffect target="Character" />
       <ReduceAffliction type="damage" strength="0.5" />
@@ -144,19 +166,22 @@
     <Effect minstrength="600" maxstrength="601" maxvitalitydecrease="1000" strengthchange="+1"></Effect>
     <icon texture="%ModDir%/icons/charCanines.png" color="60,107,195,255" origin="0,0" />
   </Affliction>
-  <!-- Psychotic Shock - Mental trauma effect from extreme psychosis; causes screen blur and vitality loss (Triggers: Psychosis, Blackout) -->
+  <!-- Psychotic Shock: Just a lethal addition to psychosis. Caused by blackout a bit and phychosis. Slowly kills. -->
   <Affliction name="" identifier="psyshock" description="" type="psyshock" limbspecific="false" indicatorlimb="Head" activationthreshold="1.0" showiconthreshold="180" showinhealthscannerthreshold="30" causeofdeathdescription="" minstrength="0" maxstrength="300">
     <Effect minstrength="0" maxstrength="300" minscreenblur="0.0" maxscreenblur="0.7" minvitalitydecrease="0" maxvitalitydecrease="200" strengthchange="-1"></Effect>
     <icon texture="%ModDir%/icons/charSilk.png" color="150,26,26,255" origin="0,0" />
   </Affliction>
-  <!-- Blood Poisoning - Toxic reaction from incompatible blood; causes stun and movement reduction (Triggers: Using of Donor Blood Pack) -->
+  <!-- Blood Poisoning: Caused by donor blood by a specific chance. Is just a lethal side effect. -->
   <Affliction name="" identifier="bloodpoisoning" description="" type="poison" limbspecific="false" indicatorlimb="Torso" activationthreshold="1.0" showinhealthscannerthreshold="30" showiconthreshold="240" minstrength="0" maxstrength="300">
+    <!-- First stage -->
     <Effect minstrength="0" maxstrength="60" strengthchange="+1">
       <StatusEffect target="Character" />
     </Effect>
+    <!-- Second stage -->
     <Effect minstrength="60" maxstrength="300" minvitalitydecrease="0" maxvitalitydecrease="200" strengthchange="+1">
       <StatusEffect target="Character" />
     </Effect>
+    <!-- 30 to secs a player get stun of different strengh/time(2.5 sec, 5 sec, 10 sec) -->
     <PeriodicEffect mininterval="30" maxinterval="60">
       <StatusEffect target="Character">
         <Affliction identifier="stun" strength="2.5" selectionmode="Random" />
@@ -166,18 +191,22 @@
     </PeriodicEffect>
     <icon texture="%ModDir%/icons/charDirtyBlood.png" color="139,60,42,255" origin="0,0" />
   </Affliction>
-  <!-- Severe injury - Serious limb injury from blunt trauma or gunshot; causes concussion and pain (Triggers: Blunt Trauma, Gunshot Wounds) -->
+  <!-- Severe injury: Caused by different types of damage(look into ragdoll of human). Gives pain. The stronger injury is, the more pain player gains. -->
   <Affliction name="" identifier="severeinjury" description="" type="deepdamage" limbspecific="true" indicatorlimb="" activationthreshold="1" showiconthreshold="0" minstrength="0" maxstrength="10" iconcolors="255,153,51,055;255,128,0,155;204,86,0,255">
+    <!-- Level one of injury: Gives just pain -->
     <Effect minstrength="0" maxstrength="5" minvitalitydecrease="0" maxvitalitydecrease="5">
       <StatusEffect target="Character">
         <Affliction identifier="pain" strength="1" />
       </StatusEffect>
     </Effect>
+    <!-- Level two: Doubles pain -->
     <Effect minstrength="5" maxstrength="10" minvitalitydecrease="5" maxvitalitydecrease="10">
       <StatusEffect target="Character">
         <Affliction identifier="pain" strength="2" />
       </StatusEffect>
     </Effect>
+    <!-- Periodically player chokes due the injury. 90 to 150 secs(1.5 to 2.5 mins) -->
+    <!-- Male sounds -->
     <PeriodicEffect mininterval="90" maxinterval="150">
       <StatusEffect target="Character" comparison="and">
         <Conditional ishuman="true" />
@@ -186,6 +215,7 @@
         <Sound file="Content/Sounds/HUMAN_chokeMale2.ogg" />
         <Sound file="Content/Sounds/HUMAN_chokeMale3.ogg" />
       </StatusEffect>
+      <!-- Female sounds -->
       <StatusEffect target="Character" comparison="and">
         <Conditional ishuman="true" />
         <Conditional isfemale="true" />
@@ -196,59 +226,46 @@
     </PeriodicEffect>
     <icon texture="%ModDir%/icons/charBrokenBone.png" color="255,90,0,255" origin="0,0" />
   </Affliction>
-  <!-- Severe Bleeding - Life-threatening blood loss from lacerations, bites, or gunshot; accumulates pain over time (Triggers: Lacerations, Bites, Gunshot Wounds) -->
+  <!-- Severe Bleeding: Caused by different damage types(look into ragdoll of human) -->
   <Affliction name="" identifier="severebleeding" description="" type="severebleeding" limbspecific="true" indicatorlimb="" activationthreshold="1" showiconthreshold="0" minstrength="0" maxstrength="10" iconcolors="255,153,51,055;255,128,0,155;204,86,0,255">
+    <!-- Level one of bleeding: Bloodloss and pain -->
     <Effect minstrength="0" maxstrength="5" minvitalitydecrease="0" maxvitalitydecrease="2.5">
       <StatusEffect target="Character">
         <Affliction identifier="bloodloss" strength="0.125" />
         <Affliction identifier="pain" strength="0.5" />
       </StatusEffect>
     </Effect>
+    <!-- Level two: Doubles pain -->
     <Effect minstrength="5" maxstrength="10" minvitalitydecrease="2.5" maxvitalitydecrease="5">
       <StatusEffect target="Character">
         <Affliction identifier="bloodloss" strength="0.25" />
         <Affliction identifier="pain" strength="1" />
       </StatusEffect>
     </Effect>
-      <!-- If a limb has deep tissue damage > 10 (or lacerations > 10), that limb may worsen into severe injury or severe bleeding -->
-      <PeriodicEffect mininterval="60" maxinterval="120">
-        <StatusEffect target="Character" targetlimbs="Any">
-          <Conditional deepdamage="gt 10" />
-          <Conditional lacerations="gt 10" />
-          <Affliction identifier="severeinjury" amount="+1" probability="0.15" />
-          <Affliction identifier="severebleeding" amount="+1" probability="0.15" />
-        </StatusEffect>
-      </PeriodicEffect>
-      <!-- If any limb has >25 bite wounds, small chance to contract space rabies -->
-      <PeriodicEffect mininterval="60" maxinterval="120">
-        <StatusEffect target="Character" targetlimbs="Any">
-          <Conditional bitewounds="gt 25" />
-          <Affliction identifier="spacerabies" amount="+1" probability="0.05" />
-        </StatusEffect>
-      </PeriodicEffect>
     <icon texture="%ModDir%/icons/charBleeding.png" sourcerect="0,0,128,128" color="255,90,0,255" origin="0,0" />
   </Affliction>
-  <!-- Pain - Cumulative suffering from injuries; accumulates only while severe injury or severe bleeding present; decays naturally when healed (Triggers: Severe Bleeding, Broken Bones) -->
+  <!-- Pain: Caused by severe injuries. Accumulates. Causes blackout and give debuffs over time. Should motivate player to seek help. ~6 min till blackout. Every severe injury accelerate pain gain. Goes away by itself over time -> Treat causes -->
   <Affliction name="" identifier="pain" description="" type="pain" limbspecific="false" indicatorlimb="Head" activationthreshold="1" showiconthreshold="0" minstrength="0" maxstrength="360" healcostmultiplier="1">
-    <Effect minstrength="0" maxstrength="90" strengthchange="-0.5">
+    <!-- First stage: None. At least 2 severe injuries needed to cause to growth (+2) -->
+    <Effect minstrength="0" maxstrength="90" strengthchange="-1">
     </Effect>
-    <Effect minstrength="90" maxstrength="180" strengthchange="-0.5">
-      <Affliction identifier="organdamage" strength="1" probability="0.01"/>
+    <!-- Second stage: Every 15 to 30 secs organdamage with 15% chance -->
+    <Effect minstrength="90" maxstrength="359" strengthchange="-1">
+      <PeriodicEffect mininterval="15" maxinterval="30">
+        <Affliction identifier="organdamage" strength="2" probability="0.15"/>
+      </PeriodicEffect>
     </Effect>
-    <Effect minstrength="180" maxstrength="360" strengthchange="-0.5">
+    <!-- Third stage: Player blackouts-->
+    <Effect minstrength="359" maxstrength="360" strengthchange="-1">
       <StatusEffect target="Character">
         <Affliction identifier="blackout" strength="10" />
-        <PeriodicEffect mininterval="30" maxinterval="60">
-          <StatusEffect target="Character">
-            <Affliction identifier="organdamage" strength="1"/>
-          </StatusEffect>
-        </PeriodicEffect>
       </StatusEffect>
     </Effect>
     <icon texture="%ModDir%/icons/charConcussion.png" sourcerect="0,0,128,128" color="255,100,100,255" origin="0,0" />
   </Affliction>
-  <!-- Blackout - Temporary unconsciousness from extreme pain or concussion; reduces control and causes organ damage; lasts 10 seconds; 10% chance to trigger hemorrhoids (Triggers: Pain/High Concussion) -->
+  <!-- Blackout: Is being gained through max pain. A short unconsciousness(10 secs) -->
   <Affliction name="" identifier="blackout" description="" type="blackout" limbspecific="false" indicatorlimb="Head" activationthreshold="1" showiconthreshold="0" maxstrength="10" minstrength="0">
+    <!-- General effects: Stuns while affected by blackout, gives a bit of psyshock just so, can give a fun effect hemor. -->
     <Effect minstrength="0" maxstrength="10" strengthchange="-1">
       <StatusEffect target="Character" setvalue="true">
         <Affliction identifier="stun" setvalue="true" />
@@ -259,13 +276,15 @@
     </Effect>
     <icon texture="%ModDir%/icons/charConcussion.png" sourcerect="0,0,128,128" color="255,90,0,255" origin="0,0" />
   </Affliction>
-  <!-- Hemorrhoids - Minor condition triggered by extreme strain from blackout; triggers stun with 5% probability every 30 seconds (Triggers: Blackout with 10% probability) -->
+  <!-- Hemorrhoids: No reason. Just for fun. Gives a small debuff. Can be removed by using huskstinger -->
   <Affliction name="" identifier="hemor" description="" type="hemor" limbspecific="false" indicatorlimb="Head" showinhealthscannerthreshold="1" activationthreshold="1" maxstrength="1">
+    <!-- Just gives a 5% speed debuff -->
     <Effect minstrength="0" maxstrength="1">
-      <StatusEffect target="Character" setvalue="true">
+      <StatusEffect target="Character" SpeedMultiplier="0.95" setvalue="true">
       </StatusEffect>
     </Effect>
-    <PeriodicEffect mininterval="60" maxinterval="60">
+    <!-- 5% chance to get stunned for 1 sec -->
+    <PeriodicEffect mininterval="120" maxinterval="300">
       <StatusEffect target="Character">
         <Affliction identifier="stun" strength="1" probability="0.05" />
       </StatusEffect>
@@ -274,7 +293,7 @@
   </Affliction>
 
   <!-- Buffs -->
-  <!-- Flu Resistance Buff - Resistance effect that reduces flu severity and provides fever reduction over time -->
+  <!-- Flu Resistance Buff: Protects from flu only REWORK NEEDED. -->
   <Affliction name="" identifier="fluresistance" description="" type="resistance" isbuff="true" indicatorlimb="Head" limbspecific="false" maxstrength="120" MedicalSkillGain="0.01">
     <Effect minstrength="0" maxstrength="120" strengthchange="-0.15" resistancefor="flu" minresistance="0" maxresistance="0.1">
       <StatusEffect target="Character" setvalue="true">
@@ -283,7 +302,7 @@
     </Effect>
     <icon texture="%ModDir%/icons/resistHeadDrop.png" color="10,193,114,255" origin="0,0" />
   </Affliction>
-  <!-- Space Rabies Resistance Buff - Resistance effect that significantly reduces space rabies progression -->
+  <!-- Space Rabies Resistance Buff: Protects from rabies only REWORK NEEDED -->
   <Affliction name="" identifier="spacerabiesresistance" description="" type="resistance" isbuff="true" indicatorlimb="Torso" limbspecific="false" resistancefor="spacerabies" maxstrength="120" MedicalSkillGain="0.01">
     <Effect minstrength="0" maxstrength="120" strengthchange="-1">
       <StatusEffect target="Character" setvalue="true">
@@ -292,7 +311,7 @@
     </Effect>
     <icon texture="%ModDir%/icons/resistCanines.png" color="10,193,114,255" origin="0,0" />
   </Affliction>
-  <!-- PsyShock Resistance Buff - Resistance effect that reduces psychotic shock accumulation -->
+  <!-- PsyShock Resistance Buff: Protects from psyshock REWORK NEEDED -->
   <Affliction name="" identifier="psyshockresistance" description="" type="resistance" isbuff="true" indicatorlimb="Head" limbspecific="false" resistancefor="psyshock" maxstrength="100" MedicalSkillGain="0.01">
     <Effect minstrength="0" maxstrength="100" strengthchange="-0.15">
       <StatusEffect target="Character" setvalue="true">
@@ -301,7 +320,7 @@
     </Effect>
     <icon texture="%ModDir%/icons/resistSilk.png" color="150,26,26,255" origin="0,0" />
   </Affliction>
-  <!-- Metabolic Arrest Buff - Emergency state that stops blood loss and reduces oxygen damage while preventing movement -->
+  <!-- Metabolic Arrest Buff: Provides survivalability while stunned. For emergencies and paramedics. -->
   <Affliction name="" identifier="metabolismarrest" description="" type="resistance" isbuff="true" limbspecific="false" maxstrength="120" affectmachines="false" MedicalSkillGain="0.01">
     <Effect minstrength="0" maxstrength="120" strengthchange="-1" resistancefor="bloodloss" minresistance="0.8" maxresistance="1">
       <StatusEffect target="Character" setvalue="true">
