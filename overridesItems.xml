@@ -422,6 +422,7 @@
       </Price>
       <Fabricate suitablefabricators="vendingmachine" requiredtime="1" requiredmoney="30" fabricationlimitmin="3" fabricationlimitmax="5" />
       <Deconstruct time="35">
+      <!-- Now it gives vitamin powder when deconstrcuted -->
         <Item identifier="carbon" mincondition="0.5" />
         <Item identifier="creepingorangevineseed" mincondition="0.5" />
         <Item identifier="vitaminpowder" mincondition="0.5" />
@@ -447,6 +448,7 @@
       <Sprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" depth="0.2" sourcerect="907,838,44,50" origin="0.5,0.5" />
       <Body radius="30" density="9" />
       <Deconstruct time="35">
+        <!-- Now it gives anti biotic powder when deconstrcuted -->
         <Item identifier="carbon" mincondition="0.5" />
         <Item identifier="raptorbaneseed" mincondition="0.5" />
         <Item identifier="antibioticpowder" mincondition="0.5" />
@@ -489,6 +491,7 @@
         <Price storeidentifier="merchantmine" multiplier="0.75" />
       </Price>
       <Deconstruct time="35">
+        <!-- Now it additionally gives reagent when deconstructed -->
         <Item identifier="sodium" />
         <Item identifier="saltvineseed" />
         <Item identifier="reagent" />
@@ -585,6 +588,7 @@
 
 
   <!-- Weapons -->
+  <!-- Husk stinger is needed to remove hemor :3 -->
   <Override>
     <Item name="" identifier="huskstinger" category="Weapon" Tags="smallitem" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" scale="0.5" allowasextracargo="true" RequireAimToUse="True">
       <Upgrade gameversion="0.10.0.0" scale="0.5" />

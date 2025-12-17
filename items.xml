@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Medical Items and Medicine -->
 <Items>
+  <!-- Medical Items and Medicine -->
   <!-- Antibiotic Pills: To threat flu mainly, also provides a bit of anti-husk effects -->
   <AntibioticPills name="" identifier="antibioticpills" category="Medical" tags="smallitem,medical,chem" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="mediccrate" description="" useinhealthinterface="true" scale="0.25" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="medcab" minamount="0" maxamount="2" />
     <PreferredContainer primary="wreckmedcab" minamount="0" maxamount="3" spawnprobability="0.5" />
     <PreferredContainer primary="outpostmedcompartment" minamount="0" maxamount="3" spawnprobability="0.25" />
     <Price baseprice="100" minavailable="6">
-      <Price storeidentifier="merchantoutpost" />
-      <Price storeidentifier="merchantcity" />
-      <Price storeidentifier="merchantresearch" />
-      <Price storeidentifier="merchantmilitary" />
-      <Price storeidentifier="merchantmine" />
+      <Price storeidentifier="merchantresearch" multiplier="0.6" />
       <Price storeidentifier="merchantmedical" multiplier="0.9" />
     </Price>
     <Fabricate suitablefabricators="medicalfabricator" requiredtime="20" amount="3">
@@ -20,9 +16,10 @@
       <RequiredItem identifier="stabilozine" />
       <RequiredItem identifier="calcium" />
     </Fabricate>
-    <Deconstruct time="20">
-      <Item identifier="antibioticpowder" copycondition="true" mincondition="0.1" outcondition="0.5" />
-      <Item identifier="calcium" copycondition="true" mincondition="0.1" outcondition="0.5" />
+    <Deconstruct time="5">
+      <!-- Removed copycondition="true" mincondition="0.1" from lines to watch what happens-->
+      <Item identifier="antibioticpowder" outcondition="0.334" />
+      <Item identifier="calcium" outcondition="0.334" />
     </Deconstruct>
     <SuitableTreatment identifier="huskinfection" suitability="30" />
     <SuitableTreatment identifier="flu" suitability="120" />
@@ -80,9 +77,9 @@
       <RequiredItem identifier="stabilozine" />
       <RequiredItem identifier="magnesium" />
     </Fabricate>
-    <Deconstruct time="20">
-      <Item identifier="vitaminpowder" copycondition="true" mincondition="0.1" outcondition="0.5" />
-      <Item identifier="magnesium" copycondition="true" mincondition="0.1" outcondition="0.5" />
+    <Deconstruct time="5">
+      <Item identifier="vitaminpowder" outcondition="0.334" />
+      <Item identifier="magnesium" outcondition="0.334" />
     </Deconstruct>
     <SuitableTreatment type="damage" suitability="30" />
     <SuitableTreatment type="fever" suitability="90" />
@@ -128,11 +125,7 @@
     <PreferredContainer primary="wreckmedcab" minamount="0" maxamount="3" spawnprobability="0.5" />
     <PreferredContainer primary="outpostmedcompartment" minamount="0" maxamount="3" spawnprobability="0.25" />
     <Price baseprice="100" minavailable="6">
-      <Price storeidentifier="merchantoutpost" />
-      <Price storeidentifier="merchantcity" />
-      <Price storeidentifier="merchantresearch" />
-      <Price storeidentifier="merchantmilitary" />
-      <Price storeidentifier="merchantmine" />
+      <Price storeidentifier="merchantresearch" multiplier="0.6" />
       <Price storeidentifier="merchantmedical" multiplier="0.9" />
     </Price>
     <Fabricate suitablefabricators="medicalfabricator" requiredtime="20" amount="3">
@@ -142,10 +135,10 @@
       <RequiredItem identifier="sodium" />
       <RequiredItem identifier="potassium" />
     </Fabricate>
-    <Deconstruct time="20">
-      <Item identifier="antibioticpowder" copycondition="true" mincondition="0.1" outcondition="0.5" />
-      <Item identifier="sodium" copycondition="true" mincondition="0.1" outcondition="0.5" />
-      <Item identifier="potassium" copycondition="true" mincondition="0.1" outcondition="0.5" />
+    <Deconstruct time="5">
+      <Item identifier="antibioticpowder" outcondition="0.334" />
+      <Item identifier="sodium" outcondition="0.334" />
+      <Item identifier="potassium" outcondition="0.334" />
     </Deconstruct>
     <SuitableTreatment identifier="psyshock" suitability="20" />
     <SuitableTreatment identifier="concussion" suitability="22.5" />
@@ -202,14 +195,9 @@
     <PreferredContainer primary="wreckmedcab" minamount="0" maxamount="1" spawnprobability="0.5" />
     <PreferredContainer primary="outpostmedcompartment" minamount="0" maxamount="1" spawnprobability="0.25" />
     <Price baseprice="560" minavailable="1">
-      <Price storeidentifier="merchantoutpost" />
-      <Price storeidentifier="merchantcity" />
-      <Price storeidentifier="merchantresearch" />
-      <Price storeidentifier="merchantmilitary" />
-      <Price storeidentifier="merchantmine" />
-      <Price storeidentifier="merchantmedical" multiplier="0.8" />
-    </Price>
-    <Fabricate suitablefabricators="medicalfabricator" requiredtime="50">
+      <Price storeidentifier="merchantresearch" multiplier="0.6" />
+      <Price storeidentifier="merchantmedical" multiplier="0.9" />
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="30">
       <RequiredSkill identifier="medical" level="72" />
       <RequiredItem identifier="uranium" />
       <RequiredItem identifier="potassium" />
@@ -217,9 +205,9 @@
       <RequiredItem identifier="vitaminsoulution" />
       <RequiredItem identifier="stabilozine" amount="2" />
     </Fabricate>
-    <Deconstruct time="20">
-      <Item identifier="uranium" copycondition="true" mincondition="0.1" />
-      <Item identifier="potassium" copycondition="true" mincondition="0.1" />
+    <Deconstruct time="15">
+      <Item identifier="uranium" />
+      <Item identifier="potassium" />
     </Deconstruct>
     <SuitableTreatment identifier="cancer" suitability="100" />
     <SuitableTreatment identifier="radiationsickness" suitability="100" />
@@ -257,14 +245,10 @@
     <PreferredContainer primary="wreckmedcab" minamount="0" maxamount="1" spawnprobability="0.5" />
     <PreferredContainer primary="outpostmedcompartment" minamount="0" maxamount="1" spawnprobability="0.25" />
     <Price baseprice="360" minavailable="1">
-      <Price storeidentifier="merchantoutpost" />
-      <Price storeidentifier="merchantcity" />
-      <Price storeidentifier="merchantresearch" />
-      <Price storeidentifier="merchantmilitary" />
-      <Price storeidentifier="merchantmine" />
+      <Price storeidentifier="merchantresearch" multiplier="0.6" />
       <Price storeidentifier="merchantmedical" multiplier="0.9" />
     </Price>
-    <Fabricate suitablefabricators="medicalfabricator" requiredtime="50">
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="30">
       <RequiredSkill identifier="medical" level="55" />
       <RequiredItem identifier="bloodsample" amount="3" />
       <RequiredItem identifier="antibioticpowder" amount="2" />
@@ -272,9 +256,9 @@
       <RequiredItem identifier="antibiotics" amount="2" />
       <RequiredItem identifier="stabilozine" amount="2" />
     </Fabricate>
-    <Deconstruct time="35">
-      <Item identifier="bloodsample" copycondition="true" mincondition="0.1" />
-      <Item identifier="antibioticpowder" copycondition="true" mincondition="0.1" />
+    <Deconstruct time="15">
+      <Item identifier="bloodsample" />
+      <Item identifier="antibioticpowder" />
     </Deconstruct>
     <InventoryIcon texture="%ModDir%/icons/syringeVac.png" sourcerect="0,0,64,64" />
     <Sprite texture="%ModDir%/sprites/syringeVac.png" sourcerect="0,0,64,64" depth="0.6" />
@@ -314,14 +298,10 @@
     <PreferredContainer primary="wreckmedcab" minamount="0" maxamount="1" spawnprobability="0.15" />
     <PreferredContainer primary="outpostmedcompartment" minamount="0" maxamount="1" spawnprobability="0.15" />
     <Price baseprice="550">
-      <Price storeidentifier="merchantoutpost" />
-      <Price storeidentifier="merchantcity" />
       <Price storeidentifier="merchantresearch" multiplier="0.6" />
-      <Price storeidentifier="merchantmilitary" />
-      <Price storeidentifier="merchantmine" />
       <Price storeidentifier="merchantmedical" multiplier="0.9" />
     </Price>
-    <Fabricate suitablefabricators="medicalfabricator" requiredtime="50" requiresrecipe="false">
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="60" requiresrecipe="false">
       <RequiredSkill identifier="medical" level="60" />
       <RequiredItem identifier="donorbloodpack" />
       <RequiredItem identifier="vitaminpowder" amount="2" />
@@ -329,11 +309,11 @@
       <RequiredItem identifier="reagent" />
       <RequiredItem identifier="elastin" amount="2" />
     </Fabricate>
-    <Deconstruct time="50">
-      <Item identifier="donorbloodpack" copycondition="true" mincondition="0.1" />
-      <Item identifier="vitaminpowder" copycondition="true" mincondition="0.1" />
-      <Item identifier="vitaminpowder" copycondition="true" mincondition="0.1" />
-      <Item identifier="fentanyl" copycondition="true" mincondition="0.1" />
+    <Deconstruct time="30">
+      <Item identifier="donorbloodpack" />
+      <Item identifier="vitaminpowder" />
+      <Item identifier="vitaminpowder" />
+      <Item identifier="fentanyl" />
     </Deconstruct>
     <InventoryIcon texture="%ModDir%/icons/bloodpackOrange.png" sourcerect="0,0,64,64" />
     <Sprite texture="%ModDir%/sprites/bloodpackOrange.png" sourcerect="0,0,64,64" depth="0.6" />
@@ -397,11 +377,7 @@
     <PreferredContainer primary="wreckmedcab" minamount="0" maxamount="2" spawnprobability="0.25" />
     <PreferredContainer primary="outpostmedcompartment" minamount="0" maxamount="1" spawnprobability="0.25" />
     <Price baseprice="180" minavailable="2">
-      <Price storeidentifier="merchantoutpost" />
-      <Price storeidentifier="merchantcity" />
-      <Price storeidentifier="merchantresearch" />
-      <Price storeidentifier="merchantmilitary" />
-      <Price storeidentifier="merchantmine" />
+      <Price storeidentifier="merchantresearch" multiplier="0.6" />
       <Price storeidentifier="merchantmedical" multiplier="0.9" />
     </Price>
     <Fabricate suitablefabricators="medicalfabricator" requiredtime="40">
@@ -411,10 +387,10 @@
       <RequiredItem identifier="bloodsample" />
       <RequiredItem identifier="liquidplasma" />
     </Fabricate>
-    <Deconstruct time="20">
-      <Item identifier="bloodsample" copycondition="true" mincondition="0.1" />
-      <Item identifier="bloodsample" copycondition="true" mincondition="0.1" />
-      <Item identifier="bloodsample" copycondition="true" mincondition="0.1" />
+    <Deconstruct time="10">
+      <Item identifier="bloodsample" />
+      <Item identifier="bloodsample" />
+      <Item identifier="bloodsample" />
     </Deconstruct>
     <InventoryIcon texture="%ModDir%/icons/bloodpackScarlett.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/sprites/bloodpackScarlett.png" sourcerect="0,0,64,64" depth="0.6" origin="0.5,0.5" />
@@ -442,8 +418,7 @@
       </StatusEffect>
     </Holdable>
   </DonorBloodPack>
-  <!-- STOPPED WORKING ITEMS HERE (11:45, 17.12.25) -->
-  <!-- Compression bandage -->
+  <!-- Compression bandage: Bandage to exclusivelly heal severe injuries -->
   <CompressionBandage name="" identifier="compressionbandage" category="Medical" tags="smallitem,medical" maxstacksize="24" maxstacksizecharacterinventory="6" cargocontaineridentifier="mediccrate" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_soft" RequireAimToUse="true">
     <PreferredContainer secondary="supplycab" minamount="1" maxamount="2" spawnprobability="0.5" notcampaign="true" />
     <PreferredContainer secondary="wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.2" />
@@ -451,19 +426,15 @@
     <PreferredContainer secondary="outpostmedcompartment,outpostmedcab" minamount="1" maxamount="3" spawnprobability="0.35" />
     <PreferredContainer primary="medcab" minamount="1" maxamount="4" spawnprobability="0.5" />
     <Price baseprice="90" minavailable="2">
-      <Price storeidentifier="merchantoutpost" />
-      <Price storeidentifier="merchantcity" />
-      <Price storeidentifier="merchantresearch" />
-      <Price storeidentifier="merchantmilitary" />
-      <Price storeidentifier="merchantmine" />
+      <Price storeidentifier="merchantresearch" multiplier="0.6" />
       <Price storeidentifier="merchantmedical" multiplier="0.9" />
     </Price>
-    <Fabricate suitablefabricators="medicalfabricator" requiredtime="45" amount="6">
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="20" amount="6">
       <RequiredSkill identifier="medical" level="35" />
       <RequiredItem identifier="antibleeding1" amount="6" />
       <RequiredItem identifier="tonicliquid" />
     </Fabricate>
-    <Deconstruct time="30">
+    <Deconstruct time="5">
       <RequiredItem identifier="antibleeding1" />
     </Deconstruct>
     <SuitableTreatment identifier="severeinjury" suitability="10" />
@@ -478,13 +449,13 @@
       <StatusEffect statuseffectstags="medical" type="OnUse" target="This, Limb" duration="5">
         <Sound file="Content/Items/Medical/Bandage1.ogg" type="OnUse" range="500" />
         <Sound file="Content/Items/Medical/Bandage2.ogg" type="OnUse" range="500" />
-        <ReduceAffliction identifier="severeinjury" amount="1" />
-        <ReduceAffliction identifier="severebleeding" amount="1" />
+        <ReduceAffliction identifier="severeinjury" amount="2" />
+        <ReduceAffliction identifier="severebleeding" amount="2" />
       </StatusEffect>
       <StatusEffect statuseffectstags="medical" type="OnFailure" target="This, Limb" duration="5">
         <Sound file="Content/Items/Medical/Bandage2.ogg" type="OnUse" range="500" />
         <Sound file="Content/Items/Medical/Bandage1.ogg" type="OnUse" range="500" />
-        <ReduceAffliction identifier="severeinjury" amount="0.5" />
+        <ReduceAffliction identifier="severeinjury" amount="1" />
         <ReduceAffliction identifier="severebleeding" amount="1" />
       </StatusEffect>
       <!-- Remove the item when fully used -->
@@ -493,28 +464,24 @@
       </StatusEffect>
     </MeleeWeapon>
   </CompressionBandage>
-  <!-- Osimilin -->
+  <!-- Osimilin: Pills to slowly heal bloodloss and a bit of bleeding. Long team bloodloss healing ~1 min -->
   <AntibloodPills name="" identifier="antibloodpills" category="Medical" tags="smallitem,medical,chem" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="mediccrate" description="" useinhealthinterface="true" scale="0.25" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="medcab" minamount="0" maxamount="2" />
     <PreferredContainer primary="wreckmedcab" minamount="0" maxamount="3" spawnprobability="0.5" />
     <PreferredContainer primary="outpostmedcompartment" minamount="0" maxamount="3" spawnprobability="0.25" />
     <Price baseprice="160" minavailable="4">
-      <Price storeidentifier="merchantoutpost" />
-      <Price storeidentifier="merchantcity" />
-      <Price storeidentifier="merchantresearch" />
-      <Price storeidentifier="merchantmilitary" />
-      <Price storeidentifier="merchantmine" />
+      <Price baseprice="440">
+      <Price storeidentifier="merchantresearch" multiplier="0.6" />
       <Price storeidentifier="merchantmedical" multiplier="0.9" />
     </Price>
     <Fabricate suitablefabricators="medicalfabricator" requiredtime="20" amount="3">
       <RequiredSkill identifier="medical" level="45" />
-      <RequiredItem identifier="bloodsample" />
+      <RequiredItem identifier="donorbloodpack" />
       <RequiredItem identifier="vitaminpowder" />
       <RequiredItem identifier="reagent" />
     </Fabricate>
-    <Deconstruct time="20">
-      <Item identifier="bloodsample" copycondition="true" mincondition="0.1" outcondition="0.5" />
-      <Item identifier="vitaminpowder" copycondition="true" mincondition="0.1" outcondition="0.5" />
+    <Deconstruct time="5">
+      <Item identifier="bloodsample" />
     </Deconstruct>
     <SuitableTreatment identifier="bloodloss" suitability="90" />
     <SuitableTreatment identifier="bleeding" suitability="60" />
@@ -526,13 +493,13 @@
       <RequiredSkill identifier="medical" level="25" />
       <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
       <StatusEffect type="OnFailure" target="This" Condition="-100.0" disabledeltatime="true" />
-      <StatusEffect type="OnUse" target="UseTarget" duration="90">
+      <StatusEffect type="OnUse" target="UseTarget" duration="60">
         <Sound file="%ModDir%/sounds/Medicine/SwallowSound.ogg" range="200" />
         <ReduceAffliction identifier="bloodloss" amount="1" />
         <ReduceAffliction identifier="bleeding" amount="0.66" />
         <Affliction identifier="concussion" amount="0.088" />
       </StatusEffect>
-      <StatusEffect type="OnFailure" target="UseTarget" duration="90">
+      <StatusEffect type="OnFailure" target="UseTarget" duration="60">
         <Sound file="%ModDir%/sounds/Medicine/SwallowSound.ogg" range="200" />
         <ReduceAffliction identifier="bloodloss" amount="1" />
         <ReduceAffliction identifier="bleeding" amount="0.66" />
@@ -555,17 +522,13 @@
       </StatusEffect>
     </MeleeWeapon>
   </AntibloodPills>
-  <!-- Cryoxadone solution -->
+  <!-- Cryoxadone solution: Paramedics medicine for emergency to give metabolic arrest and win time. Does not protect from pressure. -->
   <StasisSolution name="" identifier="stasissolution" category="Medical" tags="smallitem,medical,chem" maxstacksize="8" maxstacksizecharacterinventory="2" cargocontaineridentifier="mediccrate" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="medcab" minamount="0" maxamount="1" />
     <PreferredContainer primary="wreckmedcab" minamount="0" maxamount="1" spawnprobability="0.15" />
     <PreferredContainer primary="outpostmedcompartment" minamount="0" maxamount="1" spawnprobability="0.15" />
     <Price baseprice="440">
-      <Price storeidentifier="merchantoutpost" />
-      <Price storeidentifier="merchantcity" />
       <Price storeidentifier="merchantresearch" multiplier="0.6" />
-      <Price storeidentifier="merchantmilitary" />
-      <Price storeidentifier="merchantmine" />
       <Price storeidentifier="merchantmedical" multiplier="0.9" />
     </Price>
     <Fabricate suitablefabricators="medicalfabricator" requiredtime="50" requiresrecipe="true">
@@ -577,10 +540,10 @@
       <RequiredItem identifier="elastin" amount="2" />
     </Fabricate>
     <Deconstruct time="50">
-      <Item identifier="donorbloodpack" copycondition="true" mincondition="0.1" />
-      <Item identifier="vitaminpowder" copycondition="true" mincondition="0.1" />
-      <Item identifier="vitaminpowder" copycondition="true" mincondition="0.1" />
-      <Item identifier="deusizine" copycondition="true" mincondition="0.1" />
+      <Item identifier="donorbloodpack" />
+      <Item identifier="vitaminpowder" />
+      <Item identifier="vitaminpowder" />
+      <Item identifier="deusizine" />
     </Deconstruct>
     <InventoryIcon texture="%ModDir%/icons/bloodpackBlue.png" sourcerect="0,0,64,64" />
     <Sprite texture="%ModDir%/sprites/bloodpackBlue.png" sourcerect="0,0,64,64" depth="0.6" />
@@ -619,17 +582,13 @@
       </StatusEffect>
     </MeleeWeapon>
   </StasisSolution>
-  <!-- Chemical Oxygen -->
+  <!-- Chemical Oxygen: Long term oxygen resist. Provides oxygen when consumed for 90 secs -->
   <AntiOxygenlow name="" identifier="antioxygenlow" category="Medical" tags="smallitem,medical,chem,syringe" maxstacksize="16" maxstacksizecharacterinventory="4" cargocontaineridentifier="mediccrate" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="medcab" minamount="0" maxamount="1" />
     <PreferredContainer primary="wreckmedcab" minamount="0" maxamount="1" spawnprobability="0.15" />
     <PreferredContainer primary="outpostmedcompartment" minamount="0" maxamount="1" spawnprobability="0.15" />
     <Price baseprice="300">
-      <Price storeidentifier="merchantoutpost" />
-      <Price storeidentifier="merchantcity" />
-      <Price storeidentifier="merchantresearch" />
-      <Price storeidentifier="merchantmilitary" />
-      <Price storeidentifier="merchantmine" />
+      <Price storeidentifier="merchantresearch" multiplier="0.6" />
       <Price storeidentifier="merchantmedical" multiplier="0.9" />
     </Price>
     <Fabricate suitablefabricators="medicalfabricator" requiredtime="50" requiresrecipe="true">
@@ -640,10 +599,10 @@
       <RequiredItem identifier="liquidplasma" amount="2" />
     </Fabricate>
     <Deconstruct time="20">
-      <Item identifier="donorbloodpack" copycondition="true" mincondition="0.1" />
-      <Item identifier="liquidplasma" copycondition="true" mincondition="0.1" />
-      <Item identifier="reagent" copycondition="true" mincondition="0.1" />
-      <Item identifier="liquidoxygenite" copycondition="true" mincondition="0.1" />
+      <Item identifier="donorbloodpack" />
+      <Item identifier="liquidplasma" />
+      <Item identifier="reagent" />
+      <Item identifier="liquidoxygenite" />
     </Deconstruct>
     <InventoryIcon texture="%ModDir%/icons/syringeCO.png" sourcerect="0,0,64,64" />
     <Sprite texture="%ModDir%/sprites/syringeCO.png" sourcerect="0,0,64,64" depth="0.6" />
@@ -679,17 +638,13 @@
       </StatusEffect>
     </MeleeWeapon>
   </AntiOxygenlow>
-  <!-- Adixil -->
+  <!-- Adixil: Similar to naloxone but for chem addiction -->
   <AntiAddiction name="" identifier="antiaddiction" category="Medical" tags="smallitem,medical,chem,syringe" maxstacksize="24" maxstacksizecharacterinventory="6" cargocontaineridentifier="mediccrate" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="medcab" minamount="0" maxamount="1" />
     <PreferredContainer primary="wreckmedcab" minamount="0" maxamount="1" spawnprobability="0.15" />
     <PreferredContainer primary="outpostmedcompartment" minamount="0" maxamount="1" spawnprobability="0.15" />
     <Price baseprice="280">
-      <Price storeidentifier="merchantoutpost" />
-      <Price storeidentifier="merchantcity" />
-      <Price storeidentifier="merchantresearch" />
-      <Price storeidentifier="merchantmilitary" />
-      <Price storeidentifier="merchantmine" />
+      <Price storeidentifier="merchantresearch" multiplier="0.6" />
       <Price storeidentifier="merchantmedical" multiplier="0.9" />
     </Price>
     <Fabricate suitablefabricators="medicalfabricator" requiredtime="50" requiresrecipe="true">
@@ -701,10 +656,10 @@
       <RequiredItem identifier="liquidplasma" />
     </Fabricate>
     <Deconstruct time="20">
-      <Item identifier="donorbloodpack" copycondition="true" mincondition="0.1" />
-      <Item identifier="liquidplasma" copycondition="true" mincondition="0.1" />
-      <Item identifier="reagent" copycondition="true" mincondition="0.1" />
-      <Item identifier="liquidoxygenite" copycondition="true" mincondition="0.1" />
+      <Item identifier="donorbloodpack" />
+      <Item identifier="liquidplasma" />
+      <Item identifier="reagent" />
+      <Item identifier="liquidoxygenite" />
     </Deconstruct>
     <InventoryIcon texture="%ModDir%/icons/syringeRE.png" sourcerect="0,0,64,64" />
     <Sprite texture="%ModDir%/sprites/syringeRE.png" sourcerect="0,0,64,64" depth="0.6" />
@@ -746,11 +701,7 @@
     <PreferredContainer primary="wreckmedcab" minamount="0" maxamount="3" spawnprobability="0.5" />
     <PreferredContainer primary="outpostmedcompartment" minamount="0" maxamount="5" spawnprobability="0.25" />
     <Price baseprice="220" minavailable="2">
-      <Price storeidentifier="merchantoutpost" />
-      <Price storeidentifier="merchantcity" />
-      <Price storeidentifier="merchantresearch" />
-      <Price storeidentifier="merchantmilitary" />
-      <Price storeidentifier="merchantmine" />
+      <Price storeidentifier="merchantresearch" multiplier="0.6" />
       <Price storeidentifier="merchantmedical" multiplier="0.9" />
     </Price>
     <Fabricate suitablefabricators="medicalfabricator" requiredtime="15">
@@ -759,8 +710,8 @@
       <RequiredItem identifier="calcium" />
     </Fabricate>
     <Deconstruct time="20">
-      <Item identifier="calcium" copycondition="true" mincondition="0.1" />
-      <Item identifier="chlorine" copycondition="true" mincondition="0.1" />
+      <Item identifier="calcium" />
+      <Item identifier="chlorine" />
     </Deconstruct>
     <InventoryIcon texture="%ModDir%/icons/powderATE.png" sourcerect="0,0,64,64" depth="0.6" />
     <Sprite texture="%ModDir%/sprites/powderATE.png" sourcerect="0,0,64,64" depth="0.6" />
@@ -773,11 +724,7 @@
     <PreferredContainer primary="wreckmedcab" minamount="0" maxamount="3" spawnprobability="0.5" />
     <PreferredContainer primary="outpostmedcompartment" minamount="0" maxamount="5" spawnprobability="0.25" />
     <Price baseprice="260" minavailable="2">
-      <Price storeidentifier="merchantoutpost" />
-      <Price storeidentifier="merchantcity" />
-      <Price storeidentifier="merchantresearch" />
-      <Price storeidentifier="merchantmilitary" />
-      <Price storeidentifier="merchantmine" />
+      <Price storeidentifier="merchantresearch" multiplier="0.6" />
       <Price storeidentifier="merchantmedical" multiplier="0.9" />
     </Price>
     <Fabricate suitablefabricators="medicalfabricator" requiredtime="15">
@@ -786,49 +733,42 @@
       <RequiredItem identifier="chlorine" />
     </Fabricate>
     <Deconstruct time="20">
-      <Item identifier="creepingorangevineseed" copycondition="true" mincondition="0.1" />
-      <Item identifier="potassium" copycondition="true" mincondition="0.1" />
-      <Item identifier="chlorine" copycondition="true" mincondition="0.1" />
+      <Item identifier="creepingorangevineseed" />
+      <Item identifier="potassium" />
+      <Item identifier="chlorine" />
     </Deconstruct>
     <InventoryIcon texture="%ModDir%/icons/powderVTM.png" sourcerect="0,0,64,64" depth="0.6" />
     <Sprite texture="%ModDir%/sprites/powderVTM.png" sourcerect="0,0,64,64" depth="0.6" />
     <Body width="60" height="20" density="20" />
     <Holdable canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="-5,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" />
   </VitaminPowder>
-  <!-- Blood Sample -->
+  <!-- Blood Sample: Can be taken from any living or dead(corpse) thing -->
   <BloodSample name="" identifier="bloodsample" category="Medical" Tags="smallitem,medical" maxstacksize="24" maxstacksizecharacterinventory="8" cargocontaineridentifier="mediccrate" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
     <Upgrade gameversion="0.13.0.0" scale="0.5" />
     <PreferredContainer primary="medfabcab" />
     <PreferredContainer primary="wreckmedcab" minamount="0" maxamount="2" spawnprobability="0.33" />
     <PreferredContainer primary="outpostmedcompartment" minamount="0" maxamount="3" spawnprobability="0.25" />
     <Price baseprice="80">
-      <Price storeidentifier="merchantoutpost" />
-      <Price storeidentifier="merchantcity" />
-      <Price storeidentifier="merchantresearch" />
-      <Price storeidentifier="merchantmilitary" />
-      <Price storeidentifier="merchantmine" />
+      <Price storeidentifier="merchantresearch" multiplier="0.6" />
       <Price storeidentifier="merchantmedical" multiplier="0.9" />
     </Price>
     <Deconstruct time="30">
-      <Item identifier="emptysyringe" copycondition="true" mincondition="0.1" />
+      <Item identifier="emptysyringe" />
     </Deconstruct>
     <InventoryIcon texture="%ModDir%/icons/syringeRed.png" sourcerect="0,0,64,64" depth="0.6" />
     <Sprite texture="%ModDir%/sprites/syringeRed.png" sourcerect="0,0,64,64" depth="0.6" />
     <Body width="60" height="20" density="20" />
     <Holdable canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="-5,0" holdangle="270" reload="1.0" msg="ItemMsgPickUpSelect" />
   </BloodSample>
-  <!-- Empty Syringe -->
+  <!-- Empty Syringe: Needed for blood sample only(for now) -->
   <EmptySyringe name="" identifier="emptysyringe" category="Medical" Tags="smallitem,medical" maxstacksize="48" maxstacksizecharacterinventory="8" cargocontaineridentifier="mediccrate" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
     <Upgrade gameversion="0.13.0.0" scale="0.5" />
     <PreferredContainer primary="medfabcab" minamount="0" maxamount="3" />
     <PreferredContainer primary="wreckmedcab" minamount="0" maxamount="2" spawnprobability="0.5" />
     <PreferredContainer primary="outpostmedcompartment" minamount="0" maxamount="1" spawnprobability="0.25" />
     <Price baseprice="50">
-      <Price locationtype="outpost" multiplier="1" sold="false" />
-      <Price locationtype="city" multiplier="0.9" sold="false" />
-      <Price locationtype="research" multiplier="0.8" sold="false" />
-      <Price locationtype="military" multiplier="1" sold="false" />
-      <Price locationtype="mine" multiplier="1" sold="false" />
+      <Price storeidentifier="merchantresearch" multiplier="0.6" />
+      <Price storeidentifier="merchantmedical" multiplier="0.9" />
     </Price>
     <Fabricate suitablefabricators="medicalfabricator" requiredtime="8" amount="2">
       <RequiredSkill identifier="medical" level="15" />
@@ -836,8 +776,8 @@
       <RequiredItem identifier="aluminium" />
     </Fabricate>
     <Deconstruct time="10">
-      <Item identifier="iron" copycondition="true" mincondition="0.1" outcondition="0.5" />
-      <Item identifier="aluminium" copycondition="true" mincondition="0.1" outcondition="0.5" />
+      <Item identifier="iron" outcondition="0.5" />
+      <Item identifier="aluminium" outcondition="0.5" />
     </Deconstruct>
     <InventoryIcon texture="%ModDir%/icons/syringeEmpty.png" sourcerect="0,0,64,64" depth="0.6" />
     <Sprite texture="%ModDir%/sprites/syringeEmpty.png" sourcerect="0,0,64,64" depth="0.6" />
@@ -866,11 +806,7 @@
     <PreferredContainer primary="wreckmedcab" minamount="0" maxamount="3" spawnprobability="0.5" />
     <PreferredContainer primary="outpostmedcompartment" minamount="0" maxamount="5" spawnprobability="0.25" />
     <Price baseprice="120" minavailable="4">
-      <Price storeidentifier="merchantoutpost" />
-      <Price storeidentifier="merchantcity" />
-      <Price storeidentifier="merchantresearch" />
-      <Price storeidentifier="merchantmilitary" />
-      <Price storeidentifier="merchantmine" />
+      <Price storeidentifier="merchantresearch" multiplier="0.6" />
       <Price storeidentifier="merchantmedical" multiplier="0.9" />
     </Price>
     <Fabricate suitablefabricators="medicalfabricator" requiredtime="35">
@@ -879,8 +815,8 @@
       <RequiredItem identifier="magnesium" />
     </Fabricate>
     <Deconstruct time="35">
-      <Item identifier="sodium" copycondition="true" mincondition="0.1" />
-      <Item identifier="magnesium" copycondition="true" mincondition="0.1" />
+      <Item identifier="sodium" />
+      <Item identifier="magnesium" />
     </Deconstruct>
     <InventoryIcon texture="%ModDir%/icons/sampleBlue.png" sourcerect="0,0,64,64" depth="0.6" />
     <Sprite texture="%ModDir%/sprites/sampleBlue.png" sourcerect="0,0,64,64" depth="0.6" />
@@ -894,11 +830,7 @@
     <PreferredContainer primary="outpostmedcompartment" minamount="0" maxamount="3" spawnprobability="0.25" />
     <PreferredContainer secondary="storageorgan" minamount="0" maxamount="2" spawnprobability="0.15" />
     <Price baseprice="200">
-      <Price storeidentifier="merchantoutpost" />
-      <Price storeidentifier="merchantcity" />
-      <Price storeidentifier="merchantresearch" multiplier="0.8" />
-      <Price storeidentifier="merchantmilitary" />
-      <Price storeidentifier="merchantmine" />
+      <Price storeidentifier="merchantresearch" multiplier="0.6" />
       <Price storeidentifier="merchantmedical" multiplier="0.9" />
     </Price>
     <Fabricate suitablefabricators="medicalfabricator" requiredtime="35">
@@ -906,10 +838,12 @@
       <RequiredItem identifier="swimbladder" />
       <RequiredItem identifier="phosphorus" />
       <RequiredItem identifier="iron" amount="2" />
+      <RequiredItem identifier="reagent" />
     </Fabricate>
     <Deconstruct time="35">
-      <Item identifier="sodium" copycondition="true" mincondition="0.1" />
-      <Item identifier="magnesium" copycondition="true" mincondition="0.1" />
+      <Item identifier="phosphorus" />
+      <Item identifier="swimbladder" />
+      <Item identifier="iron" outcondition="0.5" />
     </Deconstruct>
     <InventoryIcon texture="%ModDir%/icons/sampleViolet.png" sourcerect="0,0,64,64" depth="0.6" />
     <Sprite texture="%ModDir%/sprites/sampleViolet.png" sourcerect="0,0,64,64" depth="0.6" />
@@ -917,6 +851,7 @@
     <Holdable canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="-5,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" />
   </LiquidPlasma>
   <!-- Clothes -->
+  <!-- Medical belt to store medical items only -->
   <Item name="" identifier="medicalbelt" category="Equipment" tags="mediumitem,mobilecontainer,tool" cargocontaineridentifier="metalcrate" showcontentsintooltip="true" Scale="0.5" fireproof="true" description="" impactsoundtag="impact_soft">
     <PreferredContainer primary="medfabcab" />
     <PreferredContainer primary="wreckmedcab,abandonedmedcab" amount="1" spawnprobability="0.05" />
@@ -928,13 +863,9 @@
     <Fabricate suitablefabricators="fabricator" requiredtime="20">
       <Item identifier="organicfiber" amount="3" />
     </Fabricate>
-    <Price baseprice="80">
-      <Price storeidentifier="merchantoutpost" minavailable="4" />
-      <Price storeidentifier="merchantcity" minavailable="6" />
-      <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="1" />
-      <Price storeidentifier="merchantmilitary" multiplier="1.25" minavailable="1" />
-      <Price storeidentifier="merchantmine" multiplier="1.25" minavailable="8" />
-      <Price storeidentifier="merchantengineering" minavailable="4" multiplier="0.9" />
+    <Price baseprice="150">
+      <Price storeidentifier="merchantresearch" multiplier="0.6" />
+      <Price storeidentifier="merchantmedical" multiplier="0.9" />
     </Price>
     <InventoryIcon texture="%ModDir%/icons/medBelt.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/sprites/medBelt.png" sourcerect="0,0,102,54" depth="0.6" />
