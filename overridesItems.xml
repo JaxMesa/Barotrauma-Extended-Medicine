@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- Medicine -->
 <Items>
+  <!-- Did not add any description of changes yet. (JaxMesA; 17.12.25) -->
   <!-- Projectile overrides to apply severe afflictions on impact -->
   <Override>
     <Antibiotics name="" identifier="antibiotics" category="Medical" maxstacksize="32" maxstacksizecharacterinventory="8" Tags="smallitem,chem,medical,syringe" description="" cargocontaineridentifier="mediccrate" scale="0.5" useinhealthinterface="true" RequireAimToUse="True">
