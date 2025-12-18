@@ -31,10 +31,10 @@
     <sound File="Content/Characters/Human/male_damage10.ogg" State="Damage" Range="500" Volume="1" Tags="Male" />
     <sound File="Content/Characters/Human/male_damage11.ogg" State="Damage" Range="500" Volume="1" Tags="Male" />
     <health Vitality="100" DoesBleed="True" CrushDepth="6000" UseHealthWindow="True" BleedingReduction="0" BurnReduction="0.075" ConstantHealthRegeneration="0" HealthRegenerationWhenEating="0" StunImmunity="False" PoisonImmunity="False" ApplyAfflictionColors="True">
-      <!-- 5% Chance to contract flu when in water.-->
+      <!-- 5% Chance to contract flu when in water every 120 to 300 secs(2-5 min).-->
       <StatusEffect target="Character">
         <Conditional inwater="true" />
-        <PeriodicEffect mininterval="30" maxinterval="60" >
+        <PeriodicEffect mininterval="120" maxinterval="300" >
           <Affliction identifier="flu" strengh="1" probability="0.05" />
         </PeriodicEffect>
       </StatusEffect>
