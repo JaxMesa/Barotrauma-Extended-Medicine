@@ -2,7 +2,7 @@
 <Items>
   <!-- Medical Items and Medicine -->
   <!-- Antibiotics: To threat flu mainly, also provides a bit of anti-husk effects -->
-  <AntibioticPills name="" identifier="antibioticpills" category="Medical" tags="smallitem,medical,chem" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="mediccrate" description="" useinhealthinterface="true" scale="0.25" impactsoundtag="impact_metal_light">
+  <AntibioticPills name="" identifier="antibioticpills" category="Medical" tags="smallitem,medical,chem" maxstacksize="12" maxstacksizecharacterinventory="8" cargocontaineridentifier="mediccrate" description="" useinhealthinterface="true" scale="0.25" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="medcab" minamount="0" maxamount="2" />
     <PreferredContainer primary="wreckmedcab" minamount="0" maxamount="3" spawnprobability="0.5" />
     <PreferredContainer primary="outpostmedcompartment" minamount="0" maxamount="3" spawnprobability="0.25" />
@@ -59,7 +59,7 @@
     </MeleeWeapon>
   </AntibioticPills>
   <!-- Vitamins: Primarly to cure fever + healing -->
-  <VitaminPills name="" identifier="vitaminpills" category="Medical" tags="smallitem,medical,chem" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="mediccrate" description="" useinhealthinterface="true" scale="0.25" impactsoundtag="impact_metal_light">
+  <VitaminPills name="" identifier="vitaminpills" category="Medical" tags="smallitem,medical,chem" maxstacksize="12" maxstacksizecharacterinventory="8" cargocontaineridentifier="mediccrate" description="" useinhealthinterface="true" scale="0.25" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="medcab" minamount="0" maxamount="1" />
     <PreferredContainer primary="wreckmedcab" minamount="0" maxamount="3" spawnprobability="0.5" />
     <PreferredContainer primary="outpostmedcompartment" minamount="0" maxamount="3" spawnprobability="0.25" />
@@ -120,7 +120,7 @@
     </MeleeWeapon>
   </VitaminPills>
   <!-- Antipsychotic Pills: Primarly against psychosis and psyshock, can reduce concussion and pain -->
-  <AntibioticPills name="" identifier="antipsychoticpills" category="Medical" tags="smallitem,medical,chem" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="mediccrate" description="" useinhealthinterface="true" scale="0.25" impactsoundtag="impact_metal_light">
+  <AntibioticPills name="" identifier="antipsychoticpills" category="Medical" tags="smallitem,medical,chem" maxstacksize="12" maxstacksizecharacterinventory="8" cargocontaineridentifier="mediccrate" description="" useinhealthinterface="true" scale="0.25" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="medcab" minamount="0" maxamount="2" />
     <PreferredContainer primary="wreckmedcab" minamount="0" maxamount="3" spawnprobability="0.5" />
     <PreferredContainer primary="outpostmedcompartment" minamount="0" maxamount="3" spawnprobability="0.25" />
@@ -464,7 +464,7 @@
     </MeleeWeapon>
   </CompressionBandage>
   <!-- Osimilin: Pills to slowly heal bloodloss and a bit of bleeding. Long team bloodloss healing ~1 min -->
-  <AntibloodPills name="" identifier="antibloodpills" category="Medical" tags="smallitem,medical,chem" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="mediccrate" description="" useinhealthinterface="true" scale="0.25" impactsoundtag="impact_metal_light">
+  <AntibloodPills name="" identifier="antibloodpills" category="Medical" tags="smallitem,medical,chem" maxstacksize="12" maxstacksizecharacterinventory="8" cargocontaineridentifier="mediccrate" description="" useinhealthinterface="true" scale="0.25" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="medcab" minamount="0" maxamount="2" />
     <PreferredContainer primary="wreckmedcab" minamount="0" maxamount="3" spawnprobability="0.5" />
     <PreferredContainer primary="outpostmedcompartment" minamount="0" maxamount="3" spawnprobability="0.25" />
