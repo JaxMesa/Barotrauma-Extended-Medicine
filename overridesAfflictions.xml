@@ -11,7 +11,8 @@
       <!-- If more than 25 psychosis, it starts to give psyshock -->
       <Effect minstrength="25" maxstrength="100" maxvitalitydecrease="0" strengthchange="-0.1">
         <StatusEffect target="Character">
-          <Affliction identifier="psyshock" strengthchange="+2" />
+          <Conditional clownpower="lt 1" />
+          <Affliction identifier="psyshock" strength="2" />
         </StatusEffect>
       </Effect>
       <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,640,128,128" color="150,26,26,255" origin="0,0" />
