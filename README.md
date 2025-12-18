@@ -6,6 +6,7 @@ All files are allowed for shared use.
 
 # Contribution
 Currently only through GitHub.
+Repo link: https://github.com/JaxMesa/Barotrauma-Extended-Medicine
 
 # Contacts <br />
 via Discord: jaxmesa <br />
