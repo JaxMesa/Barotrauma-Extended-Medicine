@@ -144,7 +144,7 @@
     </PeriodicEffect>
     <icon texture="%ModDir%/icons/charInnerDeadly.png" color="55,55,55,255" origin="0,0" />
   </Affliction>
-  <!-- Space Rabies: Caused by bites only and if player already have 20 damage from bites. Is letal, but the more player has it, the stronger he becomes(damage resists, speed and regeneration) while affected by rabies. -->
+  <!-- Space Rabies: Caused by bites and only if player already have 20 damage from bites. Is letal, but the more player has it, the stronger he becomes(damage resists, speed and regeneration). -->
   <Affliction name="" identifier="spacerabies" description="" type="rabies" minstrength="0" maxstrength="601" limbspecific="false" indicatorlimb="Torso" activationthreshold="1.0" showiconthreshold="80" showinhealthscannerthreshold="30" causeofdeathdescription="" iconcolors="60,140,195,255;60,107,195,255;60,0,195,255" healcostmultiplier="4.5">
     <!-- First stage: Minor regeneration -->
     <Effect minstrength="0" maxstrength="150" strengthchange="+1">
@@ -284,7 +284,7 @@
         <Affliction identifier="stun" strength="10" />
       </PeriodicEffect>
     </Effect>
-    <icon texture="%ModDir%/icons/charConcussion.png" sourcerect="0,0,128,128" color="255,100,100,255" origin="0,0" />
+    <icon texture="%ModDir%/icons/charBrokenHead.png" sourcerect="0,0,128,128" color="255,100,100,255" origin="0,0" />
   </Affliction>
   <!-- Blackout: Is being gained through max pain. A short unconsciousness(10 secs) -->
   <!-- Temporaly TURNED OFF due NOT WORKING; Check templates.txt file for template. Maybe you can fix -->

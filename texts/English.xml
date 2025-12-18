@@ -2,10 +2,9 @@
 <infotexts language="English" nowhitespace="false" translatedname="English">
   <!-- Afflictions -->
   <afflictionname.flu>Flu</afflictionname.flu>
-  <afflictiondescription.flu>The patient has a flu. In the long term, this can lead to death.</afflictiondescription.flu>
-  <afflictioncauseofdeath.flu>Died by flu</afflictioncauseofdeath.flu>
+  <afflictiondescription.flu>The patient has a flu. In the long term, this can lead to near death experience.</afflictiondescription.flu>
   <afflictionname.fever>Fever</afflictionname.fever>
-  <afflictiondescription.fever>The patient suffers from high temperatures inside his body.</afflictiondescription.fever>
+  <afflictiondescription.fever>The patient suffers from high temperatures inside his body. His immune system might need some external help to deal with diseases.</afflictiondescription.fever>
   <afflictionname.cancer>Cancer</afflictionname.cancer>
   <afflictiondescription.cancer>The patient suffers from cancer. The threat of death hanging over the patient requires timely treatment. In the worst case, a painful death awaits the patient.</afflictiondescription.cancer>
   <afflictioncauseofdeath.cancer>Died by cancer</afflictioncauseofdeath.cancer>

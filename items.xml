@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Items>
   <!-- Medical Items and Medicine -->
-  <!-- Antibiotic Pills: To threat flu mainly, also provides a bit of anti-husk effects -->
+  <!-- Antibiotics: To threat flu mainly, also provides a bit of anti-husk effects -->
   <AntibioticPills name="" identifier="antibioticpills" category="Medical" tags="smallitem,medical,chem" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="mediccrate" description="" useinhealthinterface="true" scale="0.25" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="medcab" minamount="0" maxamount="2" />
     <PreferredContainer primary="wreckmedcab" minamount="0" maxamount="3" spawnprobability="0.5" />
@@ -28,7 +28,7 @@
     <Body width="60" height="20" density="20" />
     <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect">
       <!-- General healing -->
-      <RequiredSkill identifier="medical" level="10" />
+      <RequiredSkill identifier="medical" level="25" />
       <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
       <StatusEffect type="OnFailure" target="This" Condition="-100.0" disabledeltatime="true" />
       <StatusEffect type="OnUse" target="UseTarget" duration="60">
@@ -58,7 +58,7 @@
       </StatusEffect>
     </MeleeWeapon>
   </AntibioticPills>
-  <!-- Vitamin Pills: Primarly to cure fever + healing -->
+  <!-- Vitamins: Primarly to cure fever + healing -->
   <VitaminPills name="" identifier="vitaminpills" category="Medical" tags="smallitem,medical,chem" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="mediccrate" description="" useinhealthinterface="true" scale="0.25" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="medcab" minamount="0" maxamount="1" />
     <PreferredContainer primary="wreckmedcab" minamount="0" maxamount="3" spawnprobability="0.5" />
@@ -88,7 +88,7 @@
     <Sprite texture="%ModDir%/sprites/pillsPink.png" sourcerect="0,0,64,64" depth="0.6" />
     <Body width="60" height="20" density="20" />
     <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
-      <RequiredSkill identifier="medical" level="20" />
+      <RequiredSkill identifier="medical" level="25" />
       <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
       <StatusEffect type="OnFailure" target="This" Condition="-100.0" disabledeltatime="true" />
       <!-- General healing -->
@@ -147,7 +147,7 @@
     <Body width="60" height="20" density="20" />
     <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
       <!-- Heals: Psychosis, psyshock, concussion and pain -->
-      <RequiredSkill identifier="medical" level="20" />
+      <RequiredSkill identifier="medical" level="25" />
       <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
       <StatusEffect type="OnFailure" target="This" Condition="-100.0" disabledeltatime="true" />
       <StatusEffect type="OnUse" target="UseTarget" duration="60">
@@ -199,11 +199,11 @@
       <Price storeidentifier="merchantmedical" multiplier="0.9" />
     </Price>
     <Fabricate suitablefabricators="medicalfabricator" requiredtime="30">
-      <RequiredSkill identifier="medical" level="72" />
+      <RequiredSkill identifier="medical" level="64" />
       <RequiredItem identifier="uranium" />
       <RequiredItem identifier="potassium" />
       <RequiredItem identifier="reagent" amount="3" />
-      <RequiredItem identifier="vitaminsoulution" />
+      <RequiredItem identifier="liquidplasma" />
       <RequiredItem identifier="stabilozine" amount="2" />
     </Fabricate>
     <Deconstruct time="15">
@@ -217,7 +217,7 @@
     <Body width="60" height="20" density="20" />
     <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="5,0" handle1="-5,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
       <!-- Medics only item -> Skill needed: 72 medical -->
-      <RequiredSkill identifier="medical" level="72" />
+      <RequiredSkill identifier="medical" level="64" />
       <StatusEffect type="OnUse" target="This" Condition="-25.0" disabledeltatime="true" />
       <StatusEffect type="OnFailure" target="This" Condition="-50.0" disabledeltatime="true" />
       <!-- 4 uses needed to cure cancer -->
@@ -252,8 +252,8 @@
     <Fabricate suitablefabricators="medicalfabricator" requiredtime="30">
       <RequiredSkill identifier="medical" level="55" />
       <RequiredItem identifier="bloodsample" amount="3" />
-      <RequiredItem identifier="antibioticpowder" amount="2" />
-      <RequiredItem identifier="reagent" amount="4" />
+      <RequiredItem identifier="liquidplasma" />
+      <RequiredItem identifier="reagent" amount="2" />
       <RequiredItem identifier="antibiotics" amount="2" />
       <RequiredItem identifier="stabilozine" amount="2" />
     </Fabricate>
@@ -303,11 +303,11 @@
       <Price storeidentifier="merchantmedical" multiplier="0.9" />
     </Price>
     <Fabricate suitablefabricators="medicalfabricator" requiredtime="60" requiresrecipe="false">
-      <RequiredSkill identifier="medical" level="60" />
-      <RequiredItem identifier="donorbloodpack" />
-      <RequiredItem identifier="vitaminpowder" amount="2" />
+      <RequiredSkill identifier="medical" level="50" />
+      <RequiredItem identifier="donorbloodpack" amount="2" />
+      <RequiredItem identifier="vitaminpowder" amount="3" />
       <RequiredItem identifier="fentanyl" />
-      <RequiredItem identifier="reagent" />
+      <RequiredItem identifier="liquidplasma" amount="2" />
       <RequiredItem identifier="elastin" amount="2" />
     </Fabricate>
     <Deconstruct time="30">
@@ -382,14 +382,12 @@
       <Price storeidentifier="merchantmedical" multiplier="0.9" />
     </Price>
     <Fabricate suitablefabricators="medicalfabricator" requiredtime="40">
-      <RequiredSkill identifier="medical" level="55" />
+      <RequiredSkill identifier="medical" level="15" />
       <RequiredItem identifier="bloodsample" />
       <RequiredItem identifier="bloodsample" />
       <RequiredItem identifier="bloodsample" />
-      <RequiredItem identifier="liquidplasma" />
     </Fabricate>
     <Deconstruct time="10">
-      <Item identifier="bloodsample" />
       <Item identifier="bloodsample" />
       <Item identifier="bloodsample" />
     </Deconstruct>
@@ -400,7 +398,7 @@
     <Holdable canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
       <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
       <StatusEffect type="OnFailure" target="This" Condition="-100.0" disabledeltatime="true" />
-      <RequiredSkill identifier="medical" level="55" />
+      <RequiredSkill identifier="medical" level="45" />
       <StatusEffect statuseffectstags="medical" type="OnUse" target="UseTarget" duration="20">
         <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
         <ReduceAffliction identifier="bloodloss" amount="3.25" />
@@ -431,7 +429,7 @@
       <Price storeidentifier="merchantmedical" multiplier="0.9" />
     </Price>
     <Fabricate suitablefabricators="medicalfabricator" requiredtime="20" amount="6">
-      <RequiredSkill identifier="medical" level="35" />
+      <RequiredSkill identifier="medical" level="30" />
       <RequiredItem identifier="antibleeding1" amount="6" />
       <RequiredItem identifier="tonicliquid" />
     </Fabricate>
@@ -444,7 +442,7 @@
     <Sprite texture="%ModDir%/sprites/betterBandage.png" sourcerect="0,0,64,64" depth="0.6" />
     <Body width="60" height="20" density="20" />
     <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="10" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
-      <RequiredSkill identifier="medical" level="22" />
+      <RequiredSkill identifier="medical" level="40" />
       <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
       <StatusEffect type="OnFailure" target="This" Condition="-100.0" disabledeltatime="true" />
       <StatusEffect statuseffectstags="medical" type="OnUse" target="This, Limb" duration="5">
@@ -475,7 +473,7 @@
       <Price storeidentifier="merchantmedical" multiplier="0.9" />
     </Price>
     <Fabricate suitablefabricators="medicalfabricator" requiredtime="20" amount="3">
-      <RequiredSkill identifier="medical" level="45" />
+      <RequiredSkill identifier="medical" level="40" />
       <RequiredItem identifier="donorbloodpack" />
       <RequiredItem identifier="vitaminpowder" />
       <RequiredItem identifier="reagent" />
@@ -531,9 +529,9 @@
       <Price storeidentifier="merchantresearch" multiplier="0.6" />
       <Price storeidentifier="merchantmedical" multiplier="0.9" />
     </Price>
-    <Fabricate suitablefabricators="medicalfabricator" requiredtime="50" requiresrecipe="true">
-      <RequiredSkill identifier="medical" level="60" />
-      <RequiredItem identifier="donorbloodpack" />
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="40" >
+      <RequiredSkill identifier="medical" level="45" />
+      <RequiredItem identifier="donorbloodpack" amount="2" />
       <RequiredItem identifier="vitaminpowder" amount="2" />
       <RequiredItem identifier="deusizine" />
       <RequiredItem identifier="reagent" amount="3" />
@@ -551,7 +549,7 @@
     <SuitableTreatment type="bloodloss" amount="200" />
     <SuitableTreatment type="oxygenlow" amount="200" />
     <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="5,0" handle1="-5,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
-      <RequiredSkill identifier="medical" level="60" />
+      <RequiredSkill identifier="medical" level="55" />
       <StatusEffect type="OnUse" target="This" Condition="-100" disabledeltatime="true" />
       <StatusEffect type="OnFailure" target="This" Condition="-100" disabledeltatime="true" />
       <!-- General healing -->
@@ -592,7 +590,7 @@
       <Price storeidentifier="merchantmedical" multiplier="0.9" />
     </Price>
     <Fabricate suitablefabricators="medicalfabricator" requiredtime="50" requiresrecipe="true">
-      <RequiredSkill identifier="medical" level="60" />
+      <RequiredSkill identifier="medical" level="64" />
       <RequiredItem identifier="donorbloodpack" />
       <RequiredItem identifier="liquidoxygenite" />
       <RequiredItem identifier="reagent" />
@@ -609,7 +607,7 @@
     <Body width="60" height="20" density="20" />
     <SuitableTreatment type="oxygenlow" amount="90" />
     <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
-      <RequiredSkill identifier="medical" level="72" />
+      <RequiredSkill identifier="medical" level="50" />
       <StatusEffect type="OnUse" target="This" Condition="-100" disabledeltatime="true" />
       <StatusEffect type="OnFailure" target="This" Condition="-100" disabledeltatime="true" />
       <!-- General healing -->
@@ -647,26 +645,22 @@
       <Price storeidentifier="merchantresearch" multiplier="0.6" />
       <Price storeidentifier="merchantmedical" multiplier="0.9" />
     </Price>
-    <Fabricate suitablefabricators="medicalfabricator" requiredtime="50" requiresrecipe="true">
-      <RequiredSkill identifier="medical" level="40" />
-      <RequiredItem identifier="alienblood" />
-      <RequiredItem identifier="antibioticpowder" amount="2" />
-      <RequiredItem identifier="ethanol" amount="2" />
-      <RequiredItem identifier="reagent" />
-      <RequiredItem identifier="liquidplasma" />
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="50" >
+      <RequiredSkill identifier="medical" level="23" />
+      <RequiredItem identifier="bloodsample" />
+      <RequiredItem identifier="reagent" amount="2" />
+      <RequiredItem identifier="stabilozine" />
     </Fabricate>
     <Deconstruct time="20">
-      <Item identifier="donorbloodpack" />
-      <Item identifier="liquidplasma" />
-      <Item identifier="reagent" />
-      <Item identifier="liquidoxygenite" />
+      <Item identifier="bloodsample" />
+      <Item identifier="reagent" amount="2" />
     </Deconstruct>
     <InventoryIcon texture="%ModDir%/icons/syringeRE.png" sourcerect="0,0,64,64" />
     <Sprite texture="%ModDir%/sprites/syringeRE.png" sourcerect="0,0,64,64" depth="0.6" />
     <Body width="60" height="20" density="20" />
     <SuitableTreatment type="oxygenlow" amount="90" />
     <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
-      <RequiredSkill identifier="medical" level="72" />
+      <RequiredSkill identifier="medical" level="40" />
       <StatusEffect type="OnUse" target="This" Condition="-100" disabledeltatime="true" />
       <StatusEffect type="OnFailure" target="This" Condition="-100" disabledeltatime="true" />
       <!-- General healing -->
@@ -783,7 +777,7 @@
     <Sprite texture="%ModDir%/sprites/syringeEmpty.png" sourcerect="0,0,64,64" depth="0.6" />
     <Body width="60" height="20" density="20" />
     <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="-5,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect">
-      <RequiredSkill identifier="medical" level="45" />
+      <RequiredSkill identifier="medical" level="30" />
       <StatusEffect statuseffectstags="medical" type="OnUse" target="UseTarget,This" comparison="And" condition="-100" disabledeltatime="true">
         <Conditional speciesname="eq human" />
         <Conditional IsDead="eq false" />
@@ -809,14 +803,14 @@
       <Price storeidentifier="merchantresearch" multiplier="0.6" />
       <Price storeidentifier="merchantmedical" multiplier="0.9" />
     </Price>
-    <Fabricate suitablefabricators="medicalfabricator" requiredtime="35">
-      <RequiredSkill identifier="medical" level="30" />
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="20">
+      <RequiredSkill identifier="medical" level="20" amount="2" />
       <RequiredItem identifier="chlorine" />
       <RequiredItem identifier="magnesium" />
     </Fabricate>
-    <Deconstruct time="35">
-      <Item identifier="sodium" />
-      <Item identifier="magnesium" />
+    <Deconstruct time="10">
+      <Item identifier="sodium" outcondition="0.5" />
+      <Item identifier="magnesium" outcondition="0.5" />
     </Deconstruct>
     <InventoryIcon texture="%ModDir%/icons/sampleBlue.png" sourcerect="0,0,64,64" depth="0.6" />
     <Sprite texture="%ModDir%/sprites/sampleBlue.png" sourcerect="0,0,64,64" depth="0.6" />
@@ -833,14 +827,14 @@
       <Price storeidentifier="merchantresearch" multiplier="0.6" />
       <Price storeidentifier="merchantmedical" multiplier="0.9" />
     </Price>
-    <Fabricate suitablefabricators="medicalfabricator" requiredtime="35">
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="30">
       <RequiredSkill identifier="medical" level="30" />
       <RequiredItem identifier="swimbladder" />
       <RequiredItem identifier="phosphorus" />
       <RequiredItem identifier="iron" amount="2" />
       <RequiredItem identifier="reagent" />
     </Fabricate>
-    <Deconstruct time="35">
+    <Deconstruct time="20">
       <Item identifier="phosphorus" />
       <Item identifier="swimbladder" />
       <Item identifier="iron" outcondition="0.5" />

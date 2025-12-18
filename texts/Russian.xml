@@ -3,9 +3,8 @@
   <!-- Afflictions -->
   <afflictionname.flu>Грипп</afflictionname.flu>
   <afflictiondescription.flu>У пациента грипп. В долгосрочной перспективе это может привести к смерти.</afflictiondescription.flu>
-  <afflictioncauseofdeath.flu>Смерть от гриппа</afflictioncauseofdeath.flu>
   <afflictionname.fever>Лихорадка</afflictionname.fever>
-  <afflictiondescription.fever>Пациент страдает от высоких температур в теле.</afflictiondescription.fever>
+  <afflictiondescription.fever>Пациент страдает от высоких температур в теле. Его имунной системе может понадобиться помощь извне для противостояния болезням.</afflictiondescription.fever>
   <afflictionname.cancer>Рак</afflictionname.cancer>
   <afflictiondescription.cancer>Пациент страдает от рака. Нависшая над пациентом угроза смерти требует своевременного лечения. В худшем случае, пациента ждёт мучительная смерть.</afflictiondescription.cancer>
   <afflictioncauseofdeath.cancer>Смерть от рака</afflictioncauseofdeath.cancer>
