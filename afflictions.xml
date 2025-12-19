@@ -279,7 +279,7 @@
     </Effect>
     <!-- Fourth stage: Player blackouts(replaced by stun)-->
     <Effect minstrength="290" maxstrength="300" strengthchange="-1">
-      <Affliction identifier="stun" setvalue"true" />
+      <Affliction identifier="stun" setvalue="true" />
     </Effect>
     <icon texture="%ModDir%/icons/charBrokenHead.png" sourcerect="0,0,128,128" color="255,100,100,255" origin="0,0" />
   </Affliction>
