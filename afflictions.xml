@@ -280,6 +280,7 @@
     <!-- Fourth stage: Player blackouts(replaced by stun)-->
     <Effect minstrength="290" maxstrength="300" strengthchange="-1">
       <!-- !TESTED -->
+      <!-- Periodically, from 30 to 60 seconds, gain stuns from 2.5 to 10 strength. Stun is chosen randomly. -->
       <PeriodicEffect mininterval="30" maxinterval="60">
         <StatusEffect target="Character" SpeedMultiplier="0.4" setvalue="true"/>
         <Affliction identifier="stun" strength="2.5" selectionmode="Random" />
