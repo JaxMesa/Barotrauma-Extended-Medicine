@@ -257,7 +257,7 @@
     </Effect>
     <icon texture="%ModDir%/icons/charBleeding.png" sourcerect="0,0,128,128" color="255,90,0,255" origin="0,0" />
   </Affliction>
-  <!-- Pain: Caused by severe injuries. Accumulates. Causes blackout and give debuffs over time. Should motivate player to seek help. ~6 min till blackout. Every severe injury accelerate pain gain. Goes away by itself over time -> Treat causes -->
+  <!-- Pain: Caused by severe injuries and fever. Accumulates. Causes blackout and give debuffs over time. Should motivate player to seek help. ~6 min till blackout. Every severe injury accelerate pain gain. Goes away by itself over time -> Treat causes -->
   <Affliction name="" identifier="pain" description="" type="pain" limbspecific="false" indicatorlimb="Head" activationthreshold="0.5" showiconthreshold="0" minstrength="0" maxstrength="300" healcostmultiplier="1">
     <!-- First stage: None. At least 2 severe injuries needed to cause to growth (+2) -->
     <Effect minstrength="0" maxstrength="100" strengthchange="-1">
@@ -279,12 +279,7 @@
     </Effect>
     <!-- Fourth stage: Player blackouts(replaced by stun)-->
     <Effect minstrength="290" maxstrength="300" strengthchange="-1">
-      <PeriodicEffect mininterval="30" maxinterval="60">
-        <StatusEffect target="Character" SpeedMultiplier="0.4" setvalue="true"/>
-        <Affliction identifier="stun" strength="2.5" selectionmode="Random" />
-        <Affliction identifier="stun" strength="5" />
-        <Affliction identifier="stun" strength="10" />
-      </PeriodicEffect>
+      <Affliction identifier="stun" setvalue"true" />
     </Effect>
     <icon texture="%ModDir%/icons/charBrokenHead.png" sourcerect="0,0,128,128" color="255,100,100,255" origin="0,0" />
   </Affliction>
