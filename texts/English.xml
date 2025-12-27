@@ -7,16 +7,16 @@
   <afflictiondescription.fever>The patient suffers from high temperatures inside his body. His immune system might need some external help to deal with diseases.</afflictiondescription.fever>
   <afflictionname.cancer>Cancer</afflictionname.cancer>
   <afflictiondescription.cancer>The patient suffers from cancer. The threat of death hanging over the patient requires timely treatment. In the worst case, a painful death awaits the patient.</afflictiondescription.cancer>
-  <afflictioncauseofdeath.cancer>Died by cancer</afflictioncauseofdeath.cancer>
+  <afflictioncauseofdeath.cancer>Died from cancer</afflictioncauseofdeath.cancer>
   <afflictionname.spacerabies>Space rabies</afflictionname.spacerabies>
   <afflictiondescription.spacerabies>The patient is suffering from space rabies, an infection that probably came from a bite. Patient experiences blurry vision, increased movement speed, and the desire to physically hurt other living beings.</afflictiondescription.spacerabies>
-  <afflictioncauseofdeath.spacerabies>Died by rabies</afflictioncauseofdeath.spacerabies>
+  <afflictioncauseofdeath.spacerabies>Died from rabies</afflictioncauseofdeath.spacerabies>
   <afflictionname.psyshock>Psychotic shock</afflictionname.psyshock>
   <afflictiondescription.psyshock>The patient begins to gradually go crazy and lose his mind. In the end, this can lead to the death of the patient.</afflictiondescription.psyshock>
-  <afflictioncauseofdeath.psyshock>Died by heavy stress</afflictioncauseofdeath.psyshock>
+  <afflictioncauseofdeath.psyshock>Died from heavy stress</afflictioncauseofdeath.psyshock>
   <afflictionname.bloodpoisoning>Blood poisoning</afflictionname.bloodpoisoning>
-  <afflictiondescription.bloodpoisoning>The blood seems to have been contaminated with blood transfusions. Supplemental blood transfusion may be required, preferably "correct."</afflictiondescription.bloodpoisoning>
-  <afflictioncauseofdeath.bloodpoisoning>Died by blood poisoning</afflictioncauseofdeath.bloodpoisoning>
+  <afflictiondescription.bloodpoisoning>The blood seems to have been contaminated with blood transfusions. Supplemental blood transfusion may be required, preferably "correct".</afflictiondescription.bloodpoisoning>
+  <afflictioncauseofdeath.bloodpoisoning>Died from blood poisoning</afflictioncauseofdeath.bloodpoisoning>
   <afflictionname.severeinjury>Severe injury</afflictionname.severeinjury>
   <afflictiondescription.severeinjury>The limb is badly damaged. The patient is in severe pain.</afflictiondescription.severeinjury>
   <afflictionname.pain>Pain</afflictionname.pain>
@@ -25,22 +25,22 @@
   <afflictiondescription.hemor>A painful swelling that causes discomfort and may periodically incapacitate the patient. Need something sharp to remove it.</afflictiondescription.hemor>
   <afflictionname.severebleeding>Severe bleeding</afflictionname.severebleeding>
   <afflictiondescription.severebleeding>Open wound. The patient is in severe pain.</afflictiondescription.severebleeding>
-  <afflictionname.blackout>Blackout</afflictionname.blackout>
-  <afflictiondescription.blackout>The patient is dysdirected as a result of severe pain. He can hardly stand on his feet and keep himself conscious.</afflictiondescription.blackout>
+  <afflictionname.blackout>Faint</afflictionname.blackout>
+  <afflictiondescription.blackout>The patient is disoriented as a result of severe pain. He can hardly stand on his feet and keep himself conscious.</afflictiondescription.blackout>
   <afflictioncauseofdeath.blackout>Brain death</afflictioncauseofdeath.blackout>
   <!-- Items -->
   <entityname.antibioticpowder>Antibiotic powder</entityname.antibioticpowder>
-  <entitydescription.antibioticpowder>It fights pests. It is a medical component.</entitydescription.antibioticpowder>
+  <entitydescription.antibioticpowder>Helps to create a cure to diseases. It is a medical component.</entitydescription.antibioticpowder>
   <entityname.vitaminpowder>Vitamin powder</entityname.vitaminpowder>
-  <entitydescription.vitaminpowder>Helps fight disease. It is a medical component.</entitydescription.vitaminpowder>
+  <entitydescription.vitaminpowder>Helps to create the immune boosting medicine. It is a medical component.</entitydescription.vitaminpowder>
   <entityname.bloodsample>Blood sample</entityname.bloodsample>
   <entitydescription.bloodsample>A container filled with blood. Useful for crafting medicines.</entitydescription.bloodsample>
   <entityname.emptysyringe>Empty syringe</entityname.emptysyringe>
   <entitydescription.emptysyringe>An empty syringe. Useful for extracting fluids from bodies.</entitydescription.emptysyringe>
   <entityname.reagent>Reagent</entityname.reagent>
-  <entitydescription.reagent>It is a medical component.</entitydescription.reagent>
+  <entitydescription.reagent>Useful for creating commom medicine. It is a medical component.</entitydescription.reagent>
   <entityname.liquidplasma>Liquid Plasma</entityname.liquidplasma>
-  <entitydescription.liquidplasma>Synthesized plasma from organic components. A very unusual component.</entitydescription.liquidplasma>
+  <entitydescription.liquidplasma>Useful for creating advanced medicine. A advanced medical component.</entitydescription.liquidplasma>
   <!-- Clothes/Tools -->
   <entityname.medicalbelt>Medical Belt</entityname.medicalbelt>
   <entitydescription.medicalbelt>A specially designed medical belt for doctors and paramedics, which has additional pockets for medicines, but is not able to perform other functions than helping doctors.</entitydescription.medicalbelt>

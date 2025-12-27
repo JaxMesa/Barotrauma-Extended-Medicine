@@ -2,7 +2,7 @@
 <infotexts language="Russian" nowhitespace="false" translatedname="Русский">
   <!-- Afflictions -->
   <afflictionname.flu>Грипп</afflictionname.flu>
-  <afflictiondescription.flu>У пациента грипп. В долгосрочной перспективе это может привести к смерти.</afflictiondescription.flu>
+  <afflictiondescription.flu>У пациента грипп. В долгосрочной перспективе это может привести к околосмертному опыту.</afflictiondescription.flu>
   <afflictionname.fever>Лихорадка</afflictionname.fever>
   <afflictiondescription.fever>Пациент страдает от высоких температур в теле. Его имунной системе может понадобиться помощь извне для противостояния болезням.</afflictiondescription.fever>
   <afflictionname.cancer>Рак</afflictionname.cancer>
@@ -22,25 +22,25 @@
   <afflictionname.pain>Боль</afflictionname.pain>
   <afflictiondescription.pain>Пациент испытывает интенсивную боль, накапливающуюся из-за травм и кровотечений. Длительная сильная боль может привести к дезориентации или потере сознания.</afflictiondescription.pain>
   <afflictionname.hemor>Поджопный волдырь</afflictionname.hemor>
-  <afflictiondescription.hemor>Болезненная припухлость, вызывающая дискомфорт и периодическую потерю трудоспособности. Нужно что то инопланетное и острое, что бы убрать его.</afflictiondescription.hemor>
+  <afflictiondescription.hemor>Болезненная припухлость, вызывающая дискомфорт и периодическую потерю трудоспособности. Нужно что-то острое, чтобы убрать его.</afflictiondescription.hemor>
   <afflictionname.severebleeding>Сильное кровотечение</afflictionname.severebleeding>
   <afflictiondescription.severebleeding>Открытая рана. Пациент испытывает сильную боль.</afflictiondescription.severebleeding>
-  <afflictionname.blackout>Тяжелая дезориентация</afflictionname.blackout>
-  <afflictiondescription.blackout>Пациент дизориентирован в результате сильных болей или травмы головы. Он с трудом стоит на ногах и держит себя в сознании.</afflictiondescription.blackout>
-  <afflictioncauseofdeath.blackout>Серьёзная травма головы</afflictioncauseofdeath.blackout>
+  <afflictionname.blackout>Обморок</afflictionname.blackout>
+  <afflictiondescription.blackout>Пациент дезориентирован в результате сильной боли. Он с трудом стоит на ногах и держит себя в сознании.</afflictiondescription.blackout>
+  <afflictioncauseofdeath.blackout>Смерть мозга</afflictioncauseofdeath.blackout>
   <!-- Items -->
   <entityname.antibioticpowder>Антибиотическая пудра</entityname.antibioticpowder>
-  <entitydescription.antibioticpowder>Борется с вредителями. Является медицинским компонентом.</entitydescription.antibioticpowder>
+  <entitydescription.antibioticpowder>Помогает создать лекарство от болезней. Является медицинским компонентом.</entitydescription.antibioticpowder>
   <entityname.vitaminpowder>Витаминная пудра</entityname.vitaminpowder>
-  <entitydescription.vitaminpowder>Помогает бороться с болезнями. Является медицинским компонентом.</entitydescription.vitaminpowder>
+  <entitydescription.vitaminpowder>Помогает создать лекарство, укрепляющее иммунитет. Является медицинским компонентом.</entitydescription.vitaminpowder>
   <entityname.bloodsample>Образец крови</entityname.bloodsample>
   <entitydescription.bloodsample>Контейнер заполненный кровью. Полезен для создания лекарств.</entitydescription.bloodsample>
   <entityname.emptysyringe>Пустой шприц</entityname.emptysyringe>
   <entitydescription.emptysyringe>Полезен для извлечения жидкостей из тел.</entitydescription.emptysyringe>
   <entityname.reagent>Реагент</entityname.reagent>
-  <entitydescription.reagent>Является медицинским компонентом.</entitydescription.reagent>
+  <entitydescription.reagent>Полезен для создания обычных лекарств. Является медицинским компонентом.</entitydescription.reagent>
   <entityname.liquidplasma>Жидкая плазма</entityname.liquidplasma>
-  <entitydescription.liquidplasma>Синтезированная плазма из органичких компонентов. Очень необычный компонент.</entitydescription.liquidplasma>
+  <entitydescription.liquidplasma>Полезна для создания продвинутых лекарств. Продвинутый медицинский компонент.</entitydescription.liquidplasma>
   <!-- Clothes/Tools -->
   <entityname.medicalbelt>Медицинский пояс</entityname.medicalbelt>
   <entitydescription.medicalbelt>Специально разработанный для врачей и парамедиков медицинский пояс, имеющий дополнительные карманы для медикаментов, но не способный выполнять иные функции, кроме как помогать врачам.</entitydescription.medicalbelt>
@@ -52,7 +52,7 @@
   <entityname.antipsychoticpills>Антипсихотики</entityname.antipsychoticpills>
   <entitydescription.antipsychoticpills>Иногда ваш рассудок и мораль падают до предела и вам нужно быстрое и недолгое решение этой проблемы.</entitydescription.antipsychoticpills>
   <entityname.radiazine>Радиацин</entityname.radiazine>
-  <entitydescription.radiazine>Шприц заполненный веществом для борьбы с радиацией и раком.</entitydescription.radiazine>
+  <entitydescription.radiazine>Шприц, заполненный почти смертельным составом, который, как говорят, способен вылечить рак и радиацию.</entitydescription.radiazine>
   <entityname.rabiesvaccine>Аутовакцина</entityname.rabiesvaccine>
   <entitydescription.rabiesvaccine>Шприц заполненный смесью крови и других мощных компонентов, обеспечивает сопротивление бешенству после использования. Спасает жизнь на ранних этапах болезни.</entitydescription.rabiesvaccine>
   <entityname.vitaminsoulution>Раствор витаминов</entityname.vitaminsoulution>

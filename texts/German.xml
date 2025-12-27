@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="German" nowhitespace="false" translatedname="Deutsch">
+  <!-- Afflictions -->
+  <afflictionname.flu>Influenza</afflictionname.flu>
+  <afflictiondescription.flu>Der Patient hat eine Grippe. Langfristig kann dies zu Nah-Tod-Erfahrungen führen.</afflictiondescription.flu>
+  <afflictionname.fever>Fieber</afflictionname.fever>
+  <afflictiondescription.fever>Der Patient leidet unter hohen Temperaturen in seinem Körper. Sein Immunsystem könnte etwas externe Hilfe benötigen, um mit Krankheiten umzugehen.</afflictiondescription.fever>
+  <afflictionname.cancer>Krebs</afflictionname.cancer>
+  <afflictiondescription.cancer>Der Patient leidet an Krebs. Die Todesgefahr, die über dem Patienten hängt, erfordert eine rechtzeitige Behandlung. Im schlimmsten Fall erwartet den Patienten ein schmerzhafter Tod.</afflictiondescription.cancer>
+  <afflictioncauseofdeath.cancer>Gestorben an Krebs</afflictioncauseofdeath.cancer>
+  <afflictionname.spacerabies>Kosmische Tollwut</afflictionname.spacerabies>
+  <afflictiondescription.spacerabies>Der Patient leidet an Weltraumwut, einer Infektion, die wahrscheinlich durch einen Biss verursacht wurde. Der Patient erlebt verschwommenes Sehen, erhöhte Bewegungsgeschwindigkeit und den Wunsch, andere Lebewesen körperlich zu verletzen.</afflictiondescription.spacerabies>
+  <afflictioncauseofdeath.spacerabies>Gestorben durch koscmischen Tollwut</afflictioncauseofdeath.spacerabies>
+  <afflictionname.psyshock>Psychotischer Schock</afflictionname.psyshock>
+  <afflictiondescription.psyshock>Der Patient beginnt allmählich verrückt zu werden und seinen Verstand zu verlieren. Am Ende kann dies zum Tod des Patienten führen.</afflictiondescription.psyshock>
+  <afflictioncauseofdeath.psyshock>Gestorben durch starken Stress</afflictioncauseofdeath.psyshock>
+  <afflictionname.bloodpoisoning>Blutvergiftung</afflictionname.bloodpoisoning>
+  <afflictiondescription.bloodpoisoning>Das Blut scheint mit Bluttransfusionen kontaminiert worden zu sein. Zusätzliche Bluttransfusionen können erforderlich sein, vorzugsweise „korrekt“.</afflictiondescription.bloodpoisoning>
+  <afflictioncauseofdeath.bloodpoisoning>Gestorben durch Blutvergiftung</afflictioncauseofdeath.bloodpoisoning>
+  <afflictionname.severeinjury>Schwere Verletzung</afflictionname.severeinjury>
+  <afflictiondescription.severeinjury>Das Glied ist stark beschädigt. Der Patient hat starke Schmerzen.</afflictiondescription.severeinjury>
+  <afflictionname.pain>Schmerz</afflictionname.pain>
+  <afflictiondescription.pain>Der Patient leidet unter starken Schmerzen, die sich durch Verletzungen und Blutungen ansammeln. Anhaltende hohe Schmerzen können Desorientierung oder Blackout verursachen.</afflictiondescription.pain>
+  <afflictionname.hemor>Stumpfblase</afflictionname.hemor>
+  <afflictiondescription.hemor>Eine schmerzhafte Schwellung, die Beschwerden verursacht und den Patienten periodisch außer Gefecht setzen kann. Brauchen Sie etwas Scharfes, um es zu entfernen.</afflictiondescription.hemor>
+  <afflictionname.severebleeding>Schwere Blutung</afflictionname.severebleeding>
+  <afflictiondescription.severebleeding>Offene Wunde. Der Patient hat starke Schmerzen.</afflictiondescription.severebleeding>
+  <afflictionname.blackout>Ohnmacht</afflictionname.blackout>
+  <afflictiondescription.blackout>Der Patient ist durch starke Schmerzen desorientiert. Er kann kaum auf den Beinen stehen und sich bei Bewusstsein halten.</afflictiondescription.blackout>
+  <afflictioncauseofdeath.blackout>Hirntod</afflictioncauseofdeath.blackout>
+  <!-- Items -->
+  <entityname.antibioticpowder>Antibiotikapulver</entityname.antibioticpowder>
+  <entitydescription.antibioticpowder>Hilft, eine Heilung für Krankheiten zu schaffen. Es ist eine medizinische Komponente.</entitydescription.antibioticpowder>
+  <entityname.vitaminpowder>Vitaminpulver</entityname.vitaminpowder>
+  <entitydescription.vitaminpowder>Hilft, die immunstärkende Medizin zu schaffen. Es ist eine medizinische Komponente.</entitydescription.vitaminpowder>
+  <entityname.bloodsample>Blutprobe</entityname.bloodsample>
+  <entitydescription.bloodsample>Ein mit Blut gefüllter Behälter. Nützlich für die Herstellung von Medikamenten.</entitydescription.bloodsample>
+  <entityname.emptysyringe>Leere Spritze</entityname.emptysyringe>
+  <entitydescription.emptysyringe>Eine leere Spritze. Nützlich zum Extrahieren von Flüssigkeiten aus Körpern.</entitydescription.emptysyringe>
+  <entityname.reagent>Reagenz</entityname.reagent>
+  <entitydescription.reagent>Nützlich für die Herstellung von üblichen Medikamenten. Es ist eine medizinische Komponente.</entitydescription.reagent>
+  <entityname.liquidplasma>Flüssiges Plasma</entityname.liquidplasma>
+  <entitydescription.liquidplasma>Nützlich für die Herstellung von fortgeschrittenen Medikamenten. Eine fortgeschrittene medizinische Komponente.</entitydescription.liquidplasma>
+  <!-- Clothes/Tools -->
+  <entityname.medicalbelt>Medizinischer Gürtel</entityname.medicalbelt>
+  <entitydescription.medicalbelt>Ein speziell entworfener medizinischer Gürtel für Ärzte und Sanitäter, der zusätzliche Taschen für Medikamente hat, aber keine anderen Funktionen als die Unterstützung von Ärzten ausführen kann.</entitydescription.medicalbelt>
+  <!-- Medicine -->
+  <entityname.antibioticpills>Antibiotika</entityname.antibioticpills>
+  <entitydescription.antibioticpills>Milde Antibiotika in Form von Pillen. Helfen bei der Behandlung von Krankheiten.</entitydescription.antibioticpills>
+  <entityname.vitaminpills>Vitamine</entityname.vitaminpills>
+  <entitydescription.vitaminpills>Kleine Pillen, die dem Körper bei der Erholung helfen. Schmeckt wie ein Bonbon.</entitydescription.vitaminpills>
+  <entityname.antipsychoticpills>Antipsychotika</entityname.antipsychoticpills>
+  <entitydescription.antipsychoticpills>Manchmal fallen deine Vernunft und Moral auf das Limit und du brauchst eine schnelle und kurzlebige Lösung für dieses Problem.</entitydescription.antipsychoticpills>
+  <entityname.radiazine>Radiazin</entityname.radiazine>
+  <entitydescription.radiazine>Eine Spritze gefüllt mit einer fast tödlichen Zusammensetzung, die angeblich Krebs und Strahlung heilen kann.</entitydescription.radiazine>
+  <entityname.rabiesvaccine>Tollwut-Impfstoff</entityname.rabiesvaccine>
+  <entitydescription.rabiesvaccine>Eine Spritze gefüllt mit einer Mischung aus Blut und anderen starken Komponenten bietet nach Gebrauch Resistenz gegen Tollwut. Rettet Leben in den frühen Stadien der Krankheit.</entitydescription.rabiesvaccine>
+  <entityname.vitaminsoulution>Vitaminlösung</entityname.vitaminsoulution>
+  <entitydescription.vitaminsoulution>Eine hochwirksame, vielseitige hochkonzentrierte Vitaminlösung, die es ermöglicht, den Patienten aus fast jeder schwierigen Situation zu retten. Vor der Entwicklung von Kampfstimulanzien wurde sie als Hauptmittel zur Erfüllung der Funktionen eines Kampfstimulans betrachtet. Leider ist dieses Medikament für seine schrecklichen Nebenwirkungen bekannt.</entitydescription.vitaminsoulution>
+  <entityname.compressionbandage>Kompressionsbandage</entityname.compressionbandage>
+  <entitydescription.compressionbandage>Ein Verband, speziell entwickelt zur Behandlung von Knochenbrüchen, kann aber auch zur Behandlung schwerer Blutungen verwendet werden.</entitydescription.compressionbandage>
+  <entityname.donorbloodpack>Spenderblutpackung</entityname.donorbloodpack>
+  <entitydescription.donorbloodpack>Hergestellt aus rohem Spenderblut, heilt die Packung Blutverlust.</entitydescription.donorbloodpack>
+  <entityname.antibloodpills>Osimilin</entityname.antibloodpills>
+  <entitydescription.antibloodpills>Das Medikament, das den Stoffwechsel leicht verlangsamt, erhöht den Blutdruck, aber erhöht die Überlebenschancen des Patienten bei schwerem Blutverlust und Blutungen. Sanitätern empfohlen.</entitydescription.antibloodpills>
+  <entityname.stasissolution>Cryoxadon-Lösung</entityname.stasissolution>
+  <entitydescription.stasissolution>Eine kühle Mischung in einem Beutel, die in der Lage ist, einen Patienten für kurze Zeit in einen Zustand nahe dem kryonischen Schlaf zu versetzen. Nur von erfahrenen Sanitätern zu verwenden!</entitydescription.stasissolution>
+  <entityname.antioxygenlow>Chemischer Sauerstoff</entityname.antioxygenlow>
+  <entitydescription.antioxygenlow>Eine spezielle Art von Sauerstoff, die mit chemischen Eigenschaften angereichert ist. Ermöglicht es dem Patienten, für eine relativ lange Zeit auf Sauerstoff zu verzichten. Nützlich als Notfallmedizin für Reisende.</entitydescription.antioxygenlow>
+  <entityname.antiaddiction>Adixil</entityname.antiaddiction>
+  <entitydescription.antiaddiction>Ein ungewöhnliches Medikament auf Basis von Plasma und einem Organ eines Meeresbewohners, das in der Lage ist, die Abhängigkeit von Patienten effektiv zu behandeln, aber deren Entzug intensiviert.</entitydescription.antiaddiction>
+  <!-- Buffs -->
+  <afflictionname.fluresistance>Beständigkeit</afflictionname.fluresistance>
+  <afflictiondescription.fluresistance>Es scheint, dass keine Krankheit den Patienten für eine Weile so einfach überwinden kann.</afflictiondescription.fluresistance>
+  <afflictionname.spacerabiesresistance>Geimpft</afflictionname.spacerabiesresistance>
+  <afflictiondescription.spacerabiesresistance>Durch eine astronomische Erhöhung der Gesamtzahl der weißen Blutkörperchen im Körper des Patienten durch Substanzen ist er vorübergehend gegen kosmische Tollwut resistent.</afflictiondescription.spacerabiesresistance>
+  <afflictionname.psyshockresistance>Eiserne Psyche</afflictionname.psyshockresistance>
+  <afflictiondescription.psyshockresistance>Der Patient ist vorübergehend vor psychotischem Schock geschützt.</afflictiondescription.psyshockresistance>
+  <afflictionname.metabolismarrest>Stoffwechselstillstand</afflictionname.metabolismarrest>
+  <afflictiondescription.metabolismarrest>Der Patient befindet sich in einer tiefen Trance, und sein Stoffwechsel ist fast vollständig zum Stillstand gekommen.</afflictiondescription.metabolismarrest>
+</infotexts>
