@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="[EM] Extended Medicine" modversion="1.0.72" corepackage="False" steamworkshopid="2819408026" gameversion="1.11.5.0">
+<contentpackage name="[EM] Extended Medicine" modversion="1.0.73" corepackage="False" steamworkshopid="2819408026" gameversion="1.11.5.0">
   <Afflictions file="%ModDir%/afflictions.xml" />
   <Afflictions file="%ModDir%/overridesAfflictions.xml" />
   <Item file="%ModDir%/overridesItems.xml" />
@@ -8,6 +8,4 @@
   <Item file="%ModDir%/items.xml" />
   <Text file="%ModDir%/texts/English.xml" />
   <Text file="%ModDir%/texts/Russian.xml" />
-  <!-- Addons -->
-  <!-- <Item file="%ModDir%/Addons/addon_example.xml" /> -->
 </contentpackage>
