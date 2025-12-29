@@ -23,7 +23,6 @@
   <afflictiondescription.pain>Пациент испытывает интенсивную боль, накапливающуюся из-за травм и кровотечений. Длительная боль может привести к дезориентации или потере сознания.</afflictiondescription.pain>
   <afflictionname.severebleeding>Сильное кровотечение</afflictionname.severebleeding>
   <afflictiondescription.severebleeding>Открытая рана. Пациент испытывает сильную боль.</afflictiondescription.severebleeding>
-  <afflictionname.blackout>Обморок</afflictionname.blackout>
   <!-- Items -->
   <entityname.antibioticpowder>Антибиотическая пудра</entityname.antibioticpowder>
   <entitydescription.antibioticpowder>Помогает создать лекарство от болезней. Это медицинский компонент.</entitydescription.antibioticpowder>
@@ -78,6 +77,7 @@
   <!--
   <afflictionname.hemor>Поджопный волдырь</afflictionname.hemor>
   <afflictiondescription.hemor>Болезненная припухлость, вызывающая дискомфорт и периодическую потерю трудоспособности. Нужно что-то острое, чтобы убрать его.</afflictiondescription.hemor>
+  <afflictionname.blackout>Обморок</afflictionname.blackout>
   <afflictiondescription.blackout>Пациент дезориентирован в результате сильной боли. Он с трудом стоит на ногах и держит себя в сознании.</afflictiondescription.blackout>
   <afflictioncauseofdeath.blackout>Смерть мозга</afflictioncauseofdeath.blackout>
   -->
