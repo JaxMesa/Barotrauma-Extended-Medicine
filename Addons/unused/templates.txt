@@ -1,0 +1,34 @@
+Stuff that is either in progress to be developed/used or need fixes/reworok due causing fatal errors.
+You may feel free to take it and try to improve.
+
+Blackout: Temproraly taken out due not working as intended. Should have 
+<Afflictions>
+    <Affliction name="" identifier="blackout" description="" type="blackout" limbspecific="false" indicatorlimb="Head" activationthreshold="0" showiconthreshold="0" maxstrength="10" minstrength="0">
+    <!-- General effects: Stuns while affected by blackout, gives a bit of psyshock just so, can give a fun effect hemor. -->
+    <Effect minstrength="0" maxstrength="10" strengthchange="-1">
+      <StatusEffect target="Character" setvalue="true">
+        <Affliction identifier="stun" setvalue="true" />
+        <Affliction identifier="psyshock" strength="1.5" />
+        <Affliction identifier="hemor" strength="1" probability="0.0000001" />
+        <ReduceAffliction identifier="pain" strength="1"/>
+      </StatusEffect>
+    </Effect>
+    <icon texture="%ModDir%/icons/charConcussion.png" sourcerect="0,0,128,128" color="255,90,0,255" origin="0,0" />
+    </Affliction>
+</Afflictions>
+
+Hemor: Is not being used as one and only cause was blackout with a small chance.
+  <Affliction name="" identifier="hemor" description="" type="hemor" limbspecific="false" indicatorlimb="Head" showinhealthscannerthreshold="1" activationthreshold="1" maxstrength="1">
+    <!-- Just gives a 5% speed debuff -->
+    <Effect minstrength="0" maxstrength="1">
+      <StatusEffect target="Character" SpeedMultiplier="0.95" setvalue="true">
+      </StatusEffect>
+      <!-- 5% chance to get stunned for 3 sec -->
+      <PeriodicEffect mininterval="120" maxinterval="300">
+        <StatusEffect target="Character">
+          <Affliction identifier="stun" strength="3" probability="0.05" />
+        </StatusEffect>
+      </PeriodicEffect>
+    </Effect>
+    <icon texture="%ModDir%/icons/charBleeding.png" sourcerect="0,0,128,128" color="180,180,180,255" origin="0,0" />
+  </Affliction>
