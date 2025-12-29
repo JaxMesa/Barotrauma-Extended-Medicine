@@ -174,8 +174,7 @@
   <!-- Psychotic Shock: Just a lethal addition to psychosis. Caused by blackout a bit and phychosis. Slowly kills. -->
   <Affliction name="" identifier="psyshock" description="" type="psyshock" limbspecific="false" indicatorlimb="Head" activationthreshold="1" showiconthreshold="150" showinhealthscannerthreshold="0" causeofdeathdescription="" minstrength="0" maxstrength="300">
       <!-- Normal effect when psychoclown is not present -->
-      <Effect minstrength="0" maxstrength="300" minscreenblur="0.0" maxscreenblur="0.7" minvitalitydecrease="0" maxvitalitydecrease="200" strengthchange="-1">
-      </Effect>
+      <Effect minstrength="0" maxstrength="300" minscreenblur="0.0" maxscreenblur="0.7" minvitalitydecrease="0" maxvitalitydecrease="200" strengthchange="-1" />
       <icon texture="%ModDir%/icons/charSilk.png" color="150,26,26,255" origin="0,0" />
     </Affliction>
   <!-- Blood Poisoning: Caused by donor blood with a specific chance when failed to apply. Is just a lethal side effect. -->

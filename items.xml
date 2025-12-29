@@ -306,7 +306,7 @@
       <RequiredSkill identifier="medical" level="50" />
       <RequiredItem identifier="donorbloodpack" amount="2" />
       <RequiredItem identifier="vitaminpowder" amount="3" />
-      <RequiredItem identifier="fentanyl" />
+      <RequiredItem identifier="antidama2" />
       <RequiredItem identifier="liquidplasma" amount="2" />
       <RequiredItem identifier="elastin" amount="2" />
     </Fabricate>
@@ -314,7 +314,7 @@
       <Item identifier="donorbloodpack" />
       <Item identifier="vitaminpowder" />
       <Item identifier="vitaminpowder" />
-      <Item identifier="fentanyl" />
+      <Item identifier="antidama2" />
     </Deconstruct>
     <InventoryIcon texture="%ModDir%/icons/bloodpackOrange.png" sourcerect="0,0,64,64" />
     <Sprite texture="%ModDir%/sprites/bloodpackOrange.png" sourcerect="0,0,64,64" depth="0.6" />
