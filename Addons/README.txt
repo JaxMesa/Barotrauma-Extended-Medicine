@@ -11,4 +11,8 @@ For example: addon_items.xml or addon_afflictions.xml
 Remember to override existing stuff, if you want to modify.
 You are free to add your stuff in this folder as well.
 
+The only thing you are not able to modify yet without loosing
+all your progress is character and his ragdoll.
+But I am looking towards adding hooks to make it able to modify.
+
 29.12.2025, JaxMesa
