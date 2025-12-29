@@ -285,7 +285,7 @@
     <icon texture="%ModDir%/icons/charBrokenHead.png" sourcerect="0,0,128,128" color="255,100,100,255" origin="0,0" />
   </Affliction>
 
-  <!-- Buffs -->
+  <!-- Immunities -->
   <!-- Flu Resistance Buff: Protects from flu only REWORK NEEDED. -->
   <Affliction name="" identifier="fluresistance" description="" type="resistance" isbuff="true" indicatorlimb="Head" limbspecific="false" maxstrength="120" MedicalSkillGain="0.01">
     <Effect minstrength="0" maxstrength="120" strengthchange="-0.15" resistancefor="flu" minresistance="0" maxresistance="0.1">
@@ -323,5 +323,61 @@
       </StatusEffect>
     </Effect>
     <icon texture="%ModDir%/icons/resistStop.png" color="150,26,26,255" origin="0,0" />
+  </Affliction>
+
+  <!-- Imports from "Skill n Drugs" by JaxMesa(29.12.25) -->
+  <!-- Oxygen Buff -->
+  <Affliction name="" identifier="oxygenbuff" description="" hideiconafterdelay="true" type="oxygenbuff" isbuff="true" indicatorlimb="Torso" limbspecific="false" maxstrength="300" MedicalSkillGain="0.002">
+    <Effect minstrength="0" maxstrength="300" strengthchange="-1" resistancefor="oxygenlow" minresistance="0.75" maxresistance="1">
+      <!-- Lasts for 300 seconds without oxygen -->
+      <ReduceAffliction identifier="oxygenlow" amount="100" />
+      <!-- -20% Movement Speed and -30% Swimming Speed -->
+      <StatValue stattype="MovementSpeed" value="-0.2" />
+      <StatValue stattype="SwimmingSpeed" value="-0.3" />
+    </Effect>
+    <icon texture="%ModDir%\icons\buffO2.png" color="0,0,0,100" origin="0,0" />
+  </Affliction>
+
+  <!-- Maintenance Buffs -->
+  <!-- Overdrive Buff: Improves work of electronical and mechanical machines -->
+  <Affliction name="" identifier="overdrivebuff" description="" hideiconafterdelay="true" type="maintenancebuff" isbuff="true" indicatorlimb="Torso" limbspecific="false" maxstrength="300" MedicalSkillGain="0.002">
+    <Effect minstrength="0" maxstrength="300" strengthchange="-2.22">
+      <!-- +300% Tinkering Strengh, +100% Fabrication Speed and +50% Movement Speed -->
+      <StatValue stattype="TinkeringStrength" value="3" />
+      <StatValue stattype="FabricationSpeed" value="1" />
+      <StatValue stattype="MovementSpeed" value="0.5" />
+      <!-- +50% Tinkering Damage to items -->
+      <StatValue stattype="TinkeringDamage" value="0.5" />
+    </Effect>
+    <icon texture="%ModDir%\icons\buffFireTools.png" color="0,0,0,100" origin="0,0" />
+  </Affliction>
+
+  <!-- Repair Speed Buff: Improves repairs -->
+  <Affliction name="" identifier="repairspeedbuff" description="" hideiconafterdelay="true" type="maintenancebuff" isbuff="true" indicatorlimb="Torso" limbspecific="false" maxstrength="300" MedicalSkillGain="0.002">
+    <Effect minstrength="0" maxstrength="300" strengthchange="-1.667">
+      <!-- +50% Hull Repair Speed, +30% Movement Speed and +20% Movement Speed -->
+      <StatValue stattype="RepairToolStructureRepairMultiplier" value="0.5" />
+      <StatValue stattype="SwimmingSpeed" value="0.5" />
+      <StatValue stattype="MovementSpeed" value="0.25" />
+      <!-- -50% Attack Damage via all attack types -->
+      <StatValue stattype="AttackMultiplier" value="0.5" />
+    </Effect>
+    <icon texture="%ModDir%\icons\buffTools.png" color="0,0,0,100" origin="0,0" />
+  </Affliction>
+
+  <!-- Combat Buffs -->
+  <!-- Durability Buff -->
+  <Affliction name="" identifier="durabilitybuff" description="" hideiconafterdelay="true" type="combatbuff" isbuff="true" indicatorlimb="Torso" limbspecific="false" maxstrength="300" MedicalSkillGain="0.002">
+    <Effect minstrength="0" maxstrength="300" strengthchange="-1">
+      <!-- +100% Maximum Health, +33% Attack Damage via all attack types, in 2 times lasts longer without oxygen and +50% Flow Resistance -->
+      <StatValue stattype="MaximumHealthMultiplier" value="1" />
+      <StatValue stattype="AttackMultiplier" value="0.33" />
+      <StatValue stattype="HoldBreathMultiplier" value="1" />
+      <StatValue stattype="FlowResistance" value="0.5" />
+      <!-- -20% Melee Attack Speed, and -20% Movement Speed -->
+      <StatValue stattype="MeleeAttackSpeed" value="-0.2" />
+      <StatValue stattype="MovementSpeed" value="-0.2" />
+    </Effect>
+    <icon texture="%ModDir%\icons\buffTrippleCross.png" color="0,0,0,100" origin="0,0" />
   </Affliction>
 </Afflictions>
