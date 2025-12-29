@@ -328,7 +328,7 @@
   <!-- Imports from "Skill n Drugs" by JaxMesa(29.12.25) -->
   <!-- Oxygen Buff -->
   <Affliction name="" identifier="oxygenbuff" description="" hideiconafterdelay="true" type="oxygenbuff" isbuff="true" indicatorlimb="Torso" limbspecific="false" maxstrength="300" MedicalSkillGain="0.002">
-    <Effect minstrength="0" maxstrength="300" strengthchange="-1" resistancefor="oxygenlow" minresistance="0.75" maxresistance="1">
+    <Effect minstrength="0" maxstrength="300" strengthchange="-1" resistancefor="oxygenlow" minresistance="1" maxresistance="1">
       <!-- Lasts for 300 seconds without oxygen -->
       <ReduceAffliction identifier="oxygenlow" amount="100" />
       <!-- -20% Movement Speed and -30% Swimming Speed -->
