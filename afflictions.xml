@@ -284,11 +284,6 @@
     </Effect>
     <icon texture="%ModDir%/icons/charBrokenHead.png" sourcerect="0,0,128,128" color="255,100,100,255" origin="0,0" />
   </Affliction>
-  <!-- Blackout: Is being gained through max pain. A short unconsciousness(10 secs) -->
-  <!-- Temporaly TURNED OFF due NOT WORKING; Check templates.txt file for template. Maybe you can fix -->
-
-  <!-- Hemorrhoids: No reason. Just for fun. Gives a small debuff. Can be removed by using huskstinger -->
-  <!-- Temporaly TURNED OFF due NOT WORKING; Check templates.txt file for template. Maybe you can fix -->
 
   <!-- Buffs -->
   <!-- Flu Resistance Buff: Protects from flu only REWORK NEEDED. -->
