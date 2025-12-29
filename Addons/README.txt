@@ -12,7 +12,7 @@ Remember to override existing stuff, if you want to modify.
 You are free to add your stuff in this folder as well.
 
 The only thing you are not able to modify yet without loosing
-all your progress is character and his ragdoll.
+all your progress is character and its ragdoll.
 But I am looking towards adding hooks to make it able to modify.
 
 29.12.2025, JaxMesa
