@@ -690,7 +690,6 @@
 
   <!-- Imports from "Skill n Drugs" by JaxMesa(29.12.25) -->
   <!-- Antibleeding acid: Stops bleeding. Cheaper alternative to antiobiotic glue  -->
-  <!-- NO TEXT YET -->
   <AntibleedingAcid name="" identifier="antibleedingacid" category="Medical" tags="smallitem,medical,chem,syringe" maxstacksize="16" maxstacksizecharacterinventory="8" cargocontaineridentifier="mediccrate" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
     <Price baseprice="300">
       <Price storeidentifier="merchantresearch" multiplier="0.75" />
@@ -739,7 +738,6 @@
     </MeleeWeapon>
   </AntibleedingAcid>
   <!-- Anti Drunk: Medicine to reduce drunkness -->
-  <!-- NO TEXT YET -->
   <AntiDrunk name="" identifier="antidrunk" category="Medical" tags="smallitem,medical,chem,syringe" maxstacksize="32" maxstacksizecharacterinventory="16" cargocontaineridentifier="mediccrate" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="wreckmedcab" minamount="0" maxamount="1" spawnprobability="0.15" />
     <Price baseprice="220">
@@ -778,7 +776,6 @@
     </MeleeWeapon>
   </AntiDrunk>
   <!-- Emergency Repairs: Gives stats to allow to repair under hard conditions -->
-  <!-- NO TEXT YET -->
   <EmergencyRepairs name="" identifier="emergencyrepairsmedicine" category="Medical" tags="smallitem,medical,chem,syringe" maxstacksize="24" maxstacksizecharacterinventory="6" cargocontaineridentifier="mediccrate" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
     <Fabricate suitablefabricators="medicalfabricator" requiredtime="50">
       <RequiredSkill identifier="medical" level="40" />
