@@ -605,22 +605,22 @@
     <InventoryIcon texture="%ModDir%/icons/syringeCO.png" sourcerect="0,0,64,64" />
     <Sprite texture="%ModDir%/sprites/syringeCO.png" sourcerect="0,0,64,64" depth="0.6" />
     <Body width="60" height="20" density="20" />
-    <SuitableTreatment type="oxygenlow" amount="90" />
+    <SuitableTreatment type="oxygenbuff" amount="-300" />
     <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
       <RequiredSkill identifier="medical" level="50" />
       <StatusEffect type="OnUse" target="This" Condition="-100" disabledeltatime="true" />
       <StatusEffect type="OnFailure" target="This" Condition="-100" disabledeltatime="true" />
       <!-- General healing -->
-      <StatusEffect statuseffectstags="medical" type="OnUse" target="UseTarget" duration="120">
+      <StatusEffect statuseffectstags="medical" type="OnUse" target="UseTarget" duration="10">
         <Sound file="Content/Items/Medical/Syringe.ogg" type="OnUse" range="500" />
-        <ReduceAffliction type="oxygenlow" amount="1" />
-        <Affliction identifier="chemaddiction" amount="0.35" />
+        <Affliction type="oxygenbuff" amount="30" />
+        <Affliction identifier="chemaddiction" amount="0.1" />
         <ReduceAffliction identifier="chemwithdrawal" amount="1" />
       </StatusEffect>
-      <StatusEffect statuseffectstags="medical" type="OnFailure" target="UseTarget" duration="30">
+      <StatusEffect statuseffectstags="medical" type="OnFailure" target="UseTarget" duration="10">
         <Sound file="Content/Items/Medical/Syringe.ogg" type="OnUse" range="500" />
-        <ReduceAffliction type="oxygenlow" amount="0.5" />
-        <Affliction identifier="chemaddiction" amount="0.7" />
+        <Affliction type="oxygenbuff" amount="10" />
+        <Affliction identifier="chemaddiction" amount="0.2" />
         <ReduceAffliction identifier="chemwithdrawal" amount="0.5" />
       </StatusEffect>
       <!-- Side effects -->
@@ -814,7 +814,6 @@
   </EmergencyRepairs>
 
   <!-- LSurvin -->
-  <!-- NO TEXT YET-->
   <DurabilityMedicine name="" identifier="durabilitymedicine" category="Medical" tags="smallitem,medical,chem,syringe" maxstacksize="24" maxstacksizecharacterinventory="6" cargocontaineridentifier="mediccrate" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
     <Fabricate suitablefabricators="medicalfabricator" requiredtime="50">
       <RequiredSkill identifier="medical" level="40" />
@@ -838,11 +837,11 @@
       <StatusEffect type="OnFailure" target="This" Condition="-100" disabledeltatime="true" />
       <Sound file="Content/Items/Medical/Syringe.ogg" type="OnUse" range="500" />
       <!-- Healing -->
-      <StatusEffect tags="medical" type="OnSuccess" target="UseTarget" duration="10">
-        <Affliction identifier="durabilitybuff" amount="30" />
+      <StatusEffect tags="medical" type="OnSuccess" target="UseTarget" duration="5">
+        <Affliction identifier="durabilitybuff" amount="60" />
       </StatusEffect>
-      <StatusEffect tags="medical" type="OnFailure" target="UseTarget" duration="10">
-        <Affliction identifier="durabilitybuff" amount="10" />
+      <StatusEffect tags="medical" type="OnFailure" target="UseTarget" duration="5">
+        <Affliction identifier="durabilitybuff" amount="30" />
       </StatusEffect>
       <!-- Remove the item when fully used -->
       <StatusEffect type="OnBroken" target="This">
