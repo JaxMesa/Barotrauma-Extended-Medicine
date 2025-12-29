@@ -62,7 +62,7 @@
   <entitydescription.stasissolution>Прохладная на ощуп смесь в пакете способная вводить пациента в приближённый к крионическому сну транс на короткий срок. Используется лишь опытными парамедиками!</entitydescription.stasissolution>
   <entityname.antioxygenlow>Химический кислород</entityname.antioxygenlow>
   <entitydescription.antioxygenlow>Особый вид кислорода насыщенный химическими свойствами. Позволяет пациенту на относительно продолжительный период отказаться от кислорода. Полезен как аварийный медикамент для путешествинников.</entitydescription.antioxygenlow>
-  <entityname.antiaddiction>Адиксил</entityname.antiaddiction>
+  <entityname.antiaddiction>Редукторин</entityname.antiaddiction>
   <entitydescription.antiaddiction>Необычный медикамент на основе плазмы и органа морского обитателя. Эффективно лечить химическую зависимость пациентов, но слегка усиливает её ломку.</entitydescription.antiaddiction>
   <!-- Buffs -->
   <afflictionname.fluresistance>Стойкость</afflictionname.fluresistance>

@@ -62,7 +62,7 @@
   <entitydescription.stasissolution>Eine kühle Mischung in einem Beutel, die in der Lage ist, einen Patienten für kurze Zeit in einen Zustand nahe dem kryonischen Schlaf zu versetzen. Nur von erfahrenen Sanitätern zu verwenden!</entitydescription.stasissolution>
   <entityname.antioxygenlow>Chemischer Sauerstoff</entityname.antioxygenlow>
   <entitydescription.antioxygenlow>Eine spezielle Art von Sauerstoff, die mit chemischen Eigenschaften angereichert ist. Ermöglicht es dem Patienten, für eine relativ lange Zeit auf Sauerstoff zu verzichten. Nützlich als Notfallmedizin für Reisende.</entitydescription.antioxygenlow>
-  <entityname.antiaddiction>Adixil</entityname.antiaddiction>
+  <entityname.antiaddiction>Reduktorin</entityname.antiaddiction>
   <entitydescription.antiaddiction>Ein ungewöhnliches Medikament auf Basis von Plasma und einem Organ eines Meeresbewohners. Behandelt die Abhängigkeit von Patienten effektiv, intensiviert aber deren Entzug.</entitydescription.antiaddiction>
   <!-- Buffs -->
   <afflictionname.fluresistance>Beständigkeit</afflictionname.fluresistance>

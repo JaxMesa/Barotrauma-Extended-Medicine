@@ -62,7 +62,7 @@
   <entitydescription.stasissolution>A cool mixture in a bag capable of introducing a patient into a trans close to cryonic sleep for a short time. Used only by experienced paramedics!</entitydescription.stasissolution>
   <entityname.antioxygenlow>Chemical Oxygen</entityname.antioxygenlow>
   <entitydescription.antioxygenlow>A special type of oxygen is saturated with chemical properties. Allows the patient to abandon oxygen for a relatively long period. Useful as an emergency medicine for travelers.</entitydescription.antioxygenlow>
-  <entityname.antiaddiction>Adixil</entityname.antiaddiction>
+  <entityname.antiaddiction>Reductorin</entityname.antiaddiction>
   <entitydescription.antiaddiction>An unusual medicine based on plasma and an organ of a marine inhabitant. Effectively treats the addiction of patients, but intensifies its withdrawal.</entitydescription.antiaddiction>
   <!-- Buffs -->
   <afflictionname.fluresistance>Persistance</afflictionname.fluresistance>
