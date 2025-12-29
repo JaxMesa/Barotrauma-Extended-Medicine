@@ -21,10 +21,10 @@ If anyone can  fix it, please help with it. Thanks. (JaxMesa; 17.12.25)-->
       <RequiredAffliction identifier="blunttrauma,gunshotwound,bitewounds,burn,deepdamage" minstrength="5" />
       <Affliction identifier="severeinjury" strength="5" probability="0.30" />
     </StatusEffect>
-    <!-- Spacerabies triggers by bites with 10% when characters has at least 20 bites already -->
+    <!-- Spacerabies triggers by bites with 10% when characters has at least 20 bites already(somewhat 2 jaw bites from mudraptor and then every next bite 10% rabies) -->
     <StatusEffect type="OnDamaged" target="This">
       <RequiredAffliction identifier="bitewounds" minstrength="20" />
-      <Affliction identifier="spacerabies" strength="1" probability="0.10"/>
+      <Affliction identifier="spacerabies" strength="100" probability="0.1"/>
     </StatusEffect>
   </limb>
   <limb Name="Head (1)" ID="1" Type="Head" Notes="" Scale="0.5" Flip="True" MirrorVertically="False" MirrorHorizontally="False" Hide="False" SpriteOrientation="0" InheritLimbDepth="None" SteerForce="0" Radius="45" Height="0" Width="0" Density="10" IgnoreCollisions="False" AngularDamping="7" AttackPriority="1" PullPos="0,0" StepOffset="0,0" RefJoint="-1" MouthPos="0,0" ConstantTorque="0" ConstantAngle="0" AttackForceMultiplier="1" MinSeveranceDamage="1" CanBeSeveredAlive="True" SeveredFadeOutTime="60" ApplyTailAngle="False" SineFrequencyMultiplier="1" SineAmplitudeMultiplier="1" BlinkFrequency="0" BlinkDurationIn="0.2" BlinkDurationOut="0.5" BlinkHoldTime="0" BlinkRotationIn="0" BlinkRotationOut="45" BlinkForce="50" OnlyBlinkInWater="False" BlinkTransitionIn="Linear" BlinkTransitionOut="Linear" HealthIndex="0" Friction="0.3" Restitution="0.05">
