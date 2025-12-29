@@ -15,32 +15,28 @@
   <afflictiondescription.psyshock>Пациент начинает постепенно сходить с ума и терять рассудок. В конце-концов это может привести к смерти пациента.</afflictiondescription.psyshock>
   <afflictioncauseofdeath.psyshock>Смерть от сильного стресса</afflictioncauseofdeath.psyshock>
   <afflictionname.bloodpoisoning>Заражение крови</afflictionname.bloodpoisoning>
-  <afflictiondescription.bloodpoisoning>Кровь, кажется, была загрязнена при переливании крови. Может потребоваться дополнение переливание крови, желательно "правильной".</afflictiondescription.bloodpoisoning>
+  <afflictiondescription.bloodpoisoning>Результат переливания крови неопытным врачом донорской крови. Может потребоваться дополнительное переливание крови, но обработанной.</afflictiondescription.bloodpoisoning>
   <afflictioncauseofdeath.bloodpoisoning>Смерть от заражения крови</afflictioncauseofdeath.bloodpoisoning>
   <afflictionname.severeinjury>Серьёзная травма</afflictionname.severeinjury>
   <afflictiondescription.severeinjury>Конечность сильно повреждена. Пациент испытывает сильную боль.</afflictiondescription.severeinjury>
   <afflictionname.pain>Боль</afflictionname.pain>
-  <afflictiondescription.pain>Пациент испытывает интенсивную боль, накапливающуюся из-за травм и кровотечений. Длительная сильная боль может привести к дезориентации или потере сознания.</afflictiondescription.pain>
-  <afflictionname.hemor>Поджопный волдырь</afflictionname.hemor>
-  <afflictiondescription.hemor>Болезненная припухлость, вызывающая дискомфорт и периодическую потерю трудоспособности. Нужно что-то острое, чтобы убрать его.</afflictiondescription.hemor>
+  <afflictiondescription.pain>Пациент испытывает интенсивную боль, накапливающуюся из-за травм и кровотечений. Длительная боль может привести к дезориентации или потере сознания.</afflictiondescription.pain>
   <afflictionname.severebleeding>Сильное кровотечение</afflictionname.severebleeding>
   <afflictiondescription.severebleeding>Открытая рана. Пациент испытывает сильную боль.</afflictiondescription.severebleeding>
   <afflictionname.blackout>Обморок</afflictionname.blackout>
-  <afflictiondescription.blackout>Пациент дезориентирован в результате сильной боли. Он с трудом стоит на ногах и держит себя в сознании.</afflictiondescription.blackout>
-  <afflictioncauseofdeath.blackout>Смерть мозга</afflictioncauseofdeath.blackout>
   <!-- Items -->
   <entityname.antibioticpowder>Антибиотическая пудра</entityname.antibioticpowder>
-  <entitydescription.antibioticpowder>Помогает создать лекарство от болезней. Является медицинским компонентом.</entitydescription.antibioticpowder>
+  <entitydescription.antibioticpowder>Помогает создать лекарство от болезней. Это медицинский компонент.</entitydescription.antibioticpowder>
   <entityname.vitaminpowder>Витаминная пудра</entityname.vitaminpowder>
-  <entitydescription.vitaminpowder>Помогает создать лекарство, укрепляющее иммунитет. Является медицинским компонентом.</entitydescription.vitaminpowder>
+  <entitydescription.vitaminpowder>Помогает создать лекарство, укрепляющее иммунитет. Это медицинский компонент.</entitydescription.vitaminpowder>
   <entityname.bloodsample>Образец крови</entityname.bloodsample>
   <entitydescription.bloodsample>Контейнер заполненный кровью. Полезен для создания лекарств.</entitydescription.bloodsample>
   <entityname.emptysyringe>Пустой шприц</entityname.emptysyringe>
   <entitydescription.emptysyringe>Полезен для извлечения жидкостей из тел.</entitydescription.emptysyringe>
   <entityname.reagent>Реагент</entityname.reagent>
-  <entitydescription.reagent>Полезен для создания обычных лекарств. Является медицинским компонентом.</entitydescription.reagent>
+  <entitydescription.reagent>Полезен для создания обычных лекарств. Это медицинский компонент.</entitydescription.reagent>
   <entityname.liquidplasma>Жидкая плазма</entityname.liquidplasma>
-  <entitydescription.liquidplasma>Полезна для создания продвинутых лекарств. Продвинутый медицинский компонент.</entitydescription.liquidplasma>
+  <entitydescription.liquidplasma>Полезна для создания продвинутых лекарств. Это продвинутый медицинский компонент.</entitydescription.liquidplasma>
   <!-- Clothes/Tools -->
   <entityname.medicalbelt>Медицинский пояс</entityname.medicalbelt>
   <entitydescription.medicalbelt>Специально разработанный для врачей и парамедиков медицинский пояс, имеющий дополнительные карманы для медикаментов, но не способный выполнять иные функции, кроме как помогать врачам.</entitydescription.medicalbelt>
@@ -50,25 +46,25 @@
   <entityname.vitaminpills>Витамины</entityname.vitaminpills>
   <entitydescription.vitaminpills>Небольшие витаминки, помогающие организму восстанавливаться. На вкус как конфеты.</entitydescription.vitaminpills>
   <entityname.antipsychoticpills>Антипсихотики</entityname.antipsychoticpills>
-  <entitydescription.antipsychoticpills>Иногда ваш рассудок и мораль падают до предела и вам нужно быстрое и недолгое решение этой проблемы.</entitydescription.antipsychoticpills>
+  <entitydescription.antipsychoticpills>Уменьшает симптомы психоза, связанные с такими состояниями, как психотический шок.</entitydescription.antipsychoticpills>
   <entityname.radiazine>Радиацин</entityname.radiazine>
   <entitydescription.radiazine>Шприц, заполненный почти смертельным составом, который, как говорят, способен вылечить рак и радиацию.</entitydescription.radiazine>
   <entityname.rabiesvaccine>Аутовакцина</entityname.rabiesvaccine>
-  <entitydescription.rabiesvaccine>Шприц заполненный смесью крови и других мощных компонентов, обеспечивает сопротивление бешенству после использования. Спасает жизнь на ранних этапах болезни.</entitydescription.rabiesvaccine>
+  <entitydescription.rabiesvaccine>Шприц заполненный смесью крови и других мощных компонентов, обеспечивает сопротивление бешенству. Спасает жизнь на ранних этапах болезни.</entitydescription.rabiesvaccine>
   <entityname.vitaminsoulution>Раствор витаминов</entityname.vitaminsoulution>
-  <entitydescription.vitaminsoulution>Высокоэффективный, универсальный раствор высококонцентрированных витаминов позволяющий вытащить пациента почти что из любой тяжелой ситуации. До разработки боевых стимуляторов считался основным средством выполняющим функции боевого стимулятора. К сожалению, этот медикамент известен своими ужасными побочными эффектами.</entitydescription.vitaminsoulution>
+  <entitydescription.vitaminsoulution>Высокоэффективный, универсальный раствор высококонцентрированных витаминов позволяющий вытащить пациента почти что из любой тяжелой ситуации. До разработки боевых стимуляторов считался основным средством выполняющим функции боевого стимулятора. Этот медикамент известен своими сильными побочными эффектами.</entitydescription.vitaminsoulution>
   <entityname.compressionbandage>Шина</entityname.compressionbandage>
   <entitydescription.compressionbandage>Шина, является средством лечения переломов, но может быть использована для лечения сильных кровотечений.</entitydescription.compressionbandage>
   <entityname.donorbloodpack>Пакет донорской крови</entityname.donorbloodpack>
   <entitydescription.donorbloodpack>Изготовленная на основе неочищенной донорской крови, пачка исцеляет кровопотерю.</entitydescription.donorbloodpack>
   <entityname.antibloodpills>Осимилин</entityname.antibloodpills>
-  <entitydescription.antibloodpills>Замедляющее слегка метаболизм лекарство повышает кровенное давление, но повышает шансы пациента выжить при обильных кровопотерях и кровотечениях. Парамедикам рекомендуется.</entitydescription.antibloodpills>
+  <entitydescription.antibloodpills>Замедляющее слегка метаболизм лекарство. Повышает кровенное давление и шансы пациента выжить при обильных кровопотерях и кровотечениях. Парамедикам рекомендуется.</entitydescription.antibloodpills>
   <entityname.stasissolution>Раствор криоксадона</entityname.stasissolution>
   <entitydescription.stasissolution>Прохладная на ощуп смесь в пакете способная вводить пациента в приближённый к крионическому сну транс на короткий срок. Используется лишь опытными парамедиками!</entitydescription.stasissolution>
   <entityname.antioxygenlow>Химический кислород</entityname.antioxygenlow>
   <entitydescription.antioxygenlow>Особый вид кислорода насыщенный химическими свойствами. Позволяет пациенту на относительно продолжительный период отказаться от кислорода. Полезен как аварийный медикамент для путешествинников.</entitydescription.antioxygenlow>
   <entityname.antiaddiction>Адиксил</entityname.antiaddiction>
-  <entitydescription.antiaddiction>Необычный медикамент на основе плазма и органа морского обитателя, способный эффективно лечить зависимость пациентов, но усиливает её ломку.</entitydescription.antiaddiction>
+  <entitydescription.antiaddiction>Необычный медикамент на основе плазмы и органа морского обитателя. Эффективно лечить химическую зависимость пациентов, но слегка усиливает её ломку.</entitydescription.antiaddiction>
   <!-- Buffs -->
   <afflictionname.fluresistance>Стойкость</afflictionname.fluresistance>
   <afflictiondescription.fluresistance>Похоже что никакая болезнь, на время, не сможет так просто побороть пациента.</afflictiondescription.fluresistance>
@@ -78,4 +74,11 @@
   <afflictiondescription.psyshockresistance>Пациент временно устойчив к психотическому шоку.</afflictiondescription.psyshockresistance>
   <afflictionname.metabolismarrest>Остановка метаболизма</afflictionname.metabolismarrest>
   <afflictiondescription.metabolismarrest>Пациент находится в глубоком трансе, а его метаболизм остановился почти полностью.</afflictiondescription.metabolismarrest>
+  <!-- TEMPORALY TURNED OFF -->
+  <!--
+  <afflictionname.hemor>Поджопный волдырь</afflictionname.hemor>
+  <afflictiondescription.hemor>Болезненная припухлость, вызывающая дискомфорт и периодическую потерю трудоспособности. Нужно что-то острое, чтобы убрать его.</afflictiondescription.hemor>
+  <afflictiondescription.blackout>Пациент дезориентирован в результате сильной боли. Он с трудом стоит на ногах и держит себя в сознании.</afflictiondescription.blackout>
+  <afflictioncauseofdeath.blackout>Смерть мозга</afflictioncauseofdeath.blackout>
+  -->
 </infotexts>
