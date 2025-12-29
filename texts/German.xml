@@ -73,12 +73,23 @@
   <afflictiondescription.psyshockresistance>Der Patient ist vorübergehend vor psychotischem Schock geschützt.</afflictiondescription.psyshockresistance>
   <afflictionname.metabolismarrest>Stoffwechselstillstand</afflictionname.metabolismarrest>
   <afflictiondescription.metabolismarrest>Der Patient befindet sich in einer tiefen Trance, und sein Stoffwechsel ist fast vollständig zum Stillstand gekommen.</afflictiondescription.metabolismarrest>
-  <!-- TEMPORALY TURNED OFF -->
-  <!--
-  <afflictionname.hemor>Stumpfblase</afflictionname.hemor>
-  <afflictiondescription.hemor>Eine schmerzhafte Schwellung, die Beschwerden verursacht und den Patienten periodisch außer Gefecht setzen kann. Brauchen Sie etwas Scharfes, um es zu entfernen.</afflictiondescription.hemor>
-  <afflictionname.blackout>Ohnmacht</afflictionname.blackout>
-  <afflictiondescription.blackout>Der Patient ist durch starke Schmerzen desorientiert. Er kann kaum auf den Beinen stehen und sich bei Bewusstsein halten.</afflictiondescription.blackout>
-  <afflictioncauseofdeath.blackout>Hirntod</afflictioncauseofdeath.blackout>
-  -->
+  <!-- Imported -->
+  <!-- Medicine -->
+  <entityname.antibleedingacid>Hemofuse</entityname.antibleedingacid>
+  <entitydescription.antibleedingacid>Eine starke gerinnungsfördernde Verbindung, die die Blutgerinnung schnell fördert. Behandelt schwere Blutungen effektiv, sollte aber bei Patienten mit Gerinnungsstörungen mit Vorsicht angewendet werden.</entitydescription.antibleedingacid>
+  <entityname.antidrunk>Sobrix</entityname.antidrunk>
+  <entitydescription.antidrunk>Ein schnell wirkendes Nüchternheitsmittel, das Alkohol schnell metabolisiert und das System des Patienten reinigt. Wird häufig von Besatzungsmitgliedern verwendet, die schnell wieder zum Dienst zurückkehren müssen.</entitydescription.antidrunk>
+  <entityname.emergencyrepairsmedicine>ErgoForce</entityname.emergencyrepairsmedicine>
+  <entitydescription.emergencyrepairsmedicine>Ein starkes Stimulans, das die manuelle Geschicklichkeit und Reparatureffizienz erheblich verbessert. Ingenieure schwören darauf in Notfallsituationen, obwohl längerer Gebrauch nicht empfohlen wird.</entitydescription.emergencyrepairsmedicine>
+  <entityname.durabilitymedicine>L-Survin</entityname.durabilitymedicine>
+  <entitydescription.durabilitymedicine>Eine synthetische Verbindung, die vorübergehend die Widerstandsfähigkeit und Schadensresistenz des Körpers erhöht. Beliebt bei Sicherheitspersonal und Kampftauchern, die unter gefährlichen Bedingungen arbeiten.</entitydescription.durabilitymedicine>
+  <!-- Buffs -->
+  <afflictionname.oxygenbuff>Verbesserte Sauerstoffversorgung</afflictionname.oxygenbuff>
+  <afflictiondescription.oxygenbuff>Das Blut des Patienten ist mit sauerstoffreichen Verbindungen gesättigt, was den Sauerstoffverbrauch für eine begrenzte Zeit erheblich reduziert.</afflictiondescription.oxygenbuff>
+  <afflictionname.overdrivebuff>Überlastung</afflictionname.overdrivebuff>
+  <afflictiondescription.overdrivebuff>Die neurologischen und muskulären Systeme des Patienten arbeiten mit maximaler Effizienz und verbessern die Gesamtleistung und Reaktionszeiten.</afflictiondescription.overdrivebuff>
+  <afflictionname.repairspeedbuff>Verbesserte Geschicklichkeit</afflictionname.repairspeedbuff>
+  <afflictiondescription.repairspeedbuff>Die Feinmotorik und Hand-Auge-Koordination des Patienten sind erheblich verbessert, was schnellere und präzisere Reparaturen ermöglicht.</afflictiondescription.repairspeedbuff>
+  <afflictionname.durabilitybuff>Verstärkt</afflictionname.durabilitybuff>
+  <afflictiondescription.durabilitybuff>Der Körper des Patienten wurde mit synthetischen Verbindungen verstärkt, was eine erhöhte Widerstandsfähigkeit gegen physische Schäden bietet.</afflictiondescription.durabilitybuff>
 </infotexts>

@@ -73,12 +73,23 @@
   <afflictiondescription.psyshockresistance>The patient is protected against psychotic shock temporarily.</afflictiondescription.psyshockresistance>
   <afflictionname.metabolismarrest>Metabolism arrest</afflictionname.metabolismarrest>
   <afflictiondescription.metabolismarrest>The patient is in a deep trance, and his metabolism has stopped almost completely.</afflictiondescription.metabolismarrest>
-  <!-- TEMPORALY TURNED OFF -->
-  <!--
-  <afflictionname.hemor>Butt blister</afflictionname.hemor>
-  <afflictiondescription.hemor>A painful swelling that causes discomfort and may periodically incapacitate the patient. Need something sharp to remove it.</afflictiondescription.hemor>
-  <afflictionname.blackout>Faint</afflictionname.blackout>
-  <afflictiondescription.blackout>The patient is disoriented as a result of severe pain. He can hardly stand on his feet and keep himself conscious.</afflictiondescription.blackout>
-  <afflictioncauseofdeath.blackout>Brain death</afflictioncauseofdeath.blackout>
-  -->
+  <!-- Imported from "Skill n Drugs" by JaxMesa(29.12.25) -->
+  <!-- Medicine -->
+  <entityname.antibleedingacid>Hemofuse</entityname.antibleedingacid>
+  <entitydescription.antibleedingacid>A powerful coagulant compound that rapidly promotes blood clotting. Effectively treats severe bleeding but should be used with caution in patients with clotting disorders.</entitydescription.antibleedingacid>
+  <entityname.antidrunk>Sobrix</entityname.antidrunk>
+  <entitydescription.antidrunk>A fast-acting sobriety agent that rapidly metabolizes alcohol and clears the patient's system. Commonly used by crew members who need to return to duty quickly.</entitydescription.antidrunk>
+  <entityname.emergencyrepairsmedicine>ErgoForce</entityname.emergencyrepairsmedicine>
+  <entitydescription.emergencyrepairsmedicine>A powerful stimulant that significantly enhances manual dexterity and repair efficiency. Engineers swear by it during emergency situations, though prolonged use is not recommended.</entitydescription.emergencyrepairsmedicine>
+  <entityname.durabilitymedicine>L-Survin</entityname.durabilitymedicine>
+  <entitydescription.durabilitymedicine>A synthetic compound that temporarily enhances the body's resilience and damage resistance. Popular among security personnel and combat divers operating in dangerous conditions.</entitydescription.durabilitymedicine>
+  <!-- Buffs -->
+  <afflictionname.oxygenbuff>Enhanced Oxygenation</afflictionname.oxygenbuff> 
+  <afflictiondescription.oxygenbuff>The patient's blood is saturated with oxygen-rich compounds, significantly reducing oxygen consumption for a limited time.</afflictiondescription.oxygenbuff>
+  <afflictionname.overdrivebuff>Overdrive</afflictionname.overdrivebuff> 
+  <afflictiondescription.overdrivebuff>The patient's neurological and muscular systems are operating at peak efficiency, enhancing overall performance and reaction times.</afflictiondescription.overdrivebuff>
+  <afflictionname.repairspeedbuff>Enhanced Dexterity</afflictionname.repairspeedbuff> 
+  <afflictiondescription.repairspeedbuff>The patient's fine motor skills and hand-eye coordination are significantly improved, allowing for faster and more precise repairs.</afflictiondescription.repairspeedbuff>
+  <afflictionname.durabilitybuff>Fortified</afflictionname.durabilitybuff> 
+  <afflictiondescription.durabilitybuff>The patient's body has been reinforced with synthetic compounds, providing increased resistance to physical damage.</afflictiondescription.durabilitybuff>
 </infotexts>
