@@ -75,11 +75,11 @@
   <afflictiondescription.metabolismarrest>The patient is in a deep trance, and his metabolism has stopped almost completely.</afflictiondescription.metabolismarrest>
   <!-- Imported from "Skill n Drugs" by JaxMesa(29.12.25) -->
   <!-- Medicine -->
-  <entityname.antibleedingacid>Hemofuse</entityname.antibleedingacid>
+  <entityname.antibleedingacid>Hemofusive Acid</entityname.antibleedingacid>
   <entitydescription.antibleedingacid>A powerful coagulant compound that rapidly promotes blood clotting. Effectively treats severe bleeding but should be used with caution in patients with clotting disorders.</entitydescription.antibleedingacid>
   <entityname.antidrunk>Sobrix</entityname.antidrunk>
   <entitydescription.antidrunk>A fast-acting sobriety agent that rapidly metabolizes alcohol and clears the patient's system. Commonly used by crew members who need to return to duty quickly.</entitydescription.antidrunk>
-  <entityname.emergencyrepairsmedicine>ErgoForce</entityname.emergencyrepairsmedicine>
+  <entityname.emergencyrepairsmedicine>Ergoforcit</entityname.emergencyrepairsmedicine>
   <entitydescription.emergencyrepairsmedicine>A powerful stimulant that significantly enhances manual dexterity and repair efficiency. Engineers swear by it during emergency situations, though prolonged use is not recommended.</entitydescription.emergencyrepairsmedicine>
   <entityname.durabilitymedicine>L-Survin</entityname.durabilitymedicine>
   <entitydescription.durabilitymedicine>A synthetic compound that temporarily enhances the body's resilience and damage resistance. Popular among security personnel and combat divers operating in dangerous conditions.</entitydescription.durabilitymedicine>

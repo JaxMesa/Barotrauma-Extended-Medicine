@@ -636,7 +636,7 @@
       </StatusEffect>
     </MeleeWeapon>
   </AntiOxygenlow>
-  <!-- Adixil: Similar to naloxone but for chem addiction -->
+  <!-- Reductorin: Similar to naloxone but for chem addiction -->
   <AntiAddiction name="" identifier="antiaddiction" category="Medical" tags="smallitem,medical,chem,syringe" maxstacksize="24" maxstacksizecharacterinventory="6" cargocontaineridentifier="mediccrate" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="medcab" minamount="0" maxamount="1" />
     <PreferredContainer primary="wreckmedcab" minamount="0" maxamount="1" spawnprobability="0.15" />
@@ -687,6 +687,172 @@
       </StatusEffect>
     </MeleeWeapon>
   </AntiAddiction>
+
+  <!-- Imports from "Skill n Drugs" by JaxMesa(29.12.25) -->
+  <!-- Antibleeding acid: Stops bleeding. Cheaper alternative to antiobiotic glue  -->
+  <!-- NO TEXT YET -->
+  <AntibleedingAcid name="" identifier="antibleedingacid" category="Medical" tags="smallitem,medical,chem,syringe" maxstacksize="16" maxstacksizecharacterinventory="8" cargocontaineridentifier="mediccrate" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
+    <Price baseprice="300">
+      <Price storeidentifier="merchantresearch" multiplier="0.75" />
+      <Price storeidentifier="merchantmedical" multiplier="0.9" />
+    </Price>
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="50">
+      <RequiredSkill identifier="medical" level="60" />
+      <RequiredItem identifier="sulphuricacid" />
+      <RequiredItem identifier="stabilozine" />
+      <RequiredItem identifier="reagent" amount="2" />
+    </Fabricate>
+    <Deconstruct time="20">
+      <Item identifier="stabilozine" />
+      <Item identifier="reagent" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/icons/syringeAcid.png" sourcerect="0,0,64,64" />
+    <Sprite texture="%ModDir%/sprites/syringeAcid.png" sourcerect="0,0,38,70" depth="0.6" />
+    <Body width="60" height="20" density="20" />
+    <SuitableTreatment identifier="bleeding" suitability="80" />
+    <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
+      <RequiredSkill identifier="medical" level="28" />
+      <StatusEffect type="OnSuccess" target="This" Condition="-100" disabledeltatime="true" />
+      <StatusEffect type="OnFailure" target="This" Condition="-100" disabledeltatime="true" />
+      <Sound file="Content/Items/Medical/Syringe.ogg" type="OnUse" range="500" />
+      <!-- Healing effects -->
+      <StatusEffect type="OnSuccess" target="UseTarget" duration="30">
+        <ReduceAffliction identifier="bleeding" amount="2" />
+      </StatusEffect>
+      <StatusEffect type="OnFailure" target="UseTarget" duration="30">
+        <ReduceAffliction identifier="bleeding" amount="1" />
+      </StatusEffect>
+      <!-- Side effects: Burn and pain -->
+      <StatusEffect type="OnSuccess" target="UseTarget" duration="60">
+        <Affliction identifier="burn" amount="0.167" />
+        <Affliction identifier="pain" amount="0.5" />
+      </StatusEffect>
+      <!-- On Failure doubles -->
+      <StatusEffect type="OnFailure" target="UseTarget" duration="60">
+        <Affliction identifier="burn" amount="0.33" />
+        <Affliction identifier="pain" amount="1" />
+      </StatusEffect>
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </MeleeWeapon>
+  </AntibleedingAcid>
+  <!-- Anti Drunk: Medicine to reduce drunkness -->
+  <!-- NO TEXT YET -->
+  <AntiDrunk name="" identifier="antidrunk" category="Medical" tags="smallitem,medical,chem,syringe" maxstacksize="32" maxstacksizecharacterinventory="16" cargocontaineridentifier="mediccrate" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="wreckmedcab" minamount="0" maxamount="1" spawnprobability="0.15" />
+    <Price baseprice="220">
+      <Price storeidentifier="merchantmedical" multiplier="0.9" />
+    </Price>
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="80">
+      <RequiredSkill identifier="medical" level="16" />
+      <RequiredItem identifier="ethanol" />
+      <RequiredItem identifier="stabilozine" />
+      <RequiredItem identifier="reagent" amount="2" />
+    </Fabricate>
+    <Deconstruct time="20">
+      <Item identifier="ethanol" copycondition="true" />
+      <Item identifier="stabilozine" copycondition="false" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/icons/syringeAntidrunk.png" sourcerect="0,0,64,64" />
+    <Sprite texture="%ModDir%/sprites/syringeAntidrunk.png" sourcerect="0,0,38,70" depth="0.6" />
+    <Body width="60" height="20" density="20" />
+    <SuitableTreatment identifier="drunk" suitability="50" />
+    <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
+      <RequiredSkill identifier="medical" level="24" />
+      <StatusEffect type="OnSuccess" target="This" Condition="-100" disabledeltatime="true" />
+      <StatusEffect type="OnFailure" target="This" Condition="-100" disabledeltatime="true" />
+      <Sound file="Content/Items/Medical/Syringe.ogg" type="OnUse" range="500" />
+      <!-- Healing effects -->
+      <StatusEffect type="OnSuccess" target="UseTarget" duration="10">
+        <ReduceAffliction identifier="drunk" amount="5" />
+      </StatusEffect>
+      <StatusEffect type="OnFailure" target="UseTarget" duration="10">
+        <ReduceAffliction identifier="drunk" amount="2.5" />
+      </StatusEffect>
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </MeleeWeapon>
+  </AntiDrunk>
+  <!-- Emergency Repairs: Gives stats to allow to repair under hard conditions -->
+  <!-- NO TEXT YET -->
+  <EmergencyRepairs name="" identifier="emergencyrepairsmedicine" category="Medical" tags="smallitem,medical,chem,syringe" maxstacksize="24" maxstacksizecharacterinventory="6" cargocontaineridentifier="mediccrate" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="50">
+      <RequiredSkill identifier="medical" level="40" />
+      <RequiredItem identifier="orangeextract" />
+      <RequiredItem identifier="ethanol" amount="2" />
+      <RequiredItem identifier="phosphorus" amount="2" />
+      <RequiredItem identifier="deusizine" />
+    </Fabricate>
+    <Deconstruct time="20">
+      <Item identifier="ethanol" />
+      <Item identifier="phosphorus" />
+      <Item identifier="deusizine" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/icons/syringeER.png" sourcerect="0,0,64,64" />
+    <Sprite texture="%ModDir%/sprites/syringeER.png" sourcerect="0,0,64,64" depth="0.6" />
+    <Body width="60" height="20" density="20" />
+    <SuitableTreatment type="oxygenlow" amount="90" />
+    <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
+      <RequiredSkill identifier="medical" level="44" />
+      <StatusEffect type="OnSuccess" target="This" Condition="-100" disabledeltatime="true" />
+      <StatusEffect type="OnFailure" target="This" Condition="-100" disabledeltatime="true" />
+      <Sound file="Content/Items/Medical/Syringe.ogg" type="OnUse" range="500" />
+      <!-- Healing -->
+      <StatusEffect tags="medical" type="OnSuccess" target="UseTarget" duration="10">
+        <Affliction identifier="repairspeedbuff" amount="30" />
+      </StatusEffect>
+      <StatusEffect tags="medical" type="OnFailure" target="UseTarget" duration="10">
+        <Affliction identifier="repairspeedbuff" amount="10" />
+      </StatusEffect>
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </MeleeWeapon>
+    <SkillRequirementHint identifier="medical" level="44" />
+  </EmergencyRepairs>
+
+  <!-- LSurvin -->
+  <!-- NO TEXT YET-->
+  <DurabilityMedicine name="" identifier="durabilitymedicine" category="Medical" tags="smallitem,medical,chem,syringe" maxstacksize="24" maxstacksizecharacterinventory="6" cargocontaineridentifier="mediccrate" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="50">
+      <RequiredSkill identifier="medical" level="40" />
+      <RequiredItem identifier="liquidplasma" amount="3" />
+      <RequiredItem identifier="sulphuriteshard" />
+      <RequiredItem identifier="sodium" amount="2" />
+      <RequiredItem identifier="phosphorus" amount="2" />
+    </Fabricate>
+    <Deconstruct time="20">
+      <Item identifier="sulphuriteshard" />
+      <Item identifier="sodium" />
+      <Item identifier="phosphorus" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/icons/syringeLS.png" sourcerect="0,0,64,64" />
+    <Sprite texture="%ModDir%/sprites/syringeLS.png" sourcerect="0,0,64,64" depth="0.6" />
+    <Body width="60" height="20" density="20" />
+    <SuitableTreatment type="oxygenlow" amount="90" />
+    <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
+      <RequiredSkill identifier="medical" level="44" />
+      <StatusEffect type="OnSuccess" target="This" Condition="-100" disabledeltatime="true" />
+      <StatusEffect type="OnFailure" target="This" Condition="-100" disabledeltatime="true" />
+      <Sound file="Content/Items/Medical/Syringe.ogg" type="OnUse" range="500" />
+      <!-- Healing -->
+      <StatusEffect tags="medical" type="OnSuccess" target="UseTarget" duration="10">
+        <Affliction identifier="durabilitybuff" amount="30" />
+      </StatusEffect>
+      <StatusEffect tags="medical" type="OnFailure" target="UseTarget" duration="10">
+        <Affliction identifier="durabilitybuff" amount="10" />
+      </StatusEffect>
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </MeleeWeapon>
+  </DurabilityMedicine>
 
   <!-- Raw mats -->
   <!-- Antibiotic Powder -->

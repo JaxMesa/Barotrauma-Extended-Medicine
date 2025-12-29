@@ -368,15 +368,16 @@
   <!-- Combat Buffs -->
   <!-- Durability Buff -->
   <Affliction name="" identifier="durabilitybuff" description="" hideiconafterdelay="true" type="combatbuff" isbuff="true" indicatorlimb="Torso" limbspecific="false" maxstrength="300" MedicalSkillGain="0.002">
-    <Effect minstrength="0" maxstrength="300" strengthchange="-1">
-      <!-- +100% Maximum Health, +33% Attack Damage via all attack types, in 2 times lasts longer without oxygen and +50% Flow Resistance -->
+    <Effect minstrength="0" maxstrength="300" strengthchange="-1" resistancefor="damage,stun" minresistance="0.2" maxresistance="0.9" >
+      <!-- +100% Maximum Health, +25% Attack Damage via all attack types, +75% Melee Damage, in 2 times lasts longer without oxygen and +90% Flow Resistance -->
       <StatValue stattype="MaximumHealthMultiplier" value="1" />
-      <StatValue stattype="AttackMultiplier" value="0.33" />
+      <StatValue stattype="AttackMultiplier" value="0.25" />
+      <StatValue stattype="MeleeAttackMultiplier" value="0.75" />
       <StatValue stattype="HoldBreathMultiplier" value="1" />
-      <StatValue stattype="FlowResistance" value="0.5" />
-      <!-- -20% Melee Attack Speed, and -20% Movement Speed -->
+      <StatValue stattype="FlowResistance" value="0.9" />
+      <!-- -20% Melee Attack Speed, and -40% Movement Speed -->
       <StatValue stattype="MeleeAttackSpeed" value="-0.2" />
-      <StatValue stattype="MovementSpeed" value="-0.2" />
+      <StatValue stattype="MovementSpeed" value="-0.4" />
     </Effect>
     <icon texture="%ModDir%\icons\buffTrippleCross.png" color="0,0,0,100" origin="0,0" />
   </Affliction>

@@ -75,11 +75,11 @@
   <afflictiondescription.metabolismarrest>Der Patient befindet sich in einer tiefen Trance, und sein Stoffwechsel ist fast vollständig zum Stillstand gekommen.</afflictiondescription.metabolismarrest>
   <!-- Imported -->
   <!-- Medicine -->
-  <entityname.antibleedingacid>Hemofuse</entityname.antibleedingacid>
+  <entityname.antibleedingacid>Hämofusive Säure</entityname.antibleedingacid>
   <entitydescription.antibleedingacid>Eine starke gerinnungsfördernde Verbindung, die die Blutgerinnung schnell fördert. Behandelt schwere Blutungen effektiv, sollte aber bei Patienten mit Gerinnungsstörungen mit Vorsicht angewendet werden.</entitydescription.antibleedingacid>
   <entityname.antidrunk>Sobrix</entityname.antidrunk>
   <entitydescription.antidrunk>Ein schnell wirkendes Nüchternheitsmittel, das Alkohol schnell metabolisiert und das System des Patienten reinigt. Wird häufig von Besatzungsmitgliedern verwendet, die schnell wieder zum Dienst zurückkehren müssen.</entitydescription.antidrunk>
-  <entityname.emergencyrepairsmedicine>ErgoForce</entityname.emergencyrepairsmedicine>
+  <entityname.emergencyrepairsmedicine>Ergoforcit</entityname.emergencyrepairsmedicine>
   <entitydescription.emergencyrepairsmedicine>Ein starkes Stimulans, das die manuelle Geschicklichkeit und Reparatureffizienz erheblich verbessert. Ingenieure schwören darauf in Notfallsituationen, obwohl längerer Gebrauch nicht empfohlen wird.</entitydescription.emergencyrepairsmedicine>
   <entityname.durabilitymedicine>L-Survin</entityname.durabilitymedicine>
   <entitydescription.durabilitymedicine>Eine synthetische Verbindung, die vorübergehend die Widerstandsfähigkeit und Schadensresistenz des Körpers erhöht. Beliebt bei Sicherheitspersonal und Kampftauchern, die unter gefährlichen Bedingungen arbeiten.</entitydescription.durabilitymedicine>
