@@ -15,7 +15,7 @@
   <afflictiondescription.psyshock>Пациент начинает постепенно сходить с ума и терять рассудок. В конце-концов это может привести к смерти пациента.</afflictiondescription.psyshock>
   <afflictioncauseofdeath.psyshock>Смерть от сильного стресса</afflictioncauseofdeath.psyshock>
   <afflictionname.bloodpoisoning>Заражение крови</afflictionname.bloodpoisoning>
-  <afflictiondescription.bloodpoisoning>Результат переливания крови неопытным врачом донорской крови. Может потребоваться дополнительное переливание крови, но обработанной.</afflictiondescription.bloodpoisoning>
+  <afflictiondescription.bloodpoisoning>Результат переливания донорской крови неопытным врачом. Может потребоваться дополнительное переливание крови.</afflictiondescription.bloodpoisoning>
   <afflictioncauseofdeath.bloodpoisoning>Смерть от заражения крови</afflictioncauseofdeath.bloodpoisoning>
   <afflictionname.severeinjury>Серьёзная травма</afflictionname.severeinjury>
   <afflictiondescription.severeinjury>Конечность сильно повреждена. Пациент испытывает сильную боль.</afflictiondescription.severeinjury>
