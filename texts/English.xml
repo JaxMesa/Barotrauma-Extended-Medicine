@@ -82,10 +82,4 @@
   <!-- Buffs -->
   <afflictionname.oxygenbuff>Enhanced Oxygenation</afflictionname.oxygenbuff> 
   <afflictiondescription.oxygenbuff>The patient's blood is saturated with oxygen-rich compounds, significantly reducing oxygen consumption for a limited time.</afflictiondescription.oxygenbuff>
-  <afflictionname.overdrivebuff>Overdrive</afflictionname.overdrivebuff> 
-  <afflictiondescription.overdrivebuff>The patient's neurological and muscular systems are operating at peak efficiency, enhancing overall performance and reaction times.</afflictiondescription.overdrivebuff>
-  <afflictionname.repairspeedbuff>Enhanced Dexterity</afflictionname.repairspeedbuff> 
-  <afflictiondescription.repairspeedbuff>The patient's fine motor skills and hand-eye coordination are significantly improved, allowing for faster and more precise repairs.</afflictiondescription.repairspeedbuff>
-  <afflictionname.durabilitybuff>Fortified</afflictionname.durabilitybuff> 
-  <afflictiondescription.durabilitybuff>The patient's body has been reinforced with synthetic compounds, providing increased resistance to physical damage.</afflictiondescription.durabilitybuff>
 </infotexts>

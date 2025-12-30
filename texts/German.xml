@@ -82,10 +82,4 @@
   <!-- Buffs -->
   <afflictionname.oxygenbuff>Verbesserte Sauerstoffversorgung</afflictionname.oxygenbuff>
   <afflictiondescription.oxygenbuff>Das Blut des Patienten ist mit sauerstoffreichen Verbindungen gesättigt, was den Sauerstoffverbrauch für eine begrenzte Zeit erheblich reduziert.</afflictiondescription.oxygenbuff>
-  <afflictionname.overdrivebuff>Überlastung</afflictionname.overdrivebuff>
-  <afflictiondescription.overdrivebuff>Die neurologischen und muskulären Systeme des Patienten arbeiten mit maximaler Effizienz und verbessern die Gesamtleistung und Reaktionszeiten.</afflictiondescription.overdrivebuff>
-  <afflictionname.repairspeedbuff>Verbesserte Geschicklichkeit</afflictionname.repairspeedbuff>
-  <afflictiondescription.repairspeedbuff>Die Feinmotorik und Hand-Auge-Koordination des Patienten sind erheblich verbessert, was schnellere und präzisere Reparaturen ermöglicht.</afflictiondescription.repairspeedbuff>
-  <afflictionname.durabilitybuff>Verstärkt</afflictionname.durabilitybuff>
-  <afflictiondescription.durabilitybuff>Der Körper des Patienten wurde mit synthetischen Verbindungen verstärkt, was eine erhöhte Widerstandsfähigkeit gegen physische Schäden bietet.</afflictiondescription.durabilitybuff>
 </infotexts>

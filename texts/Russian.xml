@@ -82,11 +82,5 @@
   <!-- Buffs -->
   <afflictionname.oxygenbuff>Усиленная оксигенация</afflictionname.oxygenbuff>
   <afflictiondescription.oxygenbuff>Кровь пациента насыщена кислородсодержащими соединениями, значительно снижая потребление кислорода на ограниченное время.</afflictiondescription.oxygenbuff>
-  <afflictionname.overdrivebuff>Перегрузка</afflictionname.overdrivebuff>
-  <afflictiondescription.overdrivebuff>Неврологическая и мышечная системы пациента работают на пике эффективности, улучшая общую производительность и время реакции.</afflictiondescription.overdrivebuff>
-  <afflictionname.repairspeedbuff>Улучшенная ловкость</afflictionname.repairspeedbuff>
-  <afflictiondescription.repairspeedbuff>Мелкая моторика и координация рук пациента значительно улучшены, что позволяет выполнять более быстрый и точный ремонт.</afflictiondescription.repairspeedbuff>
-  <afflictionname.durabilitybuff>Укреплённый</afflictionname.durabilitybuff>
-  <afflictiondescription.durabilitybuff>Тело пациента было усилено синтетическими соединениями, обеспечивая повышенную устойчивость к физическим повреждениям.</afflictiondescription.durabilitybuff>
 
 </infotexts>
