@@ -932,33 +932,4 @@
     <Body width="60" height="20" density="20" />
     <Holdable canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="-5,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" />
   </LiquidPlasma>
-  <!-- Clothes -->
-  <!-- Medical belt to store medical items only -->
-  <Item name="" identifier="medicalbelt" category="Equipment" tags="mediumitem,mobilecontainer,tool" cargocontaineridentifier="metalcrate" showcontentsintooltip="true" Scale="0.5" fireproof="true" description="" impactsoundtag="impact_soft">
-    <PreferredContainer primary="medfabcab" />
-    <PreferredContainer primary="wreckmedcab,abandonedmedcab" amount="1" spawnprobability="0.05" />
-    <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.1" />
-    <Deconstruct time="10">
-      <Item identifier="organicfiber" />
-      <Item identifier="organicfiber" />
-    </Deconstruct>
-    <Fabricate suitablefabricators="fabricator" requiredtime="20">
-      <Item identifier="organicfiber" amount="3" />
-    </Fabricate>
-    <Price baseprice="150">
-      <Price storeidentifier="merchantresearch" multiplier="0.6" />
-      <Price storeidentifier="merchantmedical" multiplier="0.9" />
-    </Price>
-    <InventoryIcon texture="%ModDir%/icons/medBelt.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
-    <Sprite texture="%ModDir%/sprites/medBelt.png" sourcerect="0,0,102,54" depth="0.6" />
-    <Body width="100" height="45" density="15" />
-    <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
-      <sprite name="MedicalBelt" texture="%ModDir%/Clothes/Sprite/Medical Belt.png" sourcerect="0,0,102,54" limb="Torso" inherittexturescale="true" origin="0.5,-0.2" />
-    </Wearable>
-    <Holdable slots="RightHand+LeftHand" holdpos="0,-70" handle1="-5,0" handle2="10,-20" holdangle="0" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Use" allowswappingwhenpicked="false" />
-    <ItemContainer capacity="8" depth="0.5">
-      <Containable items="chem,syringe,medical" excludeditems="medicalbelt,toolbelt,toolbox,bandolier" />
-    </ItemContainer>
-    <Upgrade gameversion="0.10.0.0" scale="0.5" />
-  </Item>
 </Items>
