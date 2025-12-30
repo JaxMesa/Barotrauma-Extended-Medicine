@@ -36,9 +36,6 @@
   <entitydescription.reagent>Nützlich für die Herstellung von üblichen Medikamenten. Es ist eine medizinische Komponente.</entitydescription.reagent>
   <entityname.liquidplasma>Flüssiges Plasma</entityname.liquidplasma>
   <entitydescription.liquidplasma>Nützlich für die Herstellung von fortgeschrittenen Medikamenten. Eine fortgeschrittene medizinische Komponente.</entitydescription.liquidplasma>
-  <!-- Clothes/Tools -->
-  <entityname.medicalbelt>Medizinischer Gürtel</entityname.medicalbelt>
-  <entitydescription.medicalbelt>Ein speziell entworfener medizinischer Gürtel für Ärzte und Sanitäter, der zusätzliche Taschen für Medikamente hat, aber keine anderen Funktionen als die Unterstützung von Ärzten ausführen kann.</entitydescription.medicalbelt>
   <!-- Medicine -->
   <entityname.antibioticpills>Antibiotika</entityname.antibioticpills>
   <entitydescription.antibioticpills>Milde Antibiotika in Form von Pillen. Helfen bei der Behandlung von Krankheiten.</entitydescription.antibioticpills>

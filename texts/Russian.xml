@@ -36,9 +36,6 @@
   <entitydescription.reagent>Полезен для создания обычных лекарств. Это медицинский компонент.</entitydescription.reagent>
   <entityname.liquidplasma>Жидкая плазма</entityname.liquidplasma>
   <entitydescription.liquidplasma>Полезна для создания продвинутых лекарств. Это продвинутый медицинский компонент.</entitydescription.liquidplasma>
-  <!-- Clothes/Tools -->
-  <entityname.medicalbelt>Медицинский пояс</entityname.medicalbelt>
-  <entitydescription.medicalbelt>Специально разработанный для врачей и парамедиков медицинский пояс, имеющий дополнительные карманы для медикаментов, но не способный выполнять иные функции, кроме как помогать врачам.</entitydescription.medicalbelt>
   <!-- Medicine -->
   <entityname.antibioticpills>Антибиотики</entityname.antibioticpills>
   <entitydescription.antibioticpills>Лёгкие антибиотики в виде таблеток. Помогают лечить болезни.</entitydescription.antibioticpills>
@@ -82,5 +79,4 @@
   <!-- Buffs -->
   <afflictionname.oxygenbuff>Усиленная оксигенация</afflictionname.oxygenbuff>
   <afflictiondescription.oxygenbuff>Кровь пациента насыщена кислородсодержащими соединениями, значительно снижая потребление кислорода на ограниченное время.</afflictiondescription.oxygenbuff>
-
 </infotexts>

@@ -36,9 +36,6 @@
   <entitydescription.reagent>Useful for creating commom medicine. It's a medical component.</entitydescription.reagent>
   <entityname.liquidplasma>Liquid Plasma</entityname.liquidplasma>
   <entitydescription.liquidplasma>Useful for creating advanced medicine. It's an advanced medical component.</entitydescription.liquidplasma>
-  <!-- Clothes/Tools -->
-  <entityname.medicalbelt>Medical Belt</entityname.medicalbelt>
-  <entitydescription.medicalbelt>A specially designed medical belt for doctors and paramedics, which has additional pockets for medicines, but is not able to perform other functions than helping doctors.</entitydescription.medicalbelt>
   <!-- Medicine -->
   <entityname.antibioticpills>Antibiotics</entityname.antibioticpills>
   <entitydescription.antibioticpills>Mild antibiotics in the form of pills. Help treat diseases.</entitydescription.antibioticpills>
