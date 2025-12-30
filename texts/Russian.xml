@@ -79,10 +79,6 @@
   <entitydescription.antibleedingacid>Мощное коагулянтное соединение, которое быстро способствует свертыванию крови. Эффективно лечит сильные кровотечения, но должно использоваться с осторожностью у пациентов с нарушениями свертываемости крови.</entitydescription.antibleedingacid>
   <entityname.antidrunk>Собрикс</entityname.antidrunk>
   <entitydescription.antidrunk>Быстродействующее средство для отрезвления, которое быстро метаболизирует алкоголь и очищает организм пациента. Обычно используется членами экипажа, которым нужно быстро вернуться к исполнению обязанностей.</entitydescription.antidrunk>
-  <entityname.emergencyrepairsmedicine>Эргофорцит</entityname.emergencyrepairsmedicine>
-  <entitydescription.emergencyrepairsmedicine>Мощный стимулятор, который значительно улучшает ловкость рук и эффективность ремонта. Инженеры клянутся им во время чрезвычайных ситуаций, хотя длительное использование не рекомендуется.</entitydescription.emergencyrepairsmedicine>
-  <entityname.durabilitymedicine>Л-Сурвин</entityname.durabilitymedicine>
-  <entitydescription.durabilitymedicine>Синтетическое соединение, которое временно повышает устойчивость и сопротивляемость организма к повреждениям. Популярен среди сотрудников безопасности и боевых водолазов, работающих в опасных условиях.</entitydescription.durabilitymedicine>
   <!-- Buffs -->
   <afflictionname.oxygenbuff>Усиленная оксигенация</afflictionname.oxygenbuff>
   <afflictiondescription.oxygenbuff>Кровь пациента насыщена кислородсодержащими соединениями, значительно снижая потребление кислорода на ограниченное время.</afflictiondescription.oxygenbuff>
